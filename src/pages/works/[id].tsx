@@ -1,5 +1,6 @@
 import { MicroCMSContentId, MicroCMSDate } from "microcms-js-sdk";
 import { GetStaticPaths, GetStaticProps, NextPage } from "next";
+import { NextSeo } from "next-seo";
 import { MainLayout } from "src/component/Layout/MainLayout";
 import { WorksDetail } from "src/component/WorksDetail";
 import { client } from "src/lib/client";
@@ -14,6 +15,10 @@ type Props = Works & MicroCMSContentId & MicroCMSDate;
 const WorksDetailPage: NextPage<Props> = (props) => {
   return (
     <>
+      <NextSeo
+        title="Works | dahoho Portfolio site"
+        description="dahohoのポートフォリオサイトです。"
+      />
       <MainLayout>
         <WorksDetail worksdata={props} />
       </MainLayout>

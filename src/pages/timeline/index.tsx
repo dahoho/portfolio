@@ -1,4 +1,5 @@
 import { GetStaticProps, NextPage } from "next";
+import { NextSeo } from "next-seo";
 import Parser from "rss-parser";
 import { MainLayout } from "src/component/Layout/MainLayout";
 import { Timeline } from "src/component/Timeline";
@@ -6,6 +7,10 @@ import { Timeline } from "src/component/Timeline";
 const TimelinePage: NextPage = ({ zennPosts }: any) => {
   return (
     <>
+      <NextSeo
+        title="Timeline | dahoho Portfolio site"
+        description="dahohoのポートフォリオサイトです。"
+      />
       <MainLayout>
         <Timeline zenndata={zennPosts} />
       </MainLayout>
