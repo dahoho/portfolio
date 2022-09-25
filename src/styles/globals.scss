@@ -3,9 +3,12 @@
   --white: #ffffff;
   --black: #000000;
   --default: #94a3b8;
-  --bg: #0f172a;
+  --bg: #101729;
   --sky: #38bdf8;
   --gray: #1e293b;
+  --gray-nl: #475569;
+  --zenn: #edf2f7;
+  --twitter: #1da1f2;
 
   // フォントファミリー
   --ja: "Noto Sans JP", "游ゴシック体", "Yu Gothic", YuGothic,
@@ -17,7 +20,7 @@
 body {
   color: var(--default);
   font-family: var(--ja);
-  font-size: 14px;
+  font-size: 12px;
   line-height: 1.5;
   background-color: var(--bg);
   @media screen and (min-width: 768px) {
@@ -54,6 +57,7 @@ sub {
 img {
   max-width: 100%;
   height: auto;
+  transition: 0.2s;
 }
 
 input,

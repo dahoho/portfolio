@@ -1,14 +1,11 @@
 .picture {
-  position: relative;
   width: 140px;
-  aspect-ratio: 1 /1;
   border-radius: 24px;
   overflow: hidden;
   margin-top: 20px;
 }
 
 .text {
-  font-size: 14px;
   line-height: 1.8;
   margin-top: 20px;
 }
@@ -24,8 +21,7 @@
   margin-top: 15px;
   & li {
     font-size: 12px;
-    background-color: #0ea5e9;
-    color: #fff;
+    background-color: var(--gray-nl);
     border-radius: 4px;
     padding: 2px 8px;
   }

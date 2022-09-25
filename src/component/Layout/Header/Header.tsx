@@ -10,7 +10,7 @@ export const Header = () => {
       <Container>
         <div className={styles.headerIn}>
           <Menu />
-          <h1>
+          <h1 className={styles.title}>
             <Link href="/">
               <a>dahoho</a>
             </Link>

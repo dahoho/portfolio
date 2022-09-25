@@ -13,7 +13,12 @@ export const About = () => {
         <HeadlineLg title="About" />
         <div>
           <figure className={styles.picture}>
-            <Image src={profileImg} alt="" layout="fill" objectFit="contain" />
+            <Image
+              src={profileImg}
+              alt=""
+              layout="responsive"
+              placeholder="blur"
+            />
           </figure>
           <p className={styles.text}>
             現在Web制作会社3年目のコーダーです。

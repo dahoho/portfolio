@@ -13,28 +13,28 @@
 }
 
 .zenn {
-  background-color: #edf2f7;
+  background-color: var(--zenn);
   & span {
     width: 70%;
   }
 }
 
 .twitter {
-  background-color: #1da1f2;
+  background-color: var(--twitter);
   & span {
     width: 40%;
   }
 }
 
 .github {
-  background-color: #1f2937;
+  background-color: var(--gray);
   & span {
     width: 40%;
   }
 }
 
 .works {
-  background-color: #374151;
+  background-color: var(--gray-nl);
 }
 
 .worksText {

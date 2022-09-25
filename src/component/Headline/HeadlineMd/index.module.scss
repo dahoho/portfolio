@@ -1,11 +1,15 @@
 .title {
+  font-size: 18px;
+  font-family: var(--en);
   display: flex;
   align-items: center;
+  letter-spacing: 0.05em;
+  color: var(--white);
   &::before {
     content: "";
     width: 6px;
     height: 6px;
-    background-color: #7dd3fc;
+    background-color: var(--sky);
     display: block;
     border-radius: 50%;
     margin-right: 10px;

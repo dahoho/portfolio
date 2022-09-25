@@ -1,12 +1,22 @@
 .header {
   position: sticky;
-  background-color: #1f2937;
+  top: 0;
+  left: 0;
+  z-index: 999;
   padding-top: 15px;
   padding-bottom: 15px;
+  border-bottom: 1px solid var(--gray);
+  background-color: var(--bg);
 }
 
 .headerIn {
   display: flex;
   align-items: center;
   width: 100%;
+}
+
+.title {
+  font-size: 14px;
+  font-family: var(--en);
+  letter-spacing: 0.05em;
 }

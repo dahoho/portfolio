@@ -9,7 +9,7 @@
   z-index: 50;
   height: 100%;
   transition: transform 0.3s;
-  background-color: #1f2937;
+  background-color: var(--gray);
   padding-top: 100px;
   padding-bottom: 100px;
 }
@@ -19,12 +19,14 @@
 }
 
 .navLink {
+  font-size: 14px;
   display: flex;
   align-items: center;
   height: 56px;
   align-items: center;
   padding-left: 24px;
   padding-right: 24px;
+  letter-spacing: 0.05em;
 }
 
 .hamburger {
@@ -39,7 +41,7 @@
     display: block;
     width: 100%;
     height: 2px;
-    background-color: #9ca3af;
+    background-color: var(--default);
     position: absolute;
     top: 0;
     left: 0;

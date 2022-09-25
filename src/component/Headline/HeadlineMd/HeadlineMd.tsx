@@ -5,5 +5,5 @@ type Props = {
 };
 
 export const HeadlineMd = ({ title }: Props) => {
-  return <h2 className={`${"font-en text-xl"} ${styles.title}`}>{title}</h2>;
+  return <h2 className={styles.title}>{title}</h2>;
 };
