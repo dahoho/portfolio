@@ -53,6 +53,13 @@ export const Menu = () => {
             </Link>
           </li>
           <li>
+            <Link href="/timeline">
+              <a onClick={navPassive} className={styles.navLink}>
+                Timeline
+              </a>
+            </Link>
+          </li>
+          <li>
             <a
               href="https://zenn.dev/rh820"
               className={styles.navLink}

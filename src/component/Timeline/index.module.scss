@@ -1,0 +1,23 @@
+.item {
+  &:not(:first-of-type) {
+    margin-top: 20px;
+  }
+}
+
+.link {
+  display: flex;
+  align-items: center;
+  border-radius: 4px;
+  background-color: var(--gray);
+  color: var(--white);
+  width: 100%;
+  padding: 15px;
+  letter-spacing: 0.05em;
+}
+
+.logo {
+  position: relative;
+  width: 20px;
+  height: 20px;
+  margin-right: 10px;
+}
