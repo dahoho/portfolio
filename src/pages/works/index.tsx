@@ -11,7 +11,7 @@ type Works = {
 
 type Props = MicroCMSListResponse<Works>;
 
-const WorksPage: NextPage = (props) => {
+const WorksPage: NextPage<Props> = (props) => {
   return (
     <>
       <MainLayout>
