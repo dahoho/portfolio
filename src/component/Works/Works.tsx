@@ -5,7 +5,7 @@ import { Container } from "../Layout/Container";
 import { Spacer } from "../Spacer";
 import styles from "./index.module.scss";
 
-export const Works = () => {
+export const Works = ({ worksdata }: any) => {
   return (
     <>
       <Container>
@@ -23,7 +23,7 @@ export const Works = () => {
           <HeadlineMd title="Personal Production" />
           <p className={styles.text}>個人で作成したものを掲載しております。</p>
         </section>
-        <CardWorks />
+        <CardWorks worksdata={worksdata} />
       </Container>
     </>
   );

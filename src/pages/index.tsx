@@ -1,4 +1,4 @@
-import type { NextPage } from "next";
+import { NextPage } from "next";
 import { MainLayout } from "src/component/Layout/MainLayout";
 import { Top } from "src/component/Top";
 

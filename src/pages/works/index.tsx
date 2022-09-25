@@ -1,15 +1,32 @@
-import type { NextPage } from "next";
+import { MicroCMSListResponse } from "microcms-js-sdk";
+import type { GetStaticProps, NextPage } from "next";
 import { MainLayout } from "src/component/Layout/MainLayout";
 import { Works } from "src/component/Works";
+import { client } from "src/lib/client";
 
-const AboutPage: NextPage = () => {
+type Works = {
+  title: string;
+  body: string;
+};
+
+type Props = MicroCMSListResponse<Works>;
+
+const WorksPage: NextPage = (props) => {
   return (
     <>
       <MainLayout>
-        <Works />
+        <Works worksdata={props} />
       </MainLayout>
     </>
   );
 };
 
-export default AboutPage;
+export const getStaticProps: GetStaticProps<Props> = async () => {
+  const data = await client.getList<Works>({ endpoint: "portfolio" });
+
+  return {
+    props: data,
+  };
+};
+
+export default WorksPage;
