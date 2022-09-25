@@ -23,6 +23,7 @@ export const CardSm = () => {
                 alt="zenn"
                 layout="fill"
                 objectFit="contain"
+                priority
               />
             </span>
           </a>
@@ -35,7 +36,12 @@ export const CardSm = () => {
             rel="noopener noreferrer"
           >
             <span className={styles.logo}>
-              <Image src={logoTwitter} alt="Twitter" objectFit="contain" />
+              <Image
+                src={logoTwitter}
+                alt="Twitter"
+                objectFit="contain"
+                priority
+              />
             </span>
           </a>
         </li>
@@ -47,7 +53,12 @@ export const CardSm = () => {
             rel="noopener noreferrer"
           >
             <span className={styles.logo}>
-              <Image src={logoGithub} alt="GitHub" objectFit="contain" />
+              <Image
+                src={logoGithub}
+                alt="GitHub"
+                objectFit="contain"
+                priority
+              />
             </span>
           </a>
         </li>

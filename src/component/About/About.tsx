@@ -14,12 +14,7 @@ export const About = () => {
         <HeadlineLg title="About" />
         <Spacer size="lg" />
         <figure className={styles.picture}>
-          <Image
-            src={profileImg}
-            alt=""
-            layout="responsive"
-            placeholder="blur"
-          />
+          <Image src={profileImg} alt="" layout="responsive" priority />
         </figure>
         <p className={styles.text}>
           現在Web制作会社3年目のコーダーです。
