@@ -5,13 +5,18 @@
 }
 
 .link {
+  border-radius: 4px;
+  display: block;
+  margin-top: 5px;
+  background-color: var(--gray);
+  padding: 12px;
+}
+
+.linkIn {
   display: flex;
   align-items: center;
-  border-radius: 4px;
-  background-color: var(--gray);
   color: var(--white);
   width: 100%;
-  padding: 15px;
   letter-spacing: 0.05em;
 }
 
@@ -20,4 +25,10 @@
   width: 20px;
   height: 20px;
   margin-right: 10px;
+}
+
+.time {
+  font-family: var(--en);
+  margin-top: 10px;
+  display: block;
 }

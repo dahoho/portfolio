@@ -1,3 +1,4 @@
+import dayjs from "dayjs";
 import Image from "next/image";
 import logoZenn from "public/img/timeline/logo-zenn.svg";
 import { HeadlineLg } from "src/component/Headline/HeadlineLg";
@@ -32,16 +33,21 @@ export const Timeline = ({ zenndata }: Props) => {
                   target="_blank"
                   rel="noopener noreferrer"
                 >
-                  <figure className={styles.logo}>
-                    <Image
-                      src={logoZenn}
-                      alt="zenn"
-                      layout="fill"
-                      objectFit="contain"
-                      priority
-                    />
-                  </figure>
-                  {item.title}
+                  <span className={styles.linkIn}>
+                    <figure className={styles.logo}>
+                      <Image
+                        src={logoZenn}
+                        alt="zenn"
+                        layout="fill"
+                        objectFit="contain"
+                        priority
+                      />
+                    </figure>
+                    {item.title}
+                  </span>
+                  <time className={styles.time}>
+                    {dayjs(item.pubDate).format("YYYY.MM.DD")}
+                  </time>
                 </a>
               </li>
             );
