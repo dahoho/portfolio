@@ -48,7 +48,7 @@ export const CardSm = () => {
         <li className={`${styles.item} ${styles.github}`}>
           <a
             className={styles.link}
-            href="https://github.com/hoda820"
+            href="https://github.com/dahoho"
             target="_blank"
             rel="noopener noreferrer"
           >

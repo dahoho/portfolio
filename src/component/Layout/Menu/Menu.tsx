@@ -74,7 +74,7 @@ export const Menu = () => {
           </li>
           <li>
             <a
-              href="https://github.com/hoda820"
+              href="https://github.com/dahoho"
               className={styles.navLink}
               target="_blank"
               rel="noopener noreferrer"
