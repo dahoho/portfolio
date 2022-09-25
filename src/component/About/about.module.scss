@@ -2,16 +2,22 @@
   width: 140px;
   border-radius: 24px;
   overflow: hidden;
-  margin-top: 20px;
+  @media screen and (min-width: 768px) {
+    width: 240px;
+  }
 }
 
 .text {
   line-height: 1.8;
   margin-top: 20px;
+  letter-spacing: 0.05em;
 }
 
 .section {
   margin-top: 20px;
+  @media screen and (min-width: 768px) {
+    margin-top: 40px;
+  }
 }
 
 .skill {
@@ -24,5 +30,8 @@
     background-color: var(--gray-nl);
     border-radius: 4px;
     padding: 2px 8px;
+    @media screen and (min-width: 768px) {
+      font-size: 14px;
+    }
   }
 }
