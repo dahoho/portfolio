@@ -3,15 +3,29 @@
   border-top: 1px solid var(--gray);
   padding-top: 24px;
   padding-bottom: 24px;
+  @media screen and (min-width: 768px) {
+    padding-top: 30px;
+    padding-bottom: 30px;
+  }
 }
 
 .list {
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
-  gap: 8px;
+  gap: 20px;
+  width: 78%;
+  margin-right: auto;
+  margin-left: auto;
+  @media screen and (min-width: 768px) {
+    gap: 15px;
+    width: 100%;
+  }
   & a {
     letter-spacing: 0.05em;
+    @media screen and (min-width: 768px) {
+      font-size: 14px;
+    }
   }
 }
 
@@ -19,4 +33,7 @@
   font-size: 10px;
   text-align: center;
   margin-top: 40px;
+  @media screen and (min-width: 768px) {
+    font-size: 12px;
+  }
 }
