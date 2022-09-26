@@ -1,3 +1,4 @@
+import { ButtonNormal } from "../Button/ButtonNormal";
 import { HeadlineLg } from "../Headline/HeadlineLg";
 import { Container } from "../Layout/Container";
 import { Spacer } from "../Spacer";
@@ -10,6 +11,8 @@ export const ErrorPage = () => {
         <HeadlineLg title="404 not found" />
         <Spacer size="lg" />
         <p className={styles.text}>ページが見つかりません。</p>
+        <Spacer size="lg" />
+        <ButtonNormal href={"/"}>TOP</ButtonNormal>
       </Container>
     </>
   );

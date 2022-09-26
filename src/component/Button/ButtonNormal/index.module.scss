@@ -1,0 +1,15 @@
+.button {
+  color: var(--white);
+  background-color: var(--sky);
+  border-radius: 4px;
+  display: block;
+  width: 120px;
+  text-align: center;
+  padding: 10px;
+  margin-left: auto;
+  margin-right: auto;
+  @media screen and (min-width: 768px) {
+    width: 180px;
+    padding: 12px;
+  }
+}
