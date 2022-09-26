@@ -71,7 +71,7 @@ export const Menu = () => {
           </li>
           <li>
             <a
-              href="https://twitter.com/@RHweb0820"
+              href="https://twitter.com/@dahoho0820"
               className={styles.navLink}
               target="_blank"
               rel="noopener noreferrer"
