@@ -13,6 +13,12 @@ export const Header = () => {
             <a>dahoho</a>
           </Link>
         </h1>
+        <form action="#" className={styles.toggle}>
+          <label className={styles.switch}>
+            <input type="checkbox" />
+            <span className={styles.slider}></span>
+          </label>
+        </form>
       </div>
     </header>
   );

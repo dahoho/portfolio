@@ -1,6 +1,6 @@
 import dayjs from "dayjs";
 import Image from "next/image";
-import logoZenn from "public/img/timeline/logo-zenn.svg";
+import logoZenn from "public/img/activity/logo-zenn.svg";
 import { HeadlineLg } from "src/component/Headline/HeadlineLg";
 import { Container } from "src/component/Layout/Container";
 import { Spacer } from "src/component/Spacer";
@@ -17,11 +17,11 @@ interface Props {
   zenndata: Array<Feed>;
 }
 
-export const Timeline = ({ zenndata }: Props) => {
+export const Activity = ({ zenndata }: Props) => {
   return (
     <>
       <Container>
-        <HeadlineLg title="Timeline" />
+        <HeadlineLg title="Activity" />
         <Spacer size="lg" />
         <ul>
           {zenndata.map((item: any) => {

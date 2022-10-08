@@ -53,9 +53,9 @@ export const Menu = () => {
             </Link>
           </li>
           <li>
-            <Link href="/timeline">
+            <Link href="/activity">
               <a onClick={navPassive} className={styles.navLink}>
-                Timeline
+                Activity
               </a>
             </Link>
           </li>

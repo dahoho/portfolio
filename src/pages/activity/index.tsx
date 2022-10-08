@@ -1,18 +1,18 @@
 import { GetStaticProps, NextPage } from "next";
 import { NextSeo } from "next-seo";
 import Parser from "rss-parser";
+import { Activity } from "src/component/Activity";
 import { MainLayout } from "src/component/Layout/MainLayout";
-import { Timeline } from "src/component/Timeline";
 
-const TimelinePage: NextPage = ({ zennPosts }: any) => {
+const ActivityPage: NextPage = ({ zennPosts }: any) => {
   return (
     <>
       <NextSeo
-        title="Timeline | dahoho Portfolio site"
+        title="Activity | dahoho Portfolio site"
         description="dahohoのポートフォリオサイトです。"
       />
       <MainLayout>
-        <Timeline zenndata={zennPosts} />
+        <Activity zenndata={zennPosts} />
       </MainLayout>
     </>
   );
@@ -30,4 +30,4 @@ export const getStaticProps: GetStaticProps = async () => {
   };
 };
 
-export default TimelinePage;
+export default ActivityPage;
