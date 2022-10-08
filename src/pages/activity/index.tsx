@@ -2,7 +2,6 @@ import { GetStaticProps, NextPage } from "next";
 import { NextSeo } from "next-seo";
 import Parser from "rss-parser";
 import { Activity } from "src/component/Activity";
-import { MainLayout } from "src/component/Layout/MainLayout";
 
 const ActivityPage: NextPage = ({ zennPosts }: any) => {
   return (
@@ -11,9 +10,8 @@ const ActivityPage: NextPage = ({ zennPosts }: any) => {
         title="Activity | dahoho Portfolio site"
         description="dahohoのポートフォリオサイトです。"
       />
-      <MainLayout>
-        <Activity zenndata={zennPosts} />
-      </MainLayout>
+
+      <Activity zenndata={zennPosts} />
     </>
   );
 };

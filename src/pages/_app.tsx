@@ -6,6 +6,7 @@ import { useRouter } from "next/router";
 import Script from "next/script";
 import { DefaultSeo } from "next-seo";
 import { useEffect } from "react";
+import { Layout } from "src/component/Layout";
 import * as gtag from "src/lib/gtag";
 
 function MyApp({ Component, pageProps }: AppProps) {
@@ -49,9 +50,9 @@ function MyApp({ Component, pageProps }: AppProps) {
         defaultTitle={siteInfo.title}
         description={siteInfo.description}
       />
-      <div className="wrapper">
+      <Layout>
         <Component {...pageProps} />
-      </div>
+      </Layout>
     </>
   );
 }

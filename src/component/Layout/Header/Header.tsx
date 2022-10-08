@@ -33,7 +33,7 @@ export const Header = () => {
           </Link>
         </h1>
         <form action="#" className={styles.toggle}>
-          <label className={styles.switch}>
+          <label className={styles.switching}>
             <input
               type="checkbox"
               onChange={handleToggle}

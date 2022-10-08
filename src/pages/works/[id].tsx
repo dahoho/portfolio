@@ -1,7 +1,6 @@
 import { MicroCMSContentId, MicroCMSDate } from "microcms-js-sdk";
 import { GetStaticPaths, GetStaticProps, NextPage } from "next";
 import { NextSeo } from "next-seo";
-import { MainLayout } from "src/component/Layout/MainLayout";
 import { WorksDetail } from "src/component/WorksDetail";
 import { client } from "src/lib/client";
 
@@ -19,9 +18,7 @@ const WorksDetailPage: NextPage<Props> = (props) => {
         title="Works | dahoho Portfolio site"
         description="dahohoのポートフォリオサイトです。"
       />
-      <MainLayout>
-        <WorksDetail worksdata={props} />
-      </MainLayout>
+      <WorksDetail worksdata={props} />
     </>
   );
 };
