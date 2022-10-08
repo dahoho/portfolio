@@ -5,7 +5,7 @@ import { Menu } from "../Menu";
 import styles from "./index.module.scss";
 
 export const Header = () => {
-  const [lightTheme, setLightTheme] = useState("");
+  const [lightTheme, setLightTheme] = useState(undefined);
 
   const handleToggle = (e: any) => {
     setLightTheme(e.target.checked);
