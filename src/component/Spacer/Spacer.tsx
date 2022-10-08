@@ -1,7 +1,7 @@
-import styles from 'src/component/Spacer/index.module.scss';
+import styles from "src/component/Spacer/index.module.scss";
 
 type Props = {
-  size: string;
+  size: never;
 };
 
 export const Spacer = ({ size }: Props) => {
