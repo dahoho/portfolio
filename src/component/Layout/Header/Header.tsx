@@ -12,7 +12,7 @@ export const Header = () => {
   };
 
   useEffect(() => {
-    if (lightTheme !== "") {
+    if (lightTheme !== undefined) {
       if (lightTheme) {
         document.documentElement.setAttribute("data-theme", "light");
         window.localStorage.setItem("theme", "light");
