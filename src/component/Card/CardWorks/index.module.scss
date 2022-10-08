@@ -6,8 +6,8 @@
     grid-template-columns: repeat(3, minmax(0, 1fr));
   }
   & > li {
-    background-color: var(--gray);
-    box-shadow: inset 0 0 0 1px hsl(0deg 0% 100% / 10%);
+    background-color: var(--card);
+    border: 1px solid var(--border);
     width: 100%;
     border-radius: 24px;
     overflow: hidden;
@@ -34,8 +34,8 @@
   gap: 10px;
   margin-top: 24px;
   & li {
-    color: var(--white);
-    background-color: var(--gray-nl);
+    color: var(--white-immutable);
+    background-color: var(--tag);
     font-size: 12px;
     border-radius: 4px;
     padding: 2px 8px;

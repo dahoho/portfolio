@@ -19,7 +19,7 @@
 .zenn {
   background-color: var(--zenn);
   & span {
-    width: 70%;
+    width: 60%;
   }
 }
 
@@ -31,14 +31,15 @@
 }
 
 .github {
-  background-color: var(--gray);
+  background-color: var(--github);
   & span {
     width: 40%;
   }
 }
 
 .works {
-  background-color: var(--gray-nl);
+  color: var(--white-immutable);
+  background-color: var(--work);
 }
 
 .worksText {

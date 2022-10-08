@@ -27,9 +27,10 @@
   margin-top: 15px;
   & li {
     font-size: 12px;
-    background-color: var(--gray-nl);
+    color: var(--white-immutable);
+    background-color: var(--tag);
     border-radius: 4px;
-    padding: 2px 8px;
+    padding: 3px 10px;
     @media screen and (min-width: 768px) {
       font-size: 14px;
     }

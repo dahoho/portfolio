@@ -1,13 +1,21 @@
 :root {
   // カラー設定
   --white: #ffffff;
+  --white-immutable: #ffffff;
   --black: #000000;
   --default: #94a3b8;
+  --activity-text: #94a3b8;
   --bg: #101729;
   --sky: #38bdf8;
   --gray: #1e293b;
+  --card: #1e293b;
+  --menu: #1e293b;
+  --border: #1e293b;
   --gray-nl: #475569;
-  --zenn: #edf2f7;
+  --tag: #475569;
+  --zenn: #e6f2ff;
+  --work: #334155;
+  --github: #1e293b;
   --twitter: #1da1f2;
   --link: #3f83f8;
 
@@ -16,6 +24,19 @@
     "ヒラギノ角ゴ ProN W3", "Hiragino Kaku Gothic ProN", "メイリオ", Meiryo,
     sans-serif;
   --en: "Poppins", sans-serif;
+}
+
+[data-theme="light"] {
+  // カラー設定
+  --white: #0f172a;
+  --white-immutable: #ffffff;
+  --bg: #ffffff;
+  --default: #64748b;
+  --activity-text: #ffffff;
+  --border: rgba(15, 23, 42, 0.1);
+  --menu: #ffffff;
+  --tag: #0f172a;
+  --card: #ffffff;
 }
 
 body {

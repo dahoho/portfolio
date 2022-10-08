@@ -15,7 +15,7 @@
 .linkIn {
   display: flex;
   align-items: center;
-  color: var(--white);
+  color: var(--activity-text);
   width: 100%;
   letter-spacing: 0.05em;
 }
@@ -32,4 +32,5 @@
   font-family: var(--en);
   margin-top: 10px;
   display: block;
+  color: var(--activity-text);
 }
