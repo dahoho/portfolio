@@ -42,9 +42,19 @@
   background-color: var(--work);
 }
 
-.worksText {
+.activity {
+  color: var(--white-immutable);
+  background-color: var(--activity);
+}
+
+.about {
+  color: var(--white-immutable);
+  background-color: var(--about);
+}
+
+.itemText {
   font-family: "Poppins", sans-serif;
-  font-size: 24px;
+  font-size: 20px;
 }
 
 .link {

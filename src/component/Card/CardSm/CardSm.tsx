@@ -10,6 +10,27 @@ export const CardSm = () => {
   return (
     <>
       <ul className={styles.list}>
+        <li className={`${styles.item} ${styles.about}`}>
+          <Link href="about/">
+            <a className={styles.link}>
+              <p className={styles.itemText}>About</p>
+            </a>
+          </Link>
+        </li>
+        <li className={`${styles.item} ${styles.works}`}>
+          <Link href="/works">
+            <a className={styles.link}>
+              <p className={styles.itemText}>Works</p>
+            </a>
+          </Link>
+        </li>
+        <li className={`${styles.item} ${styles.activity}`}>
+          <Link href="activity/">
+            <a className={styles.link}>
+              <p className={styles.itemText}>Activity</p>
+            </a>
+          </Link>
+        </li>
         <li className={`${styles.item} ${styles.zenn}`}>
           <a
             className={styles.link}
@@ -61,13 +82,6 @@ export const CardSm = () => {
               />
             </span>
           </a>
-        </li>
-        <li className={`${styles.item} ${styles.works}`}>
-          <Link href="/works">
-            <a className={styles.link}>
-              <p className={styles.worksText}>Works</p>
-            </a>
-          </Link>
         </li>
       </ul>
     </>
