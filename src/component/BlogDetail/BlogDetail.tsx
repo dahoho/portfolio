@@ -12,6 +12,7 @@ export const BlogDetail = ({ blogdata }: any) => {
         <Spacer size="lg" />
         <section>
           <HeadlineMd title={blogdata.title} />
+          <Spacer size="md" />
           <div
             className={styles.body}
             dangerouslySetInnerHTML={{ __html: blogdata.body }}

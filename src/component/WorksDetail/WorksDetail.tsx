@@ -14,6 +14,7 @@ export const WorksDetail = ({ worksdata }: any) => {
         <Spacer size="lg" />
         <section>
           <HeadlineMd title={worksdata.title} />
+          <Spacer size="md" />
           <div className={styles.flex}>
             <div>
               <figure className={styles.picture}>
