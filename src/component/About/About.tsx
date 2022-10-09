@@ -17,9 +17,15 @@ export const About = () => {
           <Image src={profileImg} alt="" layout="responsive" priority />
         </figure>
         <p className={styles.text}>
-          現在Web制作会社3年目のコーダーです。
-          普段の業務はコーディングや更新作業、Wordpressをやっております。
-          現在はNext.js、TypeScriptなどを勉強中です。
+          Ibaraki→Tokyo　28歳
+          <br />
+          未経験→web制作会社3年目
+          <br />
+          普段はWEBサイトのコーディングや更新作業、Wordpress構築。
+          <br />
+          フロントエンドエンジニアを目指して、React、Next.js、TypeScript勉強中です。
+          <br />
+          趣味はランニングです🏃
         </p>
         <section className={styles.section}>
           <HeadlineMd title="Skill" />
