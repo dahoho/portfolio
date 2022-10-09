@@ -22,6 +22,9 @@
 .picture {
   position: relative;
   width: 100%;
+  & img {
+    object-position: top;
+  }
 }
 
 .block {

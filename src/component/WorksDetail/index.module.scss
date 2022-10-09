@@ -15,12 +15,20 @@
   }
 }
 
+.picture {
+  border: 1px solid var(--border);
+  & img {
+    object-position: top;
+  }
+}
+
 .title {
-  font-size: 24px;
   color: var(--white);
-  letter-spacing: 0.05em;
-  padding-bottom: 15px;
-  border-bottom: 1px solid var(--gray);
+  font-weight: medium;
+  font-size: 18px;
+  margin-top: 30px;
+  border-bottom: 1px solid var(--border);
+  padding-bottom: 10px;
 }
 
 .flex {
@@ -34,7 +42,7 @@
 
 .url {
   display: flex;
-  margin-top: 20px;
+  margin-top: 30px;
   & a {
     text-decoration: underline;
     color: var(--link);

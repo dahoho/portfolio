@@ -1,4 +1,5 @@
 // import { CardWorks } from "../Card/CardWorks";
+import { CardWorks } from "../Card/CardWorks";
 import { HeadlineLg } from "../Headline/HeadlineLg";
 import { HeadlineMd } from "../Headline/HeadlineMd";
 import { Container } from "../Layout/Container";
@@ -21,10 +22,10 @@ export const Works = ({ worksdata }: any) => {
         </section>
         <section className={styles.section}>
           <HeadlineMd title="Personal Production" />
-          {/* <p className={styles.text}>個人で作成したものを掲載しております。</p> */}
+          <p className={styles.text}>個人で作成したものを掲載しております。</p>
           <p className={styles.text}>comming soon</p>
         </section>
-        {/* <CardWorks worksdata={worksdata} /> */}
+        <CardWorks worksdata={worksdata} />
       </Container>
     </>
   );
