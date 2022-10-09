@@ -12,11 +12,11 @@ export const WorksDetail = ({ worksdata }: any) => {
       <Container>
         <HeadlineLg title="Works" />
         <Spacer size="lg" />
-        <section className={styles.section}>
+        <section>
           <HeadlineMd title={worksdata.title} />
           <div className={styles.flex}>
-            <div className={styles.block01}>
-              <figure className={styles.picture}>
+            <div>
+              <figure>
                 <Image
                   src={worksdata.thumbnail.url}
                   width={1280}
@@ -27,7 +27,7 @@ export const WorksDetail = ({ worksdata }: any) => {
                 />
               </figure>
             </div>
-            <div className={styles.block02}>
+            <div>
               <div
                 className={styles.desc}
                 dangerouslySetInnerHTML={{ __html: worksdata.body }}
