@@ -39,28 +39,28 @@ export const Menu = () => {
             </Link>
           </li>
           <li>
-            <Link href="about/">
+            <Link href="/about/">
               <a onClick={navPassive} className={styles.navLink}>
                 About
               </a>
             </Link>
           </li>
           <li>
-            <Link href="works/">
+            <Link href="/works/">
               <a onClick={navPassive} className={styles.navLink}>
                 Works
               </a>
             </Link>
           </li>
           <li>
-            <Link href="activity/">
+            <Link href="/activity/">
               <a onClick={navPassive} className={styles.navLink}>
                 Activity
               </a>
             </Link>
           </li>
           <li>
-            <Link href="blog/">
+            <Link href="/blog/">
               <a onClick={navPassive} className={styles.navLink}>
                 Blog
               </a>
