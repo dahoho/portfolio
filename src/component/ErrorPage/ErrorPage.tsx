@@ -1,7 +1,8 @@
-import { ButtonNormal } from "../Button/ButtonNormal";
-import { HeadlineLg } from "../Headline/HeadlineLg";
-import { Container } from "../Layout/Container";
-import { Spacer } from "../Spacer";
+import { ButtonNormal } from "src/component/Button/ButtonNormal";
+import { HeadlineLg } from "src/component/Headline/HeadlineLg";
+import { Container } from "src/component/Layout/Container";
+import { Spacer } from "src/component/Spacer";
+
 import styles from "./index.module.scss";
 
 export const ErrorPage = () => {

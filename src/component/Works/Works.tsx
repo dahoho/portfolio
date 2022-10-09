@@ -1,9 +1,9 @@
-// import { CardWorks } from "../Card/CardWorks";
-import { CardWorks } from "../Card/CardWorks";
-import { HeadlineLg } from "../Headline/HeadlineLg";
-import { HeadlineMd } from "../Headline/HeadlineMd";
-import { Container } from "../Layout/Container";
-import { Spacer } from "../Spacer";
+import { CardWorks } from "src/component/Card/CardWorks";
+import { HeadlineLg } from "src/component/Headline/HeadlineLg";
+import { HeadlineMd } from "src/component/Headline/HeadlineMd";
+import { Container } from "src/component/Layout/Container";
+import { Spacer } from "src/component/Spacer";
+
 import styles from "./index.module.scss";
 
 export const Works = ({ worksdata }: any) => {

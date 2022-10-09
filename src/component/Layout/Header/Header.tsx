@@ -1,8 +1,8 @@
 import Link from "next/link";
 import { useRouter } from "next/router";
+import { Menu } from "src/component/Layout/Menu";
 import { Toggle } from "src/component/Toggle";
 
-import { Menu } from "../Menu";
 import styles from "./index.module.scss";
 
 export const Header = () => {

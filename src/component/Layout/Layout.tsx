@@ -1,7 +1,7 @@
 import type { ReactNode } from "react";
+import { Footer } from "src/component/Layout/Footer";
+import { Header } from "src/component/Layout/Header";
 
-import { Footer } from "./Footer";
-import { Header } from "./Header";
 import styles from "./index.module.scss";
 
 type Props = {

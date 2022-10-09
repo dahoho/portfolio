@@ -1,10 +1,10 @@
 import Image from "next/image";
 import profileImg from "public/img/about/profile.jpg";
+import { HeadlineLg } from "src/component/Headline/HeadlineLg";
+import { HeadlineMd } from "src/component/Headline/HeadlineMd";
+import { Container } from "src/component/Layout/Container";
+import { Spacer } from "src/component/Spacer";
 
-import { HeadlineLg } from "../Headline/HeadlineLg";
-import { HeadlineMd } from "../Headline/HeadlineMd";
-import { Container } from "../Layout/Container";
-import { Spacer } from "../Spacer";
 import styles from "./about.module.scss";
 
 export const About = () => {

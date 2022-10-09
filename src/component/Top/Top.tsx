@@ -1,5 +1,6 @@
-import { CardSm } from "../Card/CardSm";
-import { Container } from "../Layout/Container";
+import { CardSm } from "src/component/Card/CardSm";
+import { Container } from "src/component/Layout/Container";
+
 import styles from "./index.module.scss";
 
 export const Top = () => {
