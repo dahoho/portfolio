@@ -5,5 +5,5 @@ type Props = {
 };
 
 export const HeadlineLg = ({ title }: Props) => {
-  return <h2 className={styles.title}>{title}</h2>;
+  return <h1 className={styles.title}>{title}</h1>;
 };
