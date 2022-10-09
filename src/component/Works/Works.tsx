@@ -23,7 +23,7 @@ export const Works = ({ worksdata }: any) => {
         <section className={styles.section}>
           <HeadlineMd title="Personal Production" />
           <p className={styles.text}>個人で作成したものを掲載しております。</p>
-          <p className={styles.text}>comming soon</p>
+          {/* <p className={styles.text}>comming soon</p> */}
         </section>
         <CardWorks worksdata={worksdata} />
       </Container>
