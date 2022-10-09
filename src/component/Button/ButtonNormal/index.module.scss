@@ -1,3 +1,5 @@
+@import "src/styles/variables.scss";
+
 .button {
   color: var(--white-immutable);
   background-color: var(--sky);
@@ -8,7 +10,7 @@
   padding: 10px;
   margin-left: auto;
   margin-right: auto;
-  @media screen and (min-width: 768px) {
+  @include mq(md) {
     width: 180px;
     padding: 12px;
   }

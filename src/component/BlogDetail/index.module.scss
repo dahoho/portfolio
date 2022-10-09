@@ -1,3 +1,5 @@
+@import "src/styles/variables.scss";
+
 .body {
   > * {
     &:not(:first-child) {
@@ -34,7 +36,7 @@
         content: "";
         background-color: var(--sky);
         border-radius: 50%;
-        @media screen and (min-width: 768px) {
+        @include mq(md) {
           margin-top: 11.9px;
         }
       }

@@ -1,3 +1,5 @@
+@import "src/styles/variables.scss";
+
 .footer {
   font-size: 12px;
   border-top: 1px solid var(--border);
@@ -8,7 +10,7 @@
 .copy {
   font-size: 10px;
   text-align: center;
-  @media screen and (min-width: 768px) {
+  @include mq(md) {
     font-size: 12px;
   }
 }

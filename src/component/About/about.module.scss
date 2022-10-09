@@ -1,8 +1,10 @@
+@import "src/styles/variables.scss";
+
 .picture {
   width: 140px;
   border-radius: 24px;
   overflow: hidden;
-  @media screen and (min-width: 768px) {
+  @include mq(md) {
     width: 240px;
   }
 }
@@ -15,7 +17,7 @@
 
 .section {
   margin-top: 20px;
-  @media screen and (min-width: 768px) {
+  @include mq(md) {
     margin-top: 40px;
   }
 }
@@ -31,7 +33,7 @@
     background-color: var(--tag);
     border-radius: 4px;
     padding: 3px 10px;
-    @media screen and (min-width: 768px) {
+    @include mq(md) {
       font-size: 14px;
     }
   }

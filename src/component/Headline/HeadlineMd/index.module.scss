@@ -1,3 +1,5 @@
+@import "src/styles/variables.scss";
+
 .title {
   font-size: 24px;
   font-weight: 500;
@@ -5,7 +7,7 @@
   display: flex;
   letter-spacing: 0.05em;
   color: var(--white);
-  @media screen and (min-width: 768px) {
+  @include mq(md) {
     font-size: 28px;
   }
   &::before {
@@ -18,7 +20,7 @@
     margin-top: 15px;
     border-radius: 50%;
     margin-right: 10px;
-    @media screen and (min-width: 768px) {
+    @include mq(md) {
       margin-top: 18px;
     }
   }

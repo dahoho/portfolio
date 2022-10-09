@@ -1,3 +1,4 @@
+@import "src/styles/variables.scss";
 .tag {
   display: flex;
   flex-wrap: wrap;
@@ -9,7 +10,7 @@
     background-color: var(--tag);
     border-radius: 4px;
     padding: 2px 8px;
-    @media screen and (min-width: 768px) {
+    @include mq(md) {
       font-size: 14px;
     }
   }
@@ -32,7 +33,7 @@
 }
 
 .flex {
-  @media screen and (min-width: 768px) {
+  @include mq(md) {
     display: grid;
     gap: 40px;
     grid-template-columns: repeat(2, minmax(0, 1fr));
