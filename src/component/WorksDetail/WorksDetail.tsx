@@ -16,7 +16,7 @@ export const WorksDetail = ({ worksdata }: any) => {
           <HeadlineMd title={worksdata.title} />
           <div className={styles.flex}>
             <div>
-              <figure>
+              <figure className={styles.picture}>
                 <Image
                   src={worksdata.thumbnail.url}
                   width={1280}

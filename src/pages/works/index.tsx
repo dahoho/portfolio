@@ -24,7 +24,7 @@ const WorksPage: NextPage<Props> = (props) => {
 };
 
 export const getStaticProps: GetStaticProps<Props> = async () => {
-  const data = await client.getList<Works>({ endpoint: "portfolio" });
+  const data = await client.getList<Works>({ endpoint: "production" });
 
   return {
     props: data,

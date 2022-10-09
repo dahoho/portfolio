@@ -24,7 +24,7 @@ const WorksDetailPage: NextPage<Props> = (props) => {
 };
 
 export const getStaticPaths: GetStaticPaths<{ id: string }> = async () => {
-  const data = await client.getList({ endpoint: "portfolio" });
+  const data = await client.getList({ endpoint: "production" });
   const ids = data.contents.map((content) => `/works/${content.id}`);
   return {
     fallback: false,
@@ -42,7 +42,7 @@ export const getStaticProps: GetStaticProps<Props, { id: string }> = async (
   }
   const data = await client.getListDetail<Works>({
     contentId: ctx.params.id,
-    endpoint: "portfolio",
+    endpoint: "production",
   });
   return {
     props: data,
