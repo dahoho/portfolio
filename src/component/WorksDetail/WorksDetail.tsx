@@ -46,6 +46,7 @@ export const WorksDetail = ({ worksdata }: any) => {
                 </dd>
               </dl>
               <h3 className={styles.title}>技術構成</h3>
+              <Spacer size="sm" />
               <ul className={styles.tag}>
                 {worksdata.category.map((item: any) => {
                   return <li key={item.id}>{item.name}</li>;

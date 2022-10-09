@@ -1,9 +1,9 @@
 @import "src/styles/variables.scss";
+
 .tag {
   display: flex;
   flex-wrap: wrap;
   gap: 10px;
-  margin-top: 15px;
   & li {
     font-size: 12px;
     color: var(--white-immutable);

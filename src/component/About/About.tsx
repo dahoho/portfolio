@@ -32,6 +32,7 @@ export const About = () => {
           <ul className={styles.skill}>
             <li>HTML</li>
             <li>CSS</li>
+            <li>SCSS</li>
             <li>Pug</li>
             <li>Wordpress</li>
             <li>Javascript</li>
