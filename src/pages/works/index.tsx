@@ -15,7 +15,7 @@ const WorksPage: NextPage<Props> = (props) => {
   return (
     <>
       <NextSeo
-        title="Works | dahoho Portfolio site"
+        title="Works | dahoho PORTFOLIO SITE"
         description="dahohoのポートフォリオサイトです。"
       />
       <Works worksdata={props} />

@@ -12,7 +12,7 @@ import * as gtag from "src/lib/gtag";
 function MyApp({ Component, pageProps }: AppProps) {
   // meta関連
   const siteInfo = {
-    title: "dahoho Portfolio site",
+    title: "dahoho PORTFOLIO SITE",
     description: "dahohoのポートフォリオサイトです。",
   };
 

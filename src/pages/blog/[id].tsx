@@ -15,7 +15,7 @@ const BlogDetailPage: NextPage<Props> = (props) => {
   return (
     <>
       <NextSeo
-        title="Blog | dahoho Portfolio site"
+        title="Blog | dahoho PORTFOLIO SITE"
         description="dahohoのポートフォリオサイトです。"
       />
       <BlogDetail blogdata={props} />

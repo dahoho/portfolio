@@ -5,7 +5,7 @@ const CustomErrorPage = () => {
   return (
     <>
       <NextSeo
-        title="404 not found | dahoho Portfolio site"
+        title="404 not found | dahoho PORTFOLIO SITE"
         description="dahohoのポートフォリオサイトです。"
       />
       <ErrorPage />

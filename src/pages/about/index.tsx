@@ -6,7 +6,7 @@ const AboutPage: NextPage = () => {
   return (
     <>
       <NextSeo
-        title="About | dahoho Portfolio site"
+        title="About | dahoho PORTFOLIO SITE"
         description="dahohoのポートフォリオサイトです。"
       />
       <About />
