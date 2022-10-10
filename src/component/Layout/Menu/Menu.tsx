@@ -1,7 +1,6 @@
 import Link from "next/link";
 import { useState } from "react";
-
-import styles from "./index.module.scss";
+import styles from "src/component/Layout/Menu/index.module.scss";
 
 export const Menu = () => {
   const [navIsOpen, setNavIsOpen] = useState(false);

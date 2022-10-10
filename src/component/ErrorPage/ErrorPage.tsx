@@ -1,9 +1,8 @@
 import { ButtonNormal } from "src/component/Button/ButtonNormal";
+import styles from "src/component/ErrorPage/index.module.scss";
 import { HeadlineLg } from "src/component/Headline/HeadlineLg";
 import { Container } from "src/component/Layout/Container";
 import { Spacer } from "src/component/Spacer";
-
-import styles from "./index.module.scss";
 
 export const ErrorPage = () => {
   return (

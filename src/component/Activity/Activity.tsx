@@ -1,11 +1,10 @@
 import dayjs from "dayjs";
 import Image from "next/image";
 import logoZenn from "public/img/activity/logo-zenn.svg";
+import styles from "src/component/Activity/index.module.scss";
 import { HeadlineLg } from "src/component/Headline/HeadlineLg";
 import { Container } from "src/component/Layout/Container";
 import { Spacer } from "src/component/Spacer";
-
-import styles from "./index.module.scss";
 
 interface Feed {
   title: string;

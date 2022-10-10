@@ -3,8 +3,7 @@ import Link from "next/link";
 import logoGithub from "public/img/common/logo-github.svg";
 import logoTwitter from "public/img/common/logo-twitter.svg";
 import logoZenn from "public/img/common/logo-zenn.svg";
-
-import styles from "./index.module.scss";
+import styles from "src/component/Card/CardSm/index.module.scss";
 
 export const CardSm = () => {
   return (

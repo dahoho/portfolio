@@ -1,4 +1,4 @@
-import styles from "./index.module.scss";
+import styles from "src/component/Headline/HeadlineLg/index.module.scss";
 
 type Props = {
   title: string;

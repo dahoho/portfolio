@@ -1,10 +1,9 @@
 import dayjs from "dayjs";
 import Link from "next/link";
+import styles from "src/component/Blog/index.module.scss";
 import { HeadlineLg } from "src/component/Headline/HeadlineLg";
 import { Container } from "src/component/Layout/Container";
 import { Spacer } from "src/component/Spacer";
-
-import styles from "./index.module.scss";
 
 export const Blog = ({ blogdata }: any) => {
   return (

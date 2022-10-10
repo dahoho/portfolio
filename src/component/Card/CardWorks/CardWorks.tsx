@@ -1,7 +1,6 @@
 import Image from "next/image";
 import Link from "next/link";
-
-import styles from "./index.module.scss";
+import styles from "src/component/Card/CardWorks/index.module.scss";
 
 export const CardWorks = ({ worksdata }: any) => {
   return (

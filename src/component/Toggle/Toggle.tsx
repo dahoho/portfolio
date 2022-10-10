@@ -1,6 +1,5 @@
 import { useEffect, useState } from "react";
-
-import styles from "./index.module.scss";
+import styles from "src/component/Toggle/index.module.scss";
 
 export const Toggle = () => {
   const [lightTheme, setLightTheme] = useState(undefined);
