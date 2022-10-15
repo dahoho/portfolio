@@ -1,3 +1,5 @@
+import dayjs from "dayjs";
+import Link from "next/link";
 import { HeadlineLg } from "src/component/Headline/HeadlineLg";
 import { Container } from "src/component/Layout/Container";
 import styles from "src/component/Memo/index.module.scss";
@@ -10,7 +12,7 @@ export const Memo = ({ memodata }: any) => {
         <HeadlineLg title="Memo" />
         <Spacer size="lg" />
         <section>
-          {/* <ul>
+          <ul>
             {memodata.contents.map((item: any) => {
               return (
                 <li key={item.id} className={styles.item}>
@@ -25,8 +27,8 @@ export const Memo = ({ memodata }: any) => {
                 </li>
               );
             })}
-          </ul> */}
-          <p className={styles.text}>comming soon</p>
+          </ul>
+          {/* <p className={styles.text}>comming soon</p> */}
         </section>
       </Container>
     </>
