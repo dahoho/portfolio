@@ -4,24 +4,9 @@
   font-size: 24px;
   font-weight: 500;
   font-family: var(--en);
-  display: flex;
   letter-spacing: 0.05em;
   color: var(--white);
   @include mq(md) {
     font-size: 28px;
-  }
-  &::before {
-    flex-shrink: 0;
-    content: "";
-    width: 6px;
-    height: 6px;
-    background-color: var(--sky);
-    display: block;
-    margin-top: 15px;
-    border-radius: 50%;
-    margin-right: 10px;
-    @include mq(md) {
-      margin-top: 18px;
-    }
   }
 }
