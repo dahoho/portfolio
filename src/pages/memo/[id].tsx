@@ -1,31 +1,31 @@
 import { MicroCMSContentId, MicroCMSDate } from "microcms-js-sdk";
 import { GetStaticPaths, GetStaticProps, NextPage } from "next";
 import { NextSeo } from "next-seo";
-import { BlogDetail } from "src/component/BlogDetail";
+import { MemoDetail } from "src/component/MemoDetail";
 import { client } from "src/lib/client";
 
-type Blog = {
+type Memo = {
   title: string;
   body: string;
 };
 
-type Props = Blog & MicroCMSContentId & MicroCMSDate;
+type Props = Memo & MicroCMSContentId & MicroCMSDate;
 
-const BlogDetailPage: NextPage<Props> = (props) => {
+const MemoDetailPage: NextPage<Props> = (props) => {
   return (
     <>
       <NextSeo
-        title="Blog | dahoho PORTFOLIO SITE"
+        title="Memo | dahoho PORTFOLIO SITE"
         description="dahohoのポートフォリオサイトです。"
       />
-      <BlogDetail blogdata={props} />
+      <MemoDetail memodata={props} />
     </>
   );
 };
 
 export const getStaticPaths: GetStaticPaths<{ id: string }> = async () => {
-  const data = await client.getList({ endpoint: "blog" });
-  const ids = data.contents.map((content) => `/blog/${content.id}`);
+  const data = await client.getList({ endpoint: "memo" });
+  const ids = data.contents.map((content) => `/memo/${content.id}`);
   return {
     fallback: false,
     paths: ids,
@@ -40,13 +40,13 @@ export const getStaticProps: GetStaticProps<Props, { id: string }> = async (
       notFound: true,
     };
   }
-  const data = await client.getListDetail<Blog>({
+  const data = await client.getListDetail<Memo>({
     contentId: ctx.params.id,
-    endpoint: "blog",
+    endpoint: "memo",
   });
   return {
     props: data,
   };
 };
 
-export default BlogDetailPage;
+export default MemoDetailPage;

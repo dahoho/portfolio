@@ -1,22 +1,20 @@
-import dayjs from "dayjs";
-import Link from "next/link";
-import styles from "src/component/Blog/index.module.scss";
 import { HeadlineLg } from "src/component/Headline/HeadlineLg";
 import { Container } from "src/component/Layout/Container";
+import styles from "src/component/Memo/index.module.scss";
 import { Spacer } from "src/component/Spacer";
 
-export const Blog = ({ blogdata }: any) => {
+export const Memo = ({ memodata }: any) => {
   return (
     <>
       <Container>
-        <HeadlineLg title="Blog" />
+        <HeadlineLg title="Memo" />
         <Spacer size="lg" />
         <section>
-          <ul>
-            {blogdata.contents.map((item: any) => {
+          {/* <ul>
+            {memodata.contents.map((item: any) => {
               return (
                 <li key={item.id} className={styles.item}>
-                  <Link href={`/blog/${item.id}`}>
+                  <Link href={`/memo/${item.id}`}>
                     <a className={styles.link}>
                       <h3 className={styles.title}>{item.title}</h3>
                       <time className={styles.time}>
@@ -27,8 +25,8 @@ export const Blog = ({ blogdata }: any) => {
                 </li>
               );
             })}
-          </ul>
-          {/* <p className={styles.text}>comming soon</p> */}
+          </ul> */}
+          <p className={styles.text}>comming soon</p>
         </section>
       </Container>
     </>

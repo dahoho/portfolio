@@ -1,34 +1,34 @@
 import { MicroCMSListResponse } from "microcms-js-sdk";
 import type { GetStaticProps, NextPage } from "next";
 import { NextSeo } from "next-seo";
-import { Blog } from "src/component/Blog";
+import { Memo } from "src/component/Memo";
 import { client } from "src/lib/client";
 
-type Blog = {
+type Memo = {
   title: string;
   body: string;
 };
 
-type Props = MicroCMSListResponse<Blog>;
+type Props = MicroCMSListResponse<Memo>;
 
-const BlogPage: NextPage<Props> = (props) => {
+const MemoPage: NextPage<Props> = (props) => {
   return (
     <>
       <NextSeo
-        title="Blog | dahoho PORTFOLIO SITE"
+        title="Memo | dahoho PORTFOLIO SITE"
         description="dahohoのポートフォリオサイトです。"
       />
-      <Blog blogdata={props} />
+      <Memo memodata={props} />
     </>
   );
 };
 
 export const getStaticProps: GetStaticProps<Props> = async () => {
-  const data = await client.getList<Blog>({ endpoint: "blog" });
+  const data = await client.getList<Memo>({ endpoint: "memo" });
 
   return {
     props: data,
   };
 };
 
-export default BlogPage;
+export default MemoPage;
