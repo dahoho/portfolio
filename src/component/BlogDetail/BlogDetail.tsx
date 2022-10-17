@@ -1,21 +1,21 @@
+import styles from "src/component/BlogDetail/index.module.scss";
 import { HeadlineLg } from "src/component/Headline/HeadlineLg";
 import { HeadlineMd } from "src/component/Headline/HeadlineMd";
 import { Container } from "src/component/Layout/Container";
-import styles from "src/component/MemoDetail/index.module.scss";
 import { Spacer } from "src/component/Spacer";
 
-export const MemoDetail = ({ memodata }: any) => {
+export const BlogDetail = ({ blogdata }: any) => {
   return (
     <>
       <Container>
-        <HeadlineLg title="Memo" />
+        <HeadlineLg title="Blog" />
         <Spacer size="lg" />
         <section>
-          <HeadlineMd title={memodata.title} />
+          <HeadlineMd title={blogdata.title} />
           <Spacer size="md" />
           <div
             className={styles.body}
-            dangerouslySetInnerHTML={{ __html: memodata.body }}
+            dangerouslySetInnerHTML={{ __html: blogdata.body }}
           />
         </section>
       </Container>

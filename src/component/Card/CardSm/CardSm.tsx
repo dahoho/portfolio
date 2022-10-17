@@ -31,9 +31,9 @@ export const CardSm = () => {
           </Link>
         </li>
         <li className={`${styles.item} ${styles.blog}`}>
-          <Link href="memo/">
+          <Link href="blog/">
             <a className={styles.link}>
-              <p className={styles.itemText}>Memo</p>
+              <p className={styles.itemText}>Blog</p>
             </a>
           </Link>
         </li>

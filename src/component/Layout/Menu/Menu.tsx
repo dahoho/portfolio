@@ -59,9 +59,9 @@ export const Menu = () => {
             </Link>
           </li>
           <li>
-            <Link href="/memo/">
+            <Link href="/blog/">
               <a onClick={navPassive} className={styles.navLink}>
-                Memo
+                Blog
               </a>
             </Link>
           </li>
