@@ -4,7 +4,7 @@ import { NextSeo } from "next-seo";
 import { Blog } from "src/component/Blog";
 import { client } from "src/lib/client";
 
-type Blog = {
+export type Blog = {
   title: string;
   body: string;
 };
@@ -24,7 +24,9 @@ const BlogPage: NextPage<Props> = (props) => {
 };
 
 export const getStaticProps: GetStaticProps<Props> = async () => {
-  const data = await client.getList<Blog>({ endpoint: "blog" });
+  const data = await client.getList<Blog>({
+    endpoint: "blog",
+  });
 
   return {
     props: data,
