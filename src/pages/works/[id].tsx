@@ -3,13 +3,9 @@ import { GetStaticPaths, GetStaticProps, NextPage } from "next";
 import { NextSeo } from "next-seo";
 import { WorksDetail } from "src/component/WorksDetail";
 import { client } from "src/lib/client";
+import { WorksProps } from "src/types";
 
-type Works = {
-  title: string;
-  body: string;
-};
-
-type Props = Works & MicroCMSContentId & MicroCMSDate;
+type Props = WorksProps & MicroCMSContentId & MicroCMSDate;
 
 const WorksDetailPage: NextPage<Props> = (props) => {
   return (
@@ -40,7 +36,7 @@ export const getStaticProps: GetStaticProps<Props, { id: string }> = async (
       notFound: true,
     };
   }
-  const data = await client.getListDetail<Works>({
+  const data = await client.getListDetail<WorksProps>({
     contentId: ctx.params.id,
     endpoint: "production",
   });
