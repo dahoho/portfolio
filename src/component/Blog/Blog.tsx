@@ -6,14 +6,10 @@ import styles from "src/component/Blog/index.module.scss";
 import { HeadlineLg } from "src/component/Headline/HeadlineLg";
 import { Container } from "src/component/Layout/Container";
 import { Spacer } from "src/component/Spacer";
-
-type Blog = {
-  title: string;
-  body: string;
-};
+import { BlogProps } from "src/types";
 
 export const Blog = ({ blogdata }: any) => {
-  const [search, setSearch] = useState<MicroCMSListResponse<Blog>>();
+  const [search, setSearch] = useState<MicroCMSListResponse<BlogProps>>();
 
   const handleSubmit: ComponentProps<"form">["onSubmit"] = async (event) => {
     event.preventDefault();
