@@ -6,6 +6,39 @@ import { HeadlineMd } from "src/component/Headline/HeadlineMd";
 import { Container } from "src/component/Layout/Container";
 import { Spacer } from "src/component/Spacer";
 
+const ITEMS = [
+  {
+    skill: "HTML",
+  },
+  {
+    skill: "CSS",
+  },
+  {
+    skill: "SCSS",
+  },
+  {
+    skill: "Pug",
+  },
+  {
+    skill: "Wordpress",
+  },
+  {
+    skill: "Javascript",
+  },
+  {
+    skill: "jQuery",
+  },
+  {
+    skill: "webpack",
+  },
+  {
+    skill: "gulp",
+  },
+  {
+    skill: "Git",
+  },
+];
+
 export const About = () => {
   return (
     <>
@@ -29,16 +62,9 @@ export const About = () => {
         <section className={styles.section}>
           <HeadlineMd title="Skill" />
           <ul className={styles.skill}>
-            <li>HTML</li>
-            <li>CSS</li>
-            <li>SCSS</li>
-            <li>Pug</li>
-            <li>Wordpress</li>
-            <li>Javascript</li>
-            <li>jQuery</li>
-            <li>webpack</li>
-            <li>gulp</li>
-            <li>Git</li>
+            {ITEMS.map((item) => {
+              return <li key={item.skill}>{item.skill}</li>;
+            })}
           </ul>
         </section>
       </Container>
