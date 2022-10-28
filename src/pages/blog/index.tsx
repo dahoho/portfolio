@@ -12,7 +12,7 @@ const BlogPage: NextPage<Props> = (props) => {
     <>
       <NextSeo
         title="Blog | dahoho PORTFOLIO SITE"
-        description="dahohoのポートフォリオサイトです。"
+        description="ahoho PORTFOLIO SITEのBlogページです。"
       />
       <Blog blogdata={props} />
     </>

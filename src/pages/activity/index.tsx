@@ -8,7 +8,7 @@ const ActivityPage: NextPage = ({ zennPosts }: any) => {
     <>
       <NextSeo
         title="Activity | dahoho PORTFOLIO SITE"
-        description="dahohoのポートフォリオサイトです。"
+        description="ahoho PORTFOLIO SITEのActivityページです。"
       />
 
       <Activity zenndata={zennPosts} />
