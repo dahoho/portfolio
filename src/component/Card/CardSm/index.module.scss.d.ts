@@ -1,6 +1,7 @@
 export const about: string;
 export const activity: string;
 export const blog: string;
+export const codepen: string;
 export const github: string;
 export const item: string;
 export const itemText: string;
