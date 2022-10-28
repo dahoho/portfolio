@@ -1,5 +1,6 @@
 import { MicroCMSContentId, MicroCMSDate } from "microcms-js-sdk";
-import { GetStaticPaths, GetStaticProps, NextPage } from "next";
+import { processer } from "microcms-richedit-processer";
+import { GetStaticPaths, NextPage } from "next";
 import { NextSeo } from "next-seo";
 import { BlogDetail } from "src/component/BlogDetail";
 import { client } from "src/lib/client";
@@ -28,9 +29,8 @@ export const getStaticPaths: GetStaticPaths<{ id: string }> = async () => {
   };
 };
 
-export const getStaticProps: GetStaticProps<Props, { id: string }> = async (
-  ctx
-) => {
+// export const getStaticProps: GetStaticProps<Props, { id: string }>;
+export const getStaticProps = async (ctx: any) => {
   if (!ctx.params) {
     return {
       notFound: true,
@@ -41,7 +41,10 @@ export const getStaticProps: GetStaticProps<Props, { id: string }> = async (
     endpoint: "blog",
   });
   return {
-    props: data,
+    props: {
+      title: data.title,
+      body: await processer(data.body, { iframe: { lazy: false } }),
+    },
   };
 };
 
