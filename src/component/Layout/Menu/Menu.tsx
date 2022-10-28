@@ -103,6 +103,7 @@ export const Menu = () => {
       ></div>
       <button
         type="button"
+        aria-label="メニューを開く場合はこちら"
         className={`${styles.hamburger} ${
           navIsOpen ? styles.hamburgerActive : ""
         }`}
