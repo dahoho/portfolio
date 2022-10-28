@@ -16,15 +16,8 @@
 }
 
 .title {
-  display: flex;
-  align-items: center;
   width: 100%;
   letter-spacing: 0.05em;
-  &::before {
-    content: "✍";
-    font-size: 20px;
-    margin-right: 10px;
-  }
 }
 
 .time {
