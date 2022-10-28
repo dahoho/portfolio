@@ -39,6 +39,13 @@
   }
 }
 
+.codepen {
+  background-color: var(--white-immutable);
+  & span {
+    width: 40%;
+  }
+}
+
 .works {
   color: var(--white-immutable);
   background-color: var(--work);

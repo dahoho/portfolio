@@ -1,5 +1,6 @@
 import Image from "next/image";
 import Link from "next/link";
+import logoCodePen from "public/img/common/logo-codepen.svg";
 import logoGithub from "public/img/common/logo-github.svg";
 import logoTwitter from "public/img/common/logo-twitter.svg";
 import logoZenn from "public/img/common/logo-zenn.svg";
@@ -83,6 +84,23 @@ export const CardSm = () => {
               <Image
                 src={logoGithub}
                 alt="GitHub"
+                objectFit="contain"
+                priority
+              />
+            </span>
+          </a>
+        </li>
+        <li className={`${styles.item} ${styles.codepen}`}>
+          <a
+            href="https://codepen.io/dahoho"
+            className={styles.link}
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            <span className={styles.logo}>
+              <Image
+                src={logoCodePen}
+                alt="Twitter"
                 objectFit="contain"
                 priority
               />
