@@ -2,6 +2,7 @@ import dayjs from "dayjs";
 import Image from "next/image";
 import logoZenn from "public/img/activity/logo-zenn.svg";
 import styles from "src/component/Activity/index.module.scss";
+import { Breadcrumb } from "src/component/Breadcrumb";
 import { HeadlineLg } from "src/component/Headline/HeadlineLg";
 import { Container } from "src/component/Layout/Container";
 import { Spacer } from "src/component/Spacer";
@@ -19,6 +20,17 @@ interface Props {
 export const Activity = ({ zenndata }: Props) => {
   return (
     <>
+      <Breadcrumb
+        lists={[
+          {
+            name: "TOP",
+            path: "/",
+          },
+          {
+            name: "Activity",
+          },
+        ]}
+      />
       <Container>
         <HeadlineLg title="Activity" />
         <Spacer size="lg" />

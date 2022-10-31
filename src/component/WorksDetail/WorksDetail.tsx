@@ -1,4 +1,5 @@
 import Image from "next/image";
+import { Breadcrumb } from "src/component/Breadcrumb";
 import { HeadlineLg } from "src/component/Headline/HeadlineLg";
 import { HeadlineMd } from "src/component/Headline/HeadlineMd";
 import { Container } from "src/component/Layout/Container";
@@ -8,6 +9,21 @@ import styles from "src/component/WorksDetail/index.module.scss";
 export const WorksDetail = ({ worksdata }: any) => {
   return (
     <>
+      <Breadcrumb
+        lists={[
+          {
+            name: "TOP",
+            path: "/",
+          },
+          {
+            name: "Works",
+            path: "/works/",
+          },
+          {
+            name: `${worksdata.title}`,
+          },
+        ]}
+      />
       <Container>
         <HeadlineLg title="Works" />
         <Spacer size="lg" />

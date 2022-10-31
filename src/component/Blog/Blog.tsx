@@ -3,6 +3,7 @@ import { MicroCMSListResponse } from "microcms-js-sdk";
 import Link from "next/link";
 import { ComponentProps, useState } from "react";
 import styles from "src/component/Blog/index.module.scss";
+import { Breadcrumb } from "src/component/Breadcrumb";
 import { HeadlineLg } from "src/component/Headline/HeadlineLg";
 import { Container } from "src/component/Layout/Container";
 import { Spacer } from "src/component/Spacer";
@@ -32,6 +33,17 @@ export const Blog = ({ blogdata }: any) => {
 
   return (
     <>
+      <Breadcrumb
+        lists={[
+          {
+            name: "TOP",
+            path: "/",
+          },
+          {
+            name: "Blog",
+          },
+        ]}
+      />
       <Container>
         <HeadlineLg title="Blog" />
         <Spacer size="lg" />

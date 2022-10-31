@@ -1,3 +1,4 @@
+import { Breadcrumb } from "src/component/Breadcrumb";
 import { CardWorks } from "src/component/Card/CardWorks";
 import { HeadlineLg } from "src/component/Headline/HeadlineLg";
 import { HeadlineMd } from "src/component/Headline/HeadlineMd";
@@ -8,6 +9,17 @@ import styles from "src/component/Works/index.module.scss";
 export const Works = ({ worksdata }: any) => {
   return (
     <>
+      <Breadcrumb
+        lists={[
+          {
+            name: "TOP",
+            path: "/",
+          },
+          {
+            name: "Works",
+          },
+        ]}
+      />
       <Container>
         <HeadlineLg title="Works" />
         <Spacer size="lg" />

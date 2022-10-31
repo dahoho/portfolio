@@ -1,6 +1,7 @@
 import Image from "next/image";
 import profileImg from "public/img/about/profile.jpg";
 import styles from "src/component/About/about.module.scss";
+import { Breadcrumb } from "src/component/Breadcrumb";
 import { HeadlineLg } from "src/component/Headline/HeadlineLg";
 import { HeadlineMd } from "src/component/Headline/HeadlineMd";
 import { Container } from "src/component/Layout/Container";
@@ -42,6 +43,17 @@ const ITEMS = [
 export const About = () => {
   return (
     <>
+      <Breadcrumb
+        lists={[
+          {
+            name: "TOP",
+            path: "/",
+          },
+          {
+            name: "About",
+          },
+        ]}
+      />
       <Container>
         <HeadlineLg title="About" />
         <Spacer size="lg" />

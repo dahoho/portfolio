@@ -1,0 +1,30 @@
+.next {
+  &::after {
+    content: "";
+    width: 5px;
+    height: 5px;
+    transform: rotate(45deg);
+    display: inline-block;
+    border-top: 1px solid var(--default);
+    border-right: 1px solid var(--default);
+    margin: 0 6px 2px 4px;
+  }
+}
+
+.list {
+  display: flex;
+  flex-wrap: wrap;
+  padding: 20px 20px 40px;
+  max-width: 1024px;
+  margin-right: auto;
+  margin-left: auto;
+  margin-top: -10px;
+}
+
+.item {
+  font-size: 12px;
+  letter-spacing: 0.02em;
+  font-family: var(--en);
+  color: var(--default);
+  margin-top: 10px;
+}
