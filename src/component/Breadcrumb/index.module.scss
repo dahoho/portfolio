@@ -1,3 +1,5 @@
+@import "src/styles/variables.scss";
+
 .next {
   &::after {
     content: "";
@@ -27,4 +29,7 @@
   font-family: var(--en);
   color: var(--default);
   margin-top: 10px;
+  @include mq(md) {
+    font-size: 14px;
+  }
 }
