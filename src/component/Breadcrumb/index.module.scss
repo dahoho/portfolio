@@ -1,6 +1,8 @@
 @import "src/styles/variables.scss";
 
 .next {
+  display: flex;
+  align-items: center;
   &::after {
     content: "";
     width: 5px;
@@ -9,18 +11,17 @@
     display: inline-block;
     border-top: 1px solid var(--default);
     border-right: 1px solid var(--default);
-    margin: 0 6px 2px 4px;
+    margin-left: 8px;
+    margin-right: 8px;
   }
 }
 
 .list {
   display: flex;
-  flex-wrap: wrap;
   padding: 20px 20px 40px;
   max-width: 1024px;
   margin-right: auto;
   margin-left: auto;
-  margin-top: -10px;
 }
 
 .item {
@@ -28,7 +29,6 @@
   letter-spacing: 0.02em;
   font-family: var(--en);
   color: var(--default);
-  margin-top: 10px;
   @include mq(md) {
     font-size: 14px;
   }
