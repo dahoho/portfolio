@@ -63,7 +63,7 @@ export const About = () => {
         <p className={styles.text}>
           Ibaraki→Tokyo　28歳
           <br />
-          未経験→web制作会社3年目
+          未経験→WEB制作会社3年目
           <br />
           普段はWEBサイトのコーディングや更新作業、Wordpress構築。
           <br />
