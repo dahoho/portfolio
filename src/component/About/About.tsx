@@ -21,10 +21,10 @@ const ITEMS = [
     skill: "Pug",
   },
   {
-    skill: "Wordpress",
+    skill: "WordPress",
   },
   {
-    skill: "Javascript",
+    skill: "JavaScript",
   },
   {
     skill: "jQuery",
@@ -33,7 +33,7 @@ const ITEMS = [
     skill: "webpack",
   },
   {
-    skill: "gulp",
+    skill: "gulp.js",
   },
   {
     skill: "Git",
@@ -65,7 +65,7 @@ export const About = () => {
           <br />
           未経験→WEB制作会社3年目
           <br />
-          普段はWEBサイトのコーディングや更新作業、Wordpress構築。
+          普段はWEBサイトのコーディングや更新作業、WordPress構築。
           <br />
           フロントエンドエンジニアを目指して、React、Next.js、TypeScript勉強中です。
           <br />
