@@ -15,6 +15,12 @@ const ITEMS = [
     skill: "CSS",
   },
   {
+    skill: "JavaScript",
+  },
+  {
+    skill: "jQuery",
+  },
+  {
     skill: "SCSS",
   },
   {
@@ -22,12 +28,6 @@ const ITEMS = [
   },
   {
     skill: "WordPress",
-  },
-  {
-    skill: "JavaScript",
-  },
-  {
-    skill: "jQuery",
   },
   {
     skill: "webpack",
