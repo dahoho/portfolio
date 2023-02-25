@@ -1,0 +1,23 @@
+:root {
+  // カラー設定
+  --white: #ffffff;
+  --black: #000000;
+  --navy-d: #101729;
+  --navy-l: #1e293b;
+  --gray: #94a3b8;
+  --link: #3f83f8;
+
+  // フォントファミリー
+  --ja: "Noto Sans JP", "游ゴシック体", "Yu Gothic", YuGothic,
+    "ヒラギノ角ゴ ProN W3", "Hiragino Kaku Gothic ProN", "メイリオ", Meiryo,
+    sans-serif;
+  --en: "Poppins", sans-serif;
+}
+
+body {
+  font-family: var(--ja);
+  font-size: 16px;
+  color: var(--gray);
+  background-color: var(--navy-d);
+  line-height: 1.5;
+}
