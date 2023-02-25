@@ -5,10 +5,7 @@ export const Github = () => {
   return (
     <div className={styles.github}>
       <Link href="https://github.com/dahoho" target="_blank">
-        <img
-          src="https://grass-graph.appspot.com/images/dahoho.png?background=none"
-          alt=""
-        />
+        <img src="https://grass-graph.appspot.com/images/dahoho.png" alt="" />
       </Link>
     </div>
   );
