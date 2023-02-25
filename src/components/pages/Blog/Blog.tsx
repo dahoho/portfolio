@@ -29,6 +29,7 @@ export const Blog = ({ articles }: BlogZennProps) => {
                       style={{ objectFit: "contain" }}
                       width={14}
                       height={14}
+                      priority={true}
                     />
                     <time className={styles.time}>
                       {dayjs(article.published_at).format("YYYY.MM.DD")}
