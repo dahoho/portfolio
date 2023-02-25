@@ -1,3 +1,5 @@
+import { NextSeo } from "next-seo";
+
 import { Blog } from "@/components/pages/Blog";
 import { ZennItem } from "@/types";
 
@@ -16,6 +18,10 @@ const zennFetcher = async () => {
 const BlogPage = ({ articles }: BlogZennProps) => {
   return (
     <>
+      <NextSeo
+        defaultTitle="Blog - dahoho PORTFOLIO SITE"
+        description="dahoho PORTFOLIO SITE"
+      />
       <Blog articles={articles} />
     </>
   );
