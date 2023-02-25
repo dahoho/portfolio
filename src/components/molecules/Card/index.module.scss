@@ -14,7 +14,7 @@
 .item {
   a {
     aspect-ratio: 1/1;
-    font-size: 20px;
+    font-size: 18px;
     display: block;
     color: var(--white);
     text-decoration: none;
@@ -37,6 +37,15 @@
 .blog {
   a {
     background-color: #4338ca;
+  }
+}
+
+.note {
+  a {
+    background-color: #ffffff;
+    img {
+      width: 120px;
+    }
   }
 }
 

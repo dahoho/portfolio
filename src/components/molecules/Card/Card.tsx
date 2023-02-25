@@ -1,6 +1,7 @@
 import Image from "next/image";
 import Link from "next/link";
 import logoGithub from "public/common/logo-github.svg";
+import logoNote from "public/common/logo-note.svg";
 import logoTwitter from "public/common/logo-twitter.svg";
 import styles from "src/components/molecules/Card/index.module.scss";
 
@@ -12,7 +13,7 @@ export const Card = () => {
           <Link href="about/">About</Link>
         </li>
         <li className={`${styles.item} ${styles.blog}`}>
-          <Link href="blog/">Blog</Link>
+          <Link href="blog/">Tech Blog</Link>
         </li>
         <li className={`${styles.item} ${styles.github}`}>
           <Link href="https://github.com/dahoho" target="_blank">
@@ -22,6 +23,11 @@ export const Card = () => {
         <li className={`${styles.item} ${styles.twitter}`}>
           <Link href="https://twitter.com/@dahoho0820" target="_blank">
             <Image src={logoTwitter} alt="" priority={true} />
+          </Link>
+        </li>
+        <li className={`${styles.item} ${styles.note}`}>
+          <Link href="https://note.com/dahoho/" target="_blank">
+            <Image src={logoNote} alt="" priority={true} />
           </Link>
         </li>
         <li className={`${styles.item} ${styles.work}`}>

@@ -14,7 +14,7 @@ type BlogZennProps = {
 export const Blog = ({ articles }: BlogZennProps) => {
   return (
     <>
-      <HeadlineLg title="Blog" />
+      <HeadlineLg title="Tech Blog" />
       <Container>
         <ul className={styles.list}>
           {articles.map((article) => {
