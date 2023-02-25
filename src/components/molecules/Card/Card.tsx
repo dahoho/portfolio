@@ -2,7 +2,7 @@ import Image from "next/image";
 import Link from "next/link";
 import logoGithub from "public/common/logo-github.svg";
 import logoTwitter from "public/common/logo-twitter.svg";
-import styles from "src/components/atoms/Card/index.module.scss";
+import styles from "src/components/molecules/Card/index.module.scss";
 
 export const Card = () => {
   return (

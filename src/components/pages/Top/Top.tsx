@@ -1,4 +1,4 @@
-import { Card } from "@/components/atoms/Card";
+import { Card } from "@/components/molecules/Card";
 
 export const Top = () => {
   return (

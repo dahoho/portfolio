@@ -1,14 +1,10 @@
-import { ReactNode } from "react";
 import styles from "src/components/templates/DefaultLayout/index.module.scss";
 
 import { Footer } from "@/components/organisms/Footer";
 import { Header } from "@/components/organisms/Header";
+import { ChildrenProps } from "@/types";
 
-type Children = {
-  children: ReactNode;
-};
-
-export const DefaultLayout = ({ children }: Children) => {
+export const DefaultLayout = ({ children }: ChildrenProps) => {
   return (
     <>
       <div className={styles.layout}>
