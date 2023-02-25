@@ -6,7 +6,7 @@ export const Profile = () => {
   return (
     <>
       <figure className={styles.picture}>
-        <Image src={profileImage} alt="" />
+        <Image src={profileImage} alt="" priority={true} />
       </figure>
       <div className={styles.info}>
         <p className={styles.text}>

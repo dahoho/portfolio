@@ -16,12 +16,12 @@ export const Card = () => {
         </li>
         <li className={`${styles.item} ${styles.github}`}>
           <Link href="https://github.com/dahoho" target="_blank">
-            <Image src={logoGithub} alt="" />
+            <Image src={logoGithub} alt="" priority={true} />
           </Link>
         </li>
         <li className={`${styles.item} ${styles.twitter}`}>
           <Link href="https://twitter.com/@dahoho0820" target="_blank">
-            <Image src={logoTwitter} alt="" />
+            <Image src={logoTwitter} alt="" priority={true} />
           </Link>
         </li>
         <li className={`${styles.item} ${styles.work}`}>

@@ -20,46 +20,46 @@ export const Skill = () => {
     <>
       <ul className={styles.list}>
         <li className={styles.item}>
-          <Image src={logoHtml} alt="html5" />
+          <Image src={logoHtml} alt="html5" priority={true} />
         </li>
         <li className={styles.item}>
-          <Image src={logoCss} alt="css3" />
+          <Image src={logoCss} alt="css3" priority={true} />
         </li>
         <li className={styles.item}>
-          <Image src={logoSass} alt="sass" />
+          <Image src={logoSass} alt="sass" priority={true} />
         </li>
         <li className={styles.item}>
-          <Image src={logoTailwindcss} alt="tailwindcss" />
+          <Image src={logoTailwindcss} alt="tailwindcss" priority={true} />
         </li>
         <li className={styles.item}>
-          <Image src={logoPhp} alt="php" />
+          <Image src={logoPhp} alt="php" priority={true} />
         </li>
         <li className={styles.item}>
-          <Image src={logoWordpress} alt="wordpress" />
+          <Image src={logoWordpress} alt="wordpress" priority={true} />
         </li>
         <li className={styles.item}>
-          <Image src={logoJquery} alt="jquery" />
+          <Image src={logoJquery} alt="jquery" priority={true} />
         </li>
         <li className={styles.item}>
-          <Image src={logoJavascript} alt="javascript" />
+          <Image src={logoJavascript} alt="javascript" priority={true} />
         </li>
         <li className={styles.item}>
-          <Image src={logoTypescript} alt="typescript" />
+          <Image src={logoTypescript} alt="typescript" priority={true} />
         </li>
         <li className={styles.item}>
-          <Image src={logoReact} alt="react" />
+          <Image src={logoReact} alt="react" priority={true} />
         </li>
         <li className={styles.item}>
-          <Image src={logoNext} alt="next.js" />
+          <Image src={logoNext} alt="next.js" priority={true} />
         </li>
         <li className={styles.item}>
-          <Image src={logoGulp} alt="gulp" />
+          <Image src={logoGulp} alt="gulp" priority={true} />
         </li>
         <li className={styles.item}>
-          <Image src={logoWebpack} alt="webpack" />
+          <Image src={logoWebpack} alt="webpack" priority={true} />
         </li>
         <li className={styles.item}>
-          <Image src={logoGit} alt="git" />
+          <Image src={logoGit} alt="git" priority={true} />
         </li>
       </ul>
     </>
