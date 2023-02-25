@@ -1,7 +1,9 @@
+import { Top } from "@/components/pages/Top";
+
 const Home = () => {
   return (
     <>
-      <p>テスト</p>
+      <Top />
     </>
   );
 };
