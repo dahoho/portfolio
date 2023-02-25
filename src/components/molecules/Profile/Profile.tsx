@@ -1,5 +1,5 @@
 import Image from "next/image";
-import profileImage from "public/common/profile.png";
+import profileImage from "public/about/profile.png";
 import styles from "src/components/molecules/Profile/index.module.scss";
 
 export const Profile = () => {

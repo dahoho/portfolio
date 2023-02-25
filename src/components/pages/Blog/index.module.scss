@@ -1,3 +1,5 @@
+@import "../../../styles/variables";
+
 .list {
   list-style: none;
 }
@@ -20,6 +22,9 @@
 
 .title {
   font-size: 12px;
+  @include mq(md) {
+    font-size: 14px;
+  }
 }
 
 .itemIn {
