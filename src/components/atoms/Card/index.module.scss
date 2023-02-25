@@ -1,0 +1,71 @@
+@import "../../../styles/variables";
+
+.list {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  list-style: none;
+  gap: 15px;
+  @include mq(md) {
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    gap: 20px;
+  }
+}
+
+.item {
+  a {
+    aspect-ratio: 1/1;
+    font-size: 20px;
+    display: block;
+    color: var(--white);
+    text-decoration: none;
+    border-radius: 24px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    @include mq(md) {
+      font-size: 24px;
+    }
+  }
+}
+
+.about {
+  a {
+    background-color: #be185d;
+  }
+}
+
+.blog {
+  a {
+    background-color: #4338ca;
+  }
+}
+
+.work {
+  a {
+    background-color: #1d4ed8;
+  }
+}
+
+.github {
+  a {
+    background-color: #1e293b;
+    img {
+      width: 65px;
+      @include mq(md) {
+        width: 80px;
+      }
+    }
+  }
+}
+
+.twitter {
+  a {
+    background-color: #1da1f2;
+    img {
+      width: 65px;
+      @include mq(md) {
+        width: 80px;
+      }
+    }
+  }
+}

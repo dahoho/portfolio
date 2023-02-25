@@ -1,5 +1,5 @@
 import Link from "next/link";
-import styles from "src/components/atoms/layout/Header/index.module.scss";
+import styles from "src/components/organisms/Header/index.module.scss";
 
 export const Header = () => {
   return (
