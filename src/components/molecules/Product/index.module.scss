@@ -1,0 +1,51 @@
+@import "../../../styles/variables";
+
+.list {
+  list-style: none;
+  @include mq(md) {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+  }
+}
+
+.item {
+  width: 100%;
+  border: 1px solid var(--navy-l);
+  a {
+    color: var(--gray);
+    text-decoration: none;
+  }
+}
+
+.picture {
+  img {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+    object-position: top;
+  }
+}
+
+.body {
+  font-size: 12px;
+  padding: 20px;
+  line-height: 1.8;
+  color: var(--white);
+}
+
+.tag {
+  display: flex;
+  flex-wrap: wrap;
+  list-style: none;
+  margin-top: 20px;
+  gap: 10px;
+}
+.tagItem {
+  display: flex;
+  align-items: center;
+  color: var(--gray);
+  img {
+    object-fit: contain;
+    margin-right: 6px;
+  }
+}
