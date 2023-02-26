@@ -1,7 +1,7 @@
 import { GetStaticProps } from "next";
 import { NextSeo } from "next-seo";
 
-import { Blog } from "@/components/pages/Blog";
+import { Blog } from "@/components/templates/Blog";
 import { ZennItem } from "@/types";
 
 type BlogZennProps = {

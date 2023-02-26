@@ -1,8 +1,7 @@
 import dayjs from "dayjs";
 import Image from "next/image";
-import Link from "next/link";
 import logoZenn from "public/common/logo-zenn.svg";
-import styles from "src/components/pages/Blog/index.module.scss";
+import styles from "src/components/templates/Blog/index.module.scss";
 
 import { Container } from "@/components/atoms/Container";
 import { HeadlineLg } from "@/components/atoms/Headline";
@@ -21,7 +20,7 @@ export const Blog = ({ articles }: BlogZennProps) => {
           {articles.map((article) => {
             return (
               <li className={styles.item} key={article.id}>
-                <Link href={`https://zenn.dev/${article.path}`} target="_blank">
+                <a href={`https://zenn.dev/${article.path}`} target="_blank">
                   <p className={styles.title}>{article.title}</p>
                   <div className={styles.itemIn}>
                     <Image
@@ -36,7 +35,7 @@ export const Blog = ({ articles }: BlogZennProps) => {
                       {dayjs(article.published_at).format("YYYY.MM.DD")}
                     </time>
                   </div>
-                </Link>
+                </a>
               </li>
             );
           })}

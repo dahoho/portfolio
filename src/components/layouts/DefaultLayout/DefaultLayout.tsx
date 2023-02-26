@@ -1,4 +1,4 @@
-import styles from "src/components/templates/DefaultLayout/index.module.scss";
+import styles from "src/components/layouts/DefaultLayout/index.module.scss";
 
 import { Footer } from "@/components/organisms/Footer";
 import { Header } from "@/components/organisms/Header";

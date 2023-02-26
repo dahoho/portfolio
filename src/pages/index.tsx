@@ -1,6 +1,6 @@
 import { NextSeo } from "next-seo";
 
-import { Top } from "@/components/pages/Top";
+import { Top } from "@/components/templates/Top";
 
 const Home = () => {
   return (

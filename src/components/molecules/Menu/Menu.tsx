@@ -1,7 +1,7 @@
 import Link from "next/link";
 import styles from "src/components/molecules/Menu/index.module.scss";
 
-import { useHamburger } from "@/hooks/Hamburger";
+import { useHamburger } from "@/components/hooks/useHamburger";
 
 export const Menu = () => {
   const { navIsOpen, navPassive, toggleNav } = useHamburger();
