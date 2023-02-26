@@ -3,11 +3,11 @@ import { useState } from "react";
 export const useHamburger = () => {
   const [navIsOpen, setNavIsOpen] = useState<boolean>(false);
 
-  const toggleNav = () => {
+  const toggleNav = (): void => {
     setNavIsOpen((prev) => !prev);
   };
 
-  const navPassive = () => {
+  const navPassive = (): void => {
     setNavIsOpen(false);
   };
 
