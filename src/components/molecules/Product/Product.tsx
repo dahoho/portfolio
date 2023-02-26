@@ -26,7 +26,7 @@ export const Product = () => {
         <li className={styles.item}>
           <Link href="/">
             <figure className={styles.picture}>
-              <Image src={product01Img} alt="" />
+              <Image src={product01Img} alt="" priority={true} />
             </figure>
             <div className={styles.body}>
               <p>

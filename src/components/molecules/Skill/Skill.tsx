@@ -15,52 +15,76 @@ import logoWebpack from "public/common/logo-webpack.svg";
 import logoWordpress from "public/common/logo-wordpress.svg";
 import styles from "src/components/molecules/Skill/index.module.scss";
 
+const SKILL = [
+  {
+    alt: "html5",
+    path: logoHtml,
+  },
+  {
+    alt: "css3",
+    path: logoCss,
+  },
+  {
+    alt: "sass",
+    path: logoSass,
+  },
+  {
+    alt: "tailwindcss",
+    path: logoTailwindcss,
+  },
+  {
+    alt: "php",
+    path: logoPhp,
+  },
+  {
+    alt: "wordpress",
+    path: logoWordpress,
+  },
+  {
+    alt: "jquery",
+    path: logoJquery,
+  },
+  {
+    alt: "javascript",
+    path: logoJavascript,
+  },
+  {
+    alt: "typescript",
+    path: logoTypescript,
+  },
+  {
+    alt: "react",
+    path: logoReact,
+  },
+  {
+    alt: "next.js",
+    path: logoNext,
+  },
+  {
+    alt: "gulp",
+    path: logoGulp,
+  },
+  {
+    alt: "webpack",
+    path: logoWebpack,
+  },
+  {
+    alt: "git",
+    path: logoGit,
+  },
+];
+
 export const Skill = () => {
   return (
     <>
       <ul className={styles.list}>
-        <li className={styles.item}>
-          <Image src={logoHtml} alt="html5" priority={true} />
-        </li>
-        <li className={styles.item}>
-          <Image src={logoCss} alt="css3" priority={true} />
-        </li>
-        <li className={styles.item}>
-          <Image src={logoSass} alt="sass" priority={true} />
-        </li>
-        <li className={styles.item}>
-          <Image src={logoTailwindcss} alt="tailwindcss" priority={true} />
-        </li>
-        <li className={styles.item}>
-          <Image src={logoPhp} alt="php" priority={true} />
-        </li>
-        <li className={styles.item}>
-          <Image src={logoWordpress} alt="wordpress" priority={true} />
-        </li>
-        <li className={styles.item}>
-          <Image src={logoJquery} alt="jquery" priority={true} />
-        </li>
-        <li className={styles.item}>
-          <Image src={logoJavascript} alt="javascript" priority={true} />
-        </li>
-        <li className={styles.item}>
-          <Image src={logoTypescript} alt="typescript" priority={true} />
-        </li>
-        <li className={styles.item}>
-          <Image src={logoReact} alt="react" priority={true} />
-        </li>
-        <li className={styles.item}>
-          <Image src={logoNext} alt="next.js" priority={true} />
-        </li>
-        <li className={styles.item}>
-          <Image src={logoGulp} alt="gulp" priority={true} />
-        </li>
-        <li className={styles.item}>
-          <Image src={logoWebpack} alt="webpack" priority={true} />
-        </li>
-        <li className={styles.item}>
-          <Image src={logoGit} alt="git" priority={true} />
-        </li>
+        {SKILL.map((skill, index) => {
+          return (
+            <li key={index} className={styles.item}>
+              <Image src={skill.path} alt={skill.alt} priority={true} />
+            </li>
+          );
+        })}
       </ul>
     </>
   );
