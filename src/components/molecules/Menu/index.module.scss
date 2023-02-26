@@ -16,15 +16,9 @@
   transform: translateX(0);
 }
 
-.list {
-  list-style: none;
-}
-
 .item {
   a {
     font-size: 16px;
-    color: var(--gray);
-    text-decoration: none;
     padding-top: 15px;
     padding-bottom: 15px;
     display: block;

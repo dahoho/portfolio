@@ -1,9 +1,5 @@
 @import "../../../styles/variables";
 
-.list {
-  list-style: none;
-}
-
 .item {
   background-color: var(--navy-l);
   padding: 8px 10px;
@@ -12,8 +8,6 @@
     margin-top: 20px;
   }
   a {
-    color: var(--gray);
-    text-decoration: none;
     img {
       margin-right: 8px;
     }

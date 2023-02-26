@@ -3,7 +3,6 @@
 .list {
   display: grid;
   grid-template-columns: 1fr 1fr;
-  list-style: none;
   gap: 15px;
   @include mq(md) {
     grid-template-columns: 1fr 1fr 1fr 1fr;
@@ -18,7 +17,6 @@
     font-size: 18px;
     display: block;
     color: var(--white);
-    text-decoration: none;
     border-radius: 24px;
     display: flex;
     align-items: center;
