@@ -1,3 +1,4 @@
+import { GetStaticProps } from "next";
 import { NextSeo } from "next-seo";
 
 import { Blog } from "@/components/pages/Blog";
@@ -29,7 +30,7 @@ const BlogPage = ({ articles }: BlogZennProps) => {
 
 export default BlogPage;
 
-export const getStaticProps = async () => {
+export const getStaticProps: GetStaticProps<BlogZennProps> = async () => {
   const result = await zennFetcher();
 
   return {
