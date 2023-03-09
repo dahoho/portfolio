@@ -5,6 +5,8 @@ import logoNote from "public/common/logo-note.svg";
 import logoTwitter from "public/common/logo-twitter.svg";
 import styles from "src/components/molecules/Card/index.module.scss";
 
+import { GITHUB_URL, NOTE_URL, TWITTER_URL } from "@/constants";
+
 export const Card = () => {
   return (
     <>
@@ -16,17 +18,17 @@ export const Card = () => {
           <Link href="blog/">Tech Blog</Link>
         </li>
         <li className={`${styles.item} ${styles.github}`}>
-          <Link href="https://github.com/dahoho" target="_blank">
+          <Link href={GITHUB_URL} target="_blank">
             <Image src={logoGithub} alt="" priority={true} />
           </Link>
         </li>
         <li className={`${styles.item} ${styles.twitter}`}>
-          <Link href="https://twitter.com/@dahoho0820" target="_blank">
+          <Link href={TWITTER_URL} target="_blank">
             <Image src={logoTwitter} alt="" priority={true} />
           </Link>
         </li>
         <li className={`${styles.item} ${styles.note}`}>
-          <Link href="https://note.com/dahoho/" target="_blank">
+          <Link href={NOTE_URL} target="_blank">
             <Image src={logoNote} alt="" priority={true} />
           </Link>
         </li>

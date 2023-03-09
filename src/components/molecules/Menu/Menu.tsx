@@ -2,6 +2,7 @@ import Link from "next/link";
 import styles from "src/components/molecules/Menu/index.module.scss";
 
 import { useHamburger } from "@/components/hooks/useHamburger";
+import { GITHUB_URL, NOTE_URL, TWITTER_URL } from "@/constants";
 
 export const Menu = () => {
   const { navIsOpen, navPassive, toggleNav } = useHamburger();
@@ -49,29 +50,17 @@ export const Menu = () => {
             </Link>
           </li>
           <li className={styles.item}>
-            <Link
-              href="https://github.com/dahoho"
-              target="_blank"
-              onClick={navPassive}
-            >
+            <Link href={GITHUB_URL} target="_blank" onClick={navPassive}>
               Github
             </Link>
           </li>
           <li className={styles.item}>
-            <Link
-              href="https://twitter.com/@dahoho0820"
-              target="_blank"
-              onClick={navPassive}
-            >
+            <Link href={TWITTER_URL} target="_blank" onClick={navPassive}>
               Twitter
             </Link>
           </li>
           <li className={styles.item}>
-            <Link
-              href="https://note.com/dahoho/"
-              target="_blank"
-              onClick={navPassive}
-            >
+            <Link href={NOTE_URL} target="_blank" onClick={navPassive}>
               note
             </Link>
           </li>
