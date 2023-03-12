@@ -1,7 +1,7 @@
 import { Head, Html, Main, NextScript } from "next/document";
 import { DefaultSeo } from "next-seo";
 
-const Document = () => {
+const Document = (): JSX.Element => {
   return (
     <Html lang="ja">
       <Head>

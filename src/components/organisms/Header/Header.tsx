@@ -3,7 +3,7 @@ import styles from "src/components/organisms/Header/index.module.scss";
 
 import { Menu } from "@/components/molecules/Menu";
 
-export const Header = () => {
+export const Header = (): JSX.Element => {
   return (
     <>
       <header className={styles.header}>

@@ -11,7 +11,7 @@ type BlogZennProps = {
   articles: ZennItem[];
 };
 
-export const Blog = ({ articles }: BlogZennProps) => {
+export const Blog = ({ articles }: BlogZennProps): JSX.Element => {
   return (
     <>
       <HeadlineLg title="Tech Blog" />

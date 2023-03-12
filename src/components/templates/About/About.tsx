@@ -4,7 +4,7 @@ import { HeadlineLg } from "@/components/atoms/Headline";
 import { Profile } from "@/components/molecules/Profile";
 import { Skill } from "@/components/molecules/Skill";
 
-export const About = () => {
+export const About = (): JSX.Element => {
   return (
     <>
       <HeadlineLg title="About" />

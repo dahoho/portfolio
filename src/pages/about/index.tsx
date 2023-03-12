@@ -2,7 +2,7 @@ import { NextSeo } from "next-seo";
 
 import { About } from "@/components/templates/About";
 
-const AboutPage = () => {
+const AboutPage = (): JSX.Element => {
   return (
     <>
       <NextSeo

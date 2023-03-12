@@ -16,7 +16,7 @@ const zennFetcher = async () => {
   return result;
 };
 
-const BlogPage = ({ articles }: BlogZennProps) => {
+const BlogPage = ({ articles }: BlogZennProps): JSX.Element => {
   return (
     <>
       <NextSeo
