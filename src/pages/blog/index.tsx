@@ -1,6 +1,7 @@
 import { GetStaticProps } from "next";
 import { NextSeo } from "next-seo";
 
+import { DefaultLayout } from "@/components/layouts/DefaultLayout";
 import { Blog } from "@/components/templates/Blog";
 import { ZennItem } from "@/types";
 
@@ -23,7 +24,9 @@ const BlogPage = ({ articles }: BlogZennProps): JSX.Element => {
         defaultTitle="Blog - dahoho PORTFOLIO SITE"
         description="dahoho PORTFOLIO SITE"
       />
-      <Blog articles={articles} />
+      <DefaultLayout>
+        <Blog articles={articles} />
+      </DefaultLayout>
     </>
   );
 };

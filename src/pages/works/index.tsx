@@ -1,5 +1,6 @@
 import { NextSeo } from "next-seo";
 
+import { DefaultLayout } from "@/components/layouts/DefaultLayout";
 import { Works } from "@/components/templates/Works";
 
 const WorksPage = () => {
@@ -9,7 +10,9 @@ const WorksPage = () => {
         defaultTitle="Works - dahoho PORTFOLIO SITE"
         description="dahoho PORTFOLIO SITE"
       />
-      <Works />
+      <DefaultLayout>
+        <Works />
+      </DefaultLayout>
     </>
   );
 };
