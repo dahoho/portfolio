@@ -1,14 +1,18 @@
 import { useState } from "react";
 
+type Status = "open" | "close";
+
 export const useHamburger = () => {
-  const [navIsOpen, setNavIsOpen] = useState<boolean>(false);
+  const [navIsOpen, setNavIsOpen] = useState<Status>("close");
 
   const toggleNav = (): void => {
-    setNavIsOpen((prev) => !prev);
+    setNavIsOpen((prev) => {
+      return prev === "open" ? "close" : "open";
+    });
   };
 
   const navPassive = (): void => {
-    setNavIsOpen(false);
+    setNavIsOpen("close");
   };
 
   return { navIsOpen, navPassive, toggleNav };

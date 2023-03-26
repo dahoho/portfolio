@@ -9,7 +9,7 @@ export const Menu = () => {
 
   return (
     <>
-      {navIsOpen && (
+      {navIsOpen === "open" ? (
         <style jsx global>
           {`
             @media (max-width: 767px) {
@@ -21,10 +21,13 @@ export const Menu = () => {
             }
           `}
         </style>
+      ) : (
+        ""
       )}
+
       <div
         className={`${styles.hamburger} ${
-          navIsOpen ? styles.hamburgerActive : ""
+          navIsOpen === "open" ? styles.hamburgerActive : ""
         }`}
         onClick={toggleNav}
       >
@@ -32,7 +35,10 @@ export const Menu = () => {
         <span></span>
         <span></span>
       </div>
-      <nav className={`${styles.nav} ${navIsOpen ? styles.open : ""}`}>
+
+      <nav
+        className={`${styles.nav} ${navIsOpen === "open" ? styles.open : ""}`}
+      >
         <ul className={styles.list}>
           <li className={styles.item}>
             <Link href="/" onClick={navPassive}>
@@ -72,7 +78,9 @@ export const Menu = () => {
         </ul>
       </nav>
       <div
-        className={`${styles.cover} ${navIsOpen ? styles.coverActive : ""}`}
+        className={`${styles.cover} ${
+          navIsOpen === "open" ? styles.coverActive : ""
+        }`}
         onClick={navPassive}
       ></div>
     </>
