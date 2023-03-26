@@ -2,6 +2,10 @@ import { ReactNode } from "react";
 
 export type ChildrenProps = {
   children: ReactNode;
+} & LowerProps;
+
+export type LowerProps = {
+  lower?: boolean;
 };
 
 export type TitleProps = {

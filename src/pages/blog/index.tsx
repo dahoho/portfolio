@@ -24,7 +24,7 @@ const BlogPage = ({ articles }: BlogZennProps): JSX.Element => {
         defaultTitle="Blog - dahoho PORTFOLIO SITE"
         description="dahoho PORTFOLIO SITE"
       />
-      <DefaultLayout>
+      <DefaultLayout lower>
         <Blog articles={articles} />
       </DefaultLayout>
     </>

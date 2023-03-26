@@ -1,3 +1,4 @@
+import { Breadcrumb } from "@/components/atoms/Breadcrumb";
 import { Container } from "@/components/atoms/Container";
 import { Github } from "@/components/atoms/Github";
 import { HeadlineLg } from "@/components/atoms/Headline";
@@ -7,6 +8,17 @@ import { Skill } from "@/components/molecules/Skill";
 export const About = (): JSX.Element => {
   return (
     <>
+      <Breadcrumb
+        lists={[
+          {
+            pageTitle: "top",
+            path: "/",
+          },
+          {
+            pageTitle: "about",
+          },
+        ]}
+      />
       <HeadlineLg title="About" />
       <Container>
         <Profile />

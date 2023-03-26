@@ -10,7 +10,7 @@ const AboutPage = (): JSX.Element => {
         defaultTitle="About - dahoho PORTFOLIO SITE"
         description="dahoho PORTFOLIO SITE"
       />
-      <DefaultLayout>
+      <DefaultLayout lower>
         <About />
       </DefaultLayout>
     </>

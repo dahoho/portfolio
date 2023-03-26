@@ -10,7 +10,7 @@ const WorksPage = () => {
         defaultTitle="Works - dahoho PORTFOLIO SITE"
         description="dahoho PORTFOLIO SITE"
       />
-      <DefaultLayout>
+      <DefaultLayout lower>
         <Works />
       </DefaultLayout>
     </>
