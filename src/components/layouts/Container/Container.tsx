@@ -1,4 +1,4 @@
-import styles from "src/components/atoms/Container/index.module.scss";
+import styles from "src/components/layouts/Container/index.module.scss";
 
 import { ChildrenProps } from "@/types";
 

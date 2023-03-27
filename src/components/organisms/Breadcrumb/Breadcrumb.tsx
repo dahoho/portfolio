@@ -1,4 +1,4 @@
-import styles from "src/components/atoms/Breadcrumb/index.module.scss";
+import styles from "src/components/organisms/Breadcrumb/index.module.scss";
 
 type BreadcrumbItem = {
   pageTitle: string;

@@ -3,9 +3,9 @@ import Image from "next/image";
 import logoZenn from "public/common/logo-zenn.svg";
 import styles from "src/components/templates/Blog/index.module.scss";
 
-import { Breadcrumb } from "@/components/atoms/Breadcrumb";
-import { Container } from "@/components/atoms/Container";
 import { HeadlineLg } from "@/components/atoms/Headline";
+import { Container } from "@/components/layouts/Container";
+import { Breadcrumb } from "@/components/organisms/Breadcrumb";
 import { ZennItem } from "@/types";
 
 type BlogZennProps = {
