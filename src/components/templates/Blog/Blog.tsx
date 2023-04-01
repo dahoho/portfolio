@@ -43,7 +43,12 @@ export const Blog = ({ articles }: BlogZennProps): JSX.Element => {
                       height={14}
                       priority={true}
                     />
-                    <time className={styles.time}>
+                    <time
+                      dateTime={dayjs(article.published_at).format(
+                        "YYYY-MM-DD"
+                      )}
+                      className={styles.time}
+                    >
                       {dayjs(article.published_at).format("YYYY.MM.DD")}
                     </time>
                   </div>
