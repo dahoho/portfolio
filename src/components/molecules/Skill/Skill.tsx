@@ -76,16 +76,14 @@ const SKILL = [
 
 export const Skill = () => {
   return (
-    <>
-      <ul className={styles.list}>
-        {SKILL.map((skill, index) => {
-          return (
-            <li key={index} className={styles.item}>
-              <Image src={skill.path} alt={skill.alt} priority={true} />
-            </li>
-          );
-        })}
-      </ul>
-    </>
+    <ul className={styles.list}>
+      {SKILL.map((skill, index) => {
+        return (
+          <li key={index} className={styles.item}>
+            <Image src={skill.path} alt={skill.alt} priority={true} />
+          </li>
+        );
+      })}
+    </ul>
   );
 };

@@ -21,33 +21,31 @@ const TAG = [
 
 export const Product = () => {
   return (
-    <>
-      <ul className={styles.list}>
-        <li className={styles.item}>
-          <Link href="/">
-            <figure className={styles.picture}>
-              <Image src={product01Img} alt="" priority={true} />
-            </figure>
-            <div className={styles.body}>
-              <p>
-                本サイトです。
-                <br />
-                随時更新予定です。
-              </p>
-              <ul className={styles.tag}>
-                {TAG.map((item, index) => {
-                  return (
-                    <li key={index} className={styles.tagItem}>
-                      <Image src={tagImg} alt="" width={14} height={14} />
-                      <p>{item.title}</p>
-                    </li>
-                  );
-                })}
-              </ul>
-            </div>
-          </Link>
-        </li>
-      </ul>
-    </>
+    <ul className={styles.list}>
+      <li className={styles.item}>
+        <Link href="/">
+          <figure className={styles.picture}>
+            <Image src={product01Img} alt="" priority={true} />
+          </figure>
+          <div className={styles.body}>
+            <p>
+              本サイトです。
+              <br />
+              随時更新予定です。
+            </p>
+            <ul className={styles.tag}>
+              {TAG.map((item, index) => {
+                return (
+                  <li key={index} className={styles.tagItem}>
+                    <Image src={tagImg} alt="" width={14} height={14} />
+                    <p>{item.title}</p>
+                  </li>
+                );
+              })}
+            </ul>
+          </div>
+        </Link>
+      </li>
+    </ul>
   );
 };

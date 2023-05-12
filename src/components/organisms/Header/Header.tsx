@@ -5,13 +5,11 @@ import { Menu } from "@/components/molecules/Menu";
 
 export const Header = (): JSX.Element => {
   return (
-    <>
-      <header className={styles.header}>
-        <h1 className={styles.logo}>
-          <Link href="/">dahoho</Link>
-        </h1>
-        <Menu />
-      </header>
-    </>
+    <header className={styles.header}>
+      <h1 className={styles.logo}>
+        <Link href="/">dahoho</Link>
+      </h1>
+      <Menu />
+    </header>
   );
 };

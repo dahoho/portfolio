@@ -9,14 +9,12 @@ export const DefaultLayout = ({
   lower,
 }: ChildrenProps): JSX.Element => {
   return (
-    <>
-      <div className={styles.layout}>
-        <Header />
-        <main className={`${styles.main} ${lower ? styles.mainLower : ""}`}>
-          <div className={styles.container}>{children}</div>
-        </main>
-        <Footer />
-      </div>
-    </>
+    <div className={styles.layout}>
+      <Header />
+      <main className={`${styles.main} ${lower ? styles.mainLower : ""}`}>
+        <div className={styles.container}>{children}</div>
+      </main>
+      <Footer />
+    </div>
   );
 };
