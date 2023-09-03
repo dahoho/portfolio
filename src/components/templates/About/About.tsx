@@ -1,4 +1,3 @@
-import { Github } from "@/components/atoms/Github";
 import { HeadlineLg } from "@/components/atoms/Headline";
 import { Container } from "@/components/layouts/Container";
 import { Profile } from "@/components/molecules/Profile";
@@ -23,7 +22,6 @@ export const About = (): JSX.Element => {
       <Container>
         <Profile />
         <Skill />
-        <Github />
       </Container>
     </>
   );
