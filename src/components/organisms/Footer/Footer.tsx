@@ -1,6 +1,6 @@
 import styles from "src/components/organisms/Footer/index.module.scss";
 
-export const Footer = (): JSX.Element => {
+export const Footer = () => {
   return (
     <footer className={styles.footer}>
       <p>

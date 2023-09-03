@@ -1,8 +1,10 @@
+"use client";
+
 import Link from "next/link";
 import styles from "src/components/molecules/Menu/index.module.scss";
 
-import { useHamburger } from "@/components/hooks/useHamburger";
 import { GITHUB_URL, NOTE_URL, TWITTER_URL } from "@/constants";
+import { useHamburger } from "@/hooks/useHamburger";
 
 export const Menu = () => {
   const { navIsOpen, navPassive, toggleNav } = useHamburger();

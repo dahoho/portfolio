@@ -4,7 +4,7 @@ import { Profile } from "@/components/molecules/Profile";
 import { Skill } from "@/components/molecules/Skill";
 import { Breadcrumb } from "@/components/organisms/Breadcrumb";
 
-export const About = (): JSX.Element => {
+export const About = () => {
   return (
     <>
       <Breadcrumb

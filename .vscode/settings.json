@@ -1,19 +1,9 @@
 {
-  "typescript.preferences.importModuleSpecifier": "non-relative",
+  "javascript.preferences.importModuleSpecifier": "non-relative",
   "editor.formatOnSave": true,
   "editor.defaultFormatter": "esbenp.prettier-vscode",
   "editor.codeActionsOnSave": [
     "source.addMissingImports",
     "source.fixAll.eslint"
-  ],
-  "cSpell.customDictionaries": {
-    "project-words": {
-      "name": "project-words",
-      "path": "${workspaceRoot}/project-words.txt",
-      "description": "Words used in this project",
-      "addWords": true
-    },
-    "custom": true, // Enable the `custom` dictionary
-    "internal-terms": true // Disable the `internal-terms` dictionary
-  }
+  ]
 }

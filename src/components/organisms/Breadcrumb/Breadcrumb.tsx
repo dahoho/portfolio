@@ -9,7 +9,7 @@ type BreadcrumbProps = {
   lists: BreadcrumbItem[];
 };
 
-export const Breadcrumb = ({ lists }: BreadcrumbProps): JSX.Element => {
+export const Breadcrumb = ({ lists }: BreadcrumbProps) => {
   return (
     <ol className={styles.breadcrumb}>
       {lists.map(({ pageTitle, path }, index) => (

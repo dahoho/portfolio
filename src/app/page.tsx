@@ -1,19 +1,13 @@
-import { NextSeo } from "next-seo";
-
 import { DefaultLayout } from "@/components/layouts/DefaultLayout";
 import { Top } from "@/components/templates/Top";
 
-const Home = (): JSX.Element => {
+const Home = () => {
   return (
-    <>
-      <NextSeo
-        defaultTitle="dahoho PORTFOLIO SITE"
-        description="dahoho PORTFOLIO SITE"
-      />
+    <main>
       <DefaultLayout>
         <Top />
       </DefaultLayout>
-    </>
+    </main>
   );
 };
 

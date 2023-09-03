@@ -1,18 +1,18 @@
 import { ReactNode } from "react";
 
-export type ChildrenProps = {
+export type ChildrenPropsType = {
   children: ReactNode;
-} & LowerProps;
+} & LowerPropsType;
 
-export type LowerProps = {
+export type LowerPropsType = {
   lower?: boolean;
 };
 
-export type TitleProps = {
+export type TitlePropsType = {
   title: string | number;
 };
 
-export type ZennItem = {
+export type ZennArticleType = {
   id: number;
   title: string;
   body_letters_count: number;

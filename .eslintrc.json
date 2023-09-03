@@ -7,7 +7,6 @@
   ],
   "extends": ["next/core-web-vitals", "prettier"],
   "rules": {
-    "@next/next/no-img-element": "off",
     // For JS objects sorting
     "sort-keys-custom-order/object-keys": [
       "error",

@@ -6,13 +6,13 @@ import styles from "src/components/templates/Blog/index.module.scss";
 import { HeadlineLg } from "@/components/atoms/Headline";
 import { Container } from "@/components/layouts/Container";
 import { Breadcrumb } from "@/components/organisms/Breadcrumb";
-import { ZennItem } from "@/types";
+import { ZennArticleType } from "@/types";
 
-type BlogZennProps = {
-  articles: ZennItem[];
+type ZennArticlePropsType = {
+  articles: ZennArticleType[];
 };
 
-export const Blog = ({ articles }: BlogZennProps): JSX.Element => {
+export const Blog = ({ articles }: ZennArticlePropsType) => {
   return (
     <>
       <Breadcrumb
@@ -45,7 +45,7 @@ export const Blog = ({ articles }: BlogZennProps): JSX.Element => {
                     />
                     <time
                       dateTime={dayjs(article.published_at).format(
-                        "YYYY-MM-DD"
+                        "YYYY-MM-DD",
                       )}
                       className={styles.time}
                     >

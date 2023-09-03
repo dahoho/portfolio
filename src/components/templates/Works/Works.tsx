@@ -3,7 +3,7 @@ import { Container } from "@/components/layouts/Container";
 import { Product } from "@/components/molecules/Product";
 import { Breadcrumb } from "@/components/organisms/Breadcrumb";
 
-export const Works = (): JSX.Element => {
+export const Works = () => {
   return (
     <>
       <Breadcrumb
