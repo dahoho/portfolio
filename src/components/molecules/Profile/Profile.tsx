@@ -12,7 +12,9 @@ export const Profile = () => {
         <p className={styles.text}>
           東京都在住 29歳
           <br />
-          普段はReact,TypeScript中心に触ってます。
+          フロントエンドエンジニア
+          <br />
+          普段はReact,TypeScriptメインです。
         </p>
       </div>
     </>
