@@ -10,9 +10,9 @@ export const Profile = () => {
       </figure>
       <div className={styles.info}>
         <p className={styles.text}>
-          東京都在住 28歳
+          東京都在住 29歳
           <br />
-          React,TypeScript学習中
+          普段はReact,TypeScript中心に触ってます。
         </p>
       </div>
     </>
