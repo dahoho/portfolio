@@ -9,8 +9,14 @@ type BlogZennProps = {
 const zennFetcher = async () => {
   const response = await fetch(
     "https://zenn.dev/api/articles?username=rh820&order=latest",
+    {
+      headers: {
+        "Cache-Control": "no-cache",
+      },
+    }
   );
   const result = await response.json();
+  console.log(result);
   return result;
 };
 
