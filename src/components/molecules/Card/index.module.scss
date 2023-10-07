@@ -76,3 +76,15 @@
     }
   }
 }
+
+.qiita {
+  a {
+    background-color: #55c500;
+    img {
+      width: 80px;
+      @include mq(md) {
+        width: 80px;
+      }
+    }
+  }
+}
