@@ -10,7 +10,7 @@ import {
 
 export const metadata: Metadata = {
   title: 'portfolio',
-  description: 'portfolio',
+  description: "'hody's portfolio site",
 }
 
 const RootLayout = ({
