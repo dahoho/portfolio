@@ -1,22 +1,22 @@
-import type { Metadata } from "next";
-import "./globals.css";
-import "@mantine/core/styles.css";
+import '@mantine/core/styles.css'
+import type { Metadata } from 'next'
+import './styles/globals.css'
 
 import {
   ColorSchemeScript,
   MantineProvider,
   mantineHtmlProps,
-} from "@mantine/core";
+} from '@mantine/core'
 
 export const metadata: Metadata = {
-  title: "portfolio",
-  description: "portfolio",
-};
+  title: 'portfolio',
+  description: 'portfolio',
+}
 
 const RootLayout = ({
   children,
 }: Readonly<{
-  children: React.ReactNode;
+  children: React.ReactNode
 }>) => {
   return (
     <html lang="ja" {...mantineHtmlProps}>
@@ -27,7 +27,7 @@ const RootLayout = ({
         <MantineProvider>{children}</MantineProvider>
       </body>
     </html>
-  );
-};
+  )
+}
 
-export default RootLayout;
+export default RootLayout
