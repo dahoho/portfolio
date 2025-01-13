@@ -23,7 +23,7 @@ const RootLayout = ({
       <head>
         <ColorSchemeScript />
       </head>
-      <body>
+      <body className="bg-background text-text">
         <MantineProvider>{children}</MantineProvider>
       </body>
     </html>
