@@ -8,7 +8,7 @@ export const Product = () => {
       <HeadingLarge>Product</HeadingLarge>
       <InnerLayout>
         <ul className="flex flex-col gap-4">
-          <li className="bg-card rounded-md">
+          <li className="bg-card dark:bg-cardDark rounded-md text-textDark">
             <a
               href="https://reart-renovation.com/"
               target="_blank"

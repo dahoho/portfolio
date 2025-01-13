@@ -1,12 +1,11 @@
 import '@mantine/core/styles.css'
 import type { Metadata } from 'next'
+
 import './styles/globals.css'
 
-import {
-  ColorSchemeScript,
-  MantineProvider,
-  mantineHtmlProps,
-} from '@mantine/core'
+import { AppMantineProvider } from '@/app/lib/mantine'
+import { AppThemeProvider } from '@/app/lib/themeProvider'
+import { ColorSchemeScript, mantineHtmlProps } from '@mantine/core'
 
 export const metadata: Metadata = {
   title: 'portfolio',
@@ -23,8 +22,10 @@ const RootLayout = ({
       <head>
         <ColorSchemeScript />
       </head>
-      <body className="bg-background text-white text-sm">
-        <MantineProvider>{children}</MantineProvider>
+      <body className="bg-background dark:bg-backgroundDark text-text dark:text-textDark text-sm">
+        <AppThemeProvider>
+          <AppMantineProvider>{children}</AppMantineProvider>
+        </AppThemeProvider>
       </body>
     </html>
   )

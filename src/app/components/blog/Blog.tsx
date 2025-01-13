@@ -25,7 +25,10 @@ export const Blog = async () => {
         <ul className="flex flex-col gap-4">
           {articles.map((article) => {
             return (
-              <li key={article.id} className="bg-card rounded-md">
+              <li
+                key={article.id}
+                className="bg-card dark:bg-cardDark rounded-md text-textDark"
+              >
                 <a
                   href={`https://zenn.dev/${article.path}`}
                   target="_blank"

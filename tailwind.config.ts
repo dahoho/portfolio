@@ -6,12 +6,17 @@ export default {
     './src/components/**/*.{js,ts,jsx,tsx,mdx}',
     './src/app/**/*.{js,ts,jsx,tsx,mdx}',
   ],
+  darkMode: ['selector', '.dark'],
+
   theme: {
     extend: {
       colors: {
-        white: '#f8fafc',
-        background: '#0f172a',
-        card: '#1e293b',
+        text: '#334155',
+        background: '#F7FAFC',
+        card: '#1E293B',
+        backgroundDark: '#0f172a',
+        cardDark: '#1e293b',
+        textDark: '#f8fafc',
         border: '#e5e7eb',
         accent: '#38bdf8',
       },
