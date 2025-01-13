@@ -6,10 +6,6 @@ import { calculateAge } from '@/app/utils/calculateAge'
 
 const PROFILE_ITEMS = [
   {
-    key: '名前',
-    value: '保田 崚佑',
-  },
-  {
     key: '年齢',
     value: `${calculateAge(1994, 8, 20)}歳`,
   },
