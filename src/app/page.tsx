@@ -1,5 +1,6 @@
 import { Blog } from '@/app/components/blog'
 import { Event } from '@/app/components/event'
+import { Footer } from '@/app/components/layout/footer'
 import { Header } from '@/app/components/layout/header'
 import { MainLayout } from '@/app/components/layout/main'
 import { Product } from '@/app/components/product'
@@ -15,6 +16,7 @@ const Home = async () => {
         <Event />
         <Product />
       </MainLayout>
+      <Footer />
     </>
   )
 }
