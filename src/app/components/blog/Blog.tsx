@@ -34,6 +34,7 @@ export const Blog = async () => {
                 >
                   <time
                     dateTime={dayjs(article.published_at).format('YYYY-MM-DD')}
+                    className="text-xs"
                   >
                     {dayjs(article.published_at).format('YYYY-MM-DD')}
                   </time>
