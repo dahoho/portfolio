@@ -5,7 +5,7 @@ export const Footer = () => {
 
   return (
     <footer className="h-12 flex items-center justify-center text-xs">
-      &copy; {currentYear} Ryosuke Hoda
+      &copy; {currentYear} Hody
     </footer>
   )
 }
