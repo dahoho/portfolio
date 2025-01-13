@@ -16,6 +16,11 @@ const SNS_LIST_ITEM = [
     url: 'https://zenn.dev/rh820',
     alt: 'Zenn',
   },
+  {
+    iconPath: '/note.svg',
+    url: 'https://note.com/dahoho',
+    alt: 'note',
+  },
 ]
 
 export const SnsList = () => {
