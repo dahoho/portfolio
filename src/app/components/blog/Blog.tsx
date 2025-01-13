@@ -25,23 +25,24 @@ export const Blog = async () => {
         <ul className="flex flex-col gap-4">
           {articles.map((article) => {
             return (
-              <li key={article.id} className="bg-card p-2 rounded-md">
-                <time
-                  dateTime={dayjs(article.published_at).format('YYYY-MM-DD')}
+              <li key={article.id} className="bg-card rounded-md">
+                <a
+                  href={`https://zenn.dev/${article.path}`}
+                  target="_blank"
+                  rel="noreferrer"
+                  className="block p-2"
                 >
-                  {dayjs(article.published_at).format('YYYY-MM-DD')}
-                </time>
-                <div className="flex gap-2 mt-1">
-                  <span>{article.emoji}</span>
-                  <a
-                    href={`https://zenn.dev/${article.path}`}
-                    target="_blank"
-                    rel="noreferrer"
-                    className="flex gap-2 underline hover:no-underline"
+                  <time
+                    dateTime={dayjs(article.published_at).format('YYYY-MM-DD')}
                   >
+                    {dayjs(article.published_at).format('YYYY-MM-DD')}
+                  </time>
+                  <div className="flex gap-2 mt-1">
+                    <span>{article.emoji}</span>
+
                     <p>{article.title}</p>
-                  </a>
-                </div>
+                  </div>
+                </a>
               </li>
             )
           })}
