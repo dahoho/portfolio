@@ -23,6 +23,12 @@ const SNS_LIST_ITEM = [
     url: 'https://note.com/dahoho',
     alt: 'note',
   },
+  {
+    iconPath: '/sizu.svg',
+    iconPathDark: '/sizu-dark.svg',
+    url: 'https://sizu.me/hody',
+    alt: 'sizu',
+  },
 ]
 
 export const SnsList = () => {
