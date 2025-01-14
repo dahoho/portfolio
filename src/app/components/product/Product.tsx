@@ -8,7 +8,7 @@ export const Product = () => {
       <Heading order={2}>Product</Heading>
       <InnerLayout>
         <ul className="flex flex-col gap-4">
-          <li className="bg-card dark:bg-cardDark rounded-md text-textDark">
+          <li className="bg-card dark:bg-cardDark rounded-md ">
             <a
               href="https://reart-renovation.com/"
               target="_blank"
@@ -16,10 +16,10 @@ export const Product = () => {
               className="block p-4"
             >
               <div className="flex items-center gap-2">
-                <span className="text-xs bg-accent text-white p-1 rounded-sm">
+                <span className="text-xs bg-accent text-white p-1 rounded-sm font-bold">
                   WEBサイト
                 </span>
-                <p>株式会社リアート様</p>
+                <p className="font-bold">株式会社リアート様</p>
               </div>
               <p className="mt-2">https://reart-renovation.com/</p>
             </a>

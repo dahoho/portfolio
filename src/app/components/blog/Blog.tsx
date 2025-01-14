@@ -28,7 +28,7 @@ export const Blog = async () => {
             return (
               <li
                 key={article.id}
-                className="bg-card dark:bg-cardDark rounded-md text-textDark"
+                className="bg-card dark:bg-cardDark rounded-md"
               >
                 <a
                   href={`https://zenn.dev/${article.path}`}

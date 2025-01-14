@@ -12,8 +12,8 @@ export default {
     extend: {
       colors: {
         text: '#334155',
-        background: '#F7FAFC',
-        card: '#1E293B',
+        background: '#ffffff',
+        card: '#F7FAFC',
         backgroundDark: '#0f172a',
         cardDark: '#1e293b',
         textDark: '#f8fafc',
