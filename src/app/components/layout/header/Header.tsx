@@ -1,6 +1,6 @@
 'use client'
 
-import { ThemeSwitch, UserAvatar } from '@/app/lib/mantine'
+import { Heading, ThemeSwitch, UserAvatar } from '@/app/lib/mantine'
 import { useTheme } from 'next-themes'
 
 export const Header = () => {
@@ -8,7 +8,7 @@ export const Header = () => {
 
   return (
     <header className="h-16 px-5 flex items-center justify-between">
-      <h1 className="text-2xl font-bold text-text dark:text-textDark">Hody</h1>
+      <Heading order={1}>Hody</Heading>
 
       <div className="flex items-center gap-6">
         <ThemeSwitch

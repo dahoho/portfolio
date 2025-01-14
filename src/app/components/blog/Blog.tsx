@@ -1,6 +1,6 @@
 import { InnerLayout } from '@/app/components/layout/inner'
 import { Section } from '@/app/components/layout/section'
-import { HeadingLarge } from '@/app/components/ui/heading'
+import { Heading } from '@/app/lib/mantine'
 import dayjs from 'dayjs'
 import Image from 'next/image'
 
@@ -21,7 +21,7 @@ export const Blog = async () => {
 
   return (
     <Section>
-      <HeadingLarge>Blog</HeadingLarge>
+      <Heading order={2}>Blog</Heading>
       <InnerLayout>
         <ul className="flex flex-col gap-4">
           {articles.map((article) => {

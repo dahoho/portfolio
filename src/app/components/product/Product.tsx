@@ -1,11 +1,11 @@
 import { InnerLayout } from '@/app/components/layout/inner'
 import { Section } from '@/app/components/layout/section'
-import { HeadingLarge } from '@/app/components/ui/heading'
+import { Heading } from '@/app/lib/mantine'
 
 export const Product = () => {
   return (
     <Section>
-      <HeadingLarge>Product</HeadingLarge>
+      <Heading order={2}>Product</Heading>
       <InnerLayout>
         <ul className="flex flex-col gap-4">
           <li className="bg-card dark:bg-cardDark rounded-md text-textDark">

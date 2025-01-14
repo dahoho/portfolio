@@ -1,7 +1,7 @@
 import { InnerLayout } from '@/app/components/layout/inner'
 import { Section } from '@/app/components/layout/section'
 import { SnsList } from '@/app/components/snsList'
-import { HeadingLarge } from '@/app/components/ui/heading'
+import { Heading } from '@/app/lib/mantine'
 import { calculateAge } from '@/app/utils/calculateAge'
 
 const PROFILE_ITEMS = [
@@ -30,7 +30,7 @@ const PROFILE_ITEMS = [
 export const Profile = () => {
   return (
     <Section>
-      <HeadingLarge>Profile</HeadingLarge>
+      <Heading order={2}>Profile</Heading>
       <InnerLayout>
         <div className="flex flex-col gap-2">
           {PROFILE_ITEMS.map((item) => {
