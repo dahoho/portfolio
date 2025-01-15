@@ -13,7 +13,7 @@ export const Product = () => {
               href="https://reart-renovation.com/"
               target="_blank"
               rel="noreferrer"
-              className="block p-4"
+              className="block p-3"
             >
               <div className="flex items-center gap-2">
                 <span className="text-xs bg-accent text-white p-1 rounded-sm font-bold">

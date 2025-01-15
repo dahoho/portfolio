@@ -1,3 +1,4 @@
+import typography from '@tailwindcss/typography'
 import type { Config } from 'tailwindcss'
 
 export default {
@@ -30,5 +31,5 @@ export default {
       xl: '1400px',
     },
   },
-  plugins: [],
+  plugins: [typography],
 } satisfies Config

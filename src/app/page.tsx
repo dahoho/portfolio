@@ -1,4 +1,5 @@
-import { Blog } from '@/app/components/blog'
+import { Articles } from '@/app/components/articles/Articles'
+import { BookSummary } from '@/app/components/bookSummary'
 import { Footer } from '@/app/components/layout/footer'
 import { Header } from '@/app/components/layout/header'
 import { MainLayout } from '@/app/components/layout/main'
@@ -11,7 +12,8 @@ const Home = async () => {
       <Header />
       <MainLayout>
         <Profile />
-        <Blog />
+        <Articles />
+        <BookSummary />
         <Product />
       </MainLayout>
       <Footer />

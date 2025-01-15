@@ -12,7 +12,7 @@ type ZennArticleType = {
   published_at: string
 }
 
-export const Blog = async () => {
+export const Articles = async () => {
   const response = await fetch(
     'https://zenn.dev/api/articles?username=rh820&order=latest',
   )
@@ -21,7 +21,7 @@ export const Blog = async () => {
 
   return (
     <Section>
-      <Heading order={2}>Blog</Heading>
+      <Heading order={2}>Articles</Heading>
       <InnerLayout>
         <ul className="flex flex-col gap-4">
           {articles.map((article) => {
@@ -34,7 +34,7 @@ export const Blog = async () => {
                   href={`https://zenn.dev/${article.path}`}
                   target="_blank"
                   rel="noreferrer"
-                  className="block p-2"
+                  className="block p-3"
                 >
                   <div className="flex gap-2">
                     <span>{article.emoji}</span>
