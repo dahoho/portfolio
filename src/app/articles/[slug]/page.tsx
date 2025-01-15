@@ -40,7 +40,7 @@ const Article = async ({ params }: ParamsType) => {
       <Header />
       <MainLayout>
         <Heading order={2}>{article.title}</Heading>
-        <div className="prose dark:text-textDark text-sm">
+        <div className="prose mt-12 prose-h1:dark:text-textDark prose-h2:dark:text-textDark prose-h1:text-text prose-h2:text-text prose-h1:text-2xl prose-h2:text-xl dark:text-textDark text-text">
           <div dangerouslySetInnerHTML={{ __html: article.body }} />
         </div>
       </MainLayout>

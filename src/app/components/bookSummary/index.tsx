@@ -1,1 +1,0 @@
-export { BookSummary } from './BookSummary'

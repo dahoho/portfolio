@@ -4,14 +4,14 @@ import { Heading } from '@/app/lib/mantine'
 import { getArticles } from '@/app/lib/newt'
 import Link from 'next/link'
 
-export const BookSummary = async () => {
+export const ReadingRecord = async () => {
   const articles = await getArticles()
 
   if (articles.length === 0) return null
 
   return (
     <Section>
-      <Heading order={2}>BookSummary</Heading>
+      <Heading order={2}>ReadingRecord</Heading>
       <InnerLayout>
         <ul className="flex flex-col gap-4">
           {articles.map((article) => {
