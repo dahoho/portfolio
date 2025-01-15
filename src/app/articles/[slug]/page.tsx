@@ -5,9 +5,9 @@ import { getArticleBySlug, getArticles } from '@/app/lib/newt'
 import type { Metadata } from 'next'
 
 type ParamsType = {
-  params: Promise<{
+  params: {
     slug: string
-  }>
+  }
 }
 
 export async function generateStaticParams() {
