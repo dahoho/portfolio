@@ -10,7 +10,7 @@ type ParamsType = {
   }>
 }
 
-export const generateStaticParams = async () => {
+export async function generateStaticParams() {
   const articles = await getArticles()
   return articles.map((article) => ({
     slug: article.slug,
