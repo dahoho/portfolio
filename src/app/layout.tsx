@@ -5,6 +5,7 @@ import GoogleAnalytics from '@/app/components/GoogleAnalytics/GoogleAnalytics'
 import { ColorSchemeScript, mantineHtmlProps } from '@mantine/core'
 import '@mantine/core/styles.css'
 import type { Metadata } from 'next'
+import { Suspense } from 'react'
 import './styles/globals.css'
 
 export const metadata: Metadata = {
@@ -20,7 +21,9 @@ const RootLayout = ({
   return (
     <html lang="ja" {...mantineHtmlProps}>
       <head>
-        <GoogleAnalytics />
+        <Suspense fallback={null}>
+          <GoogleAnalytics />
+        </Suspense>
         <ColorSchemeScript />
       </head>
       <body className="bg-background dark:bg-backgroundDark text-text dark:text-textDark text-sm">
