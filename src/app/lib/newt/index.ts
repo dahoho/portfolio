@@ -11,10 +11,19 @@ const client = createClient({
 
 export const getArticles = cache(async () => {
   const { items } = await client.getContents<ArticleType>({
-    appUid: 'blog',
+    appUid: 'ReadingRecord',
     modelUid: 'article',
     query: {
-      select: ['_id', 'title', 'slug', 'body'],
+      select: [
+        '_id',
+        'title',
+        'slug',
+        'body',
+        'coverImage',
+        'tags',
+        '_sys',
+        'bookUrl',
+      ],
     },
   })
   return items
@@ -22,11 +31,20 @@ export const getArticles = cache(async () => {
 
 export const getArticleBySlug = cache(async (slug: string) => {
   const article = await client.getFirstContent<ArticleType>({
-    appUid: 'blog',
+    appUid: 'ReadingRecord',
     modelUid: 'article',
     query: {
       slug,
-      select: ['_id', 'title', 'slug', 'body'],
+      select: [
+        '_id',
+        'title',
+        'slug',
+        'body',
+        'coverImage',
+        'tags',
+        '_sys',
+        'bookUrl',
+      ],
     },
   })
   return article
