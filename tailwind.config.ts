@@ -14,7 +14,7 @@ export default {
       colors: {
         text: '#334155',
         background: '#ffffff',
-        card: '#F7FAFC',
+        card: '#ECF5FF',
         backgroundDark: '#0f172a',
         cardDark: '#1e293b',
         textDark: '#f8fafc',

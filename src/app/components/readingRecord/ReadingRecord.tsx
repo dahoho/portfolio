@@ -13,7 +13,8 @@ export const ReadingRecord = async () => {
     <Section>
       <Heading order={2}>ReadingRecord</Heading>
       <InnerLayout>
-        <ul className="flex flex-col gap-4">
+        <p className="text-xs">読んだ本の要約やメモ</p>
+        <ul className="flex flex-col gap-4 mt-4">
           {articles.map((article) => {
             return (
               <li

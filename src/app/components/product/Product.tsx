@@ -8,7 +8,7 @@ export const Product = () => {
       <Heading order={2}>Product</Heading>
       <InnerLayout>
         <ul className="flex flex-col gap-4">
-          <li className="bg-card dark:bg-cardDark rounded-md ">
+          <li className="bg-card dark:bg-cardDark rounded-md mt-4">
             <a
               href="https://reart-renovation.com/"
               target="_blank"

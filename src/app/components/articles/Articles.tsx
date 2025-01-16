@@ -23,7 +23,7 @@ export const Articles = async () => {
     <Section>
       <Heading order={2}>Articles</Heading>
       <InnerLayout>
-        <ul className="flex flex-col gap-4">
+        <ul className="flex flex-col gap-4 mt-4">
           {articles.map((article) => {
             return (
               <li
