@@ -21,7 +21,11 @@ export const Product = () => {
                 </span>
                 <p className="font-bold">株式会社リアート様</p>
               </div>
-              <p className="mt-2">https://reart-renovation.com/</p>
+              <div className="mt-4">
+                <p className="mt-1 text-xs">
+                  Astro / React / SCSS / microCMS / Netlify
+                </p>
+              </div>
             </a>
           </li>
         </ul>
