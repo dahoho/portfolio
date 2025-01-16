@@ -5,9 +5,7 @@ import { getArticleBySlug, getArticles } from '@/app/lib/newt'
 import type { Metadata } from 'next'
 
 type ParamsType = {
-  params: {
-    slug: string
-  }
+  params: Promise<{ slug: string }>
 }
 
 export async function generateStaticParams() {
@@ -16,11 +14,12 @@ export async function generateStaticParams() {
     slug: article.slug,
   }))
 }
+
 export const dynamicParams = false
 
-export const generateMetadata = async ({
+export async function generateMetadata({
   params,
-}: ParamsType): Promise<Metadata> => {
+}: ParamsType): Promise<Metadata> {
   const { slug } = await params
   const article = await getArticleBySlug(slug)
 
@@ -30,10 +29,10 @@ export const generateMetadata = async ({
   }
 }
 
-const Article = async ({ params }: ParamsType) => {
+export default async function Article({ params }: ParamsType) {
   const { slug } = await params
   const article = await getArticleBySlug(slug)
-  if (!article) return null
+  if (!article) return
 
   return (
     <>
@@ -47,5 +46,3 @@ const Article = async ({ params }: ParamsType) => {
     </>
   )
 }
-
-export default Article
