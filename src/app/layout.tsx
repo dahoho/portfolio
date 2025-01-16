@@ -17,8 +17,6 @@ const RootLayout = ({
 }: Readonly<{
   children: React.ReactNode
 }>) => {
-  const gaId = process.env.GA_ID || ''
-
   return (
     <html lang="ja" {...mantineHtmlProps}>
       <head>
