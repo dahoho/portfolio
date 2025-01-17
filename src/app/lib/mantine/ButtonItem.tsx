@@ -8,7 +8,7 @@ export const ButtonItem = ({ children }: ChildrenType) => {
     <Button
       variant="outline"
       color="#38bdf8"
-      size="md"
+      size="lg"
       onClick={() => history.back()}
     >
       {children}
