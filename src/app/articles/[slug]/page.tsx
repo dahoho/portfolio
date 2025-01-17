@@ -1,5 +1,5 @@
 import { ContainerLayout } from '@/app/components/layout/containerLayout'
-import { Heading } from '@/app/lib/mantine'
+import { ButtonItem, Heading } from '@/app/lib/mantine'
 import { getArticleBySlug, getArticles } from '@/app/lib/newt'
 import dayjs from 'dayjs'
 import type { Metadata } from 'next'
@@ -72,6 +72,9 @@ export default async function Article({ params }: ParamsType) {
         >
           <div dangerouslySetInnerHTML={{ __html: article.body }} />
         </div>
+      </div>
+      <div className="text-center mt-20">
+        <ButtonItem>Back</ButtonItem>
       </div>
     </ContainerLayout>
   )
