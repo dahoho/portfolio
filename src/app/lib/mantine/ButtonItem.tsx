@@ -1,8 +1,9 @@
 'use client'
 
+import { ChildrenType } from '@/app/types/children'
 import { Button } from '@mantine/core'
 
-export const ButtonItem = ({ children }) => {
+export const ButtonItem = ({ children }: ChildrenType) => {
   return (
     <Button
       variant="outline"
