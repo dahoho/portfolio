@@ -1,15 +1,34 @@
+'use client'
+
 import { InnerLayout } from '@/app/components/layout/inner'
 import { Section } from '@/app/components/layout/section'
 import { Heading } from '@/app/lib/mantine'
-import { getArticles } from '@/app/lib/newt'
+import { ArticleType } from '@/app/types/article'
+import { Pagination } from '@mantine/core'
 import dayjs from 'dayjs'
 import Link from 'next/link'
+import { useState } from 'react'
 
-export const ReadingRecord = async () => {
-  const articles = await getArticles()
-  console.log(articles)
+type ReadingRecordPropsType = {
+  articles: ArticleType[]
+}
+
+const chunk = <T,>(array: T[], size: number): T[][] => {
+  if (!array.length) return []
+
+  const head = array.slice(0, size)
+  const tail = array.slice(size)
+  return [head, ...chunk(tail, size)]
+}
+
+export const ReadingRecord = ({ articles }: ReadingRecordPropsType) => {
+  const [activePage, setActivePage] = useState(1)
+  const pageSize = 5
 
   if (articles.length === 0) return null
+
+  const paginatedArticles = chunk(articles, pageSize)
+  const currentArticles = paginatedArticles[activePage - 1] || []
 
   return (
     <Section>
@@ -17,7 +36,7 @@ export const ReadingRecord = async () => {
       <InnerLayout>
         <p className="text-xs">読んだ本の要約やメモ</p>
         <ul className="flex flex-col gap-4 mt-4">
-          {articles.map((article) => {
+          {currentArticles.map((article) => {
             return (
               <li
                 key={article._id}
@@ -39,6 +58,13 @@ export const ReadingRecord = async () => {
             )
           })}
         </ul>
+        <div className="flex justify-center mt-8">
+          <Pagination
+            total={paginatedArticles.length}
+            value={activePage}
+            onChange={setActivePage}
+          />
+        </div>
       </InnerLayout>
     </Section>
   )
