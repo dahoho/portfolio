@@ -8,7 +8,7 @@ export const Header = () => {
   const { theme, setTheme } = useTheme()
 
   return (
-    <header className="h-16 px-5 flex items-center justify-between">
+    <header className="h-16 px-5 flex items-center justify-between sticky top-0 left-0  backdrop-blur">
       <Heading order={1}>
         <Link href="/">Hody</Link>
       </Heading>
