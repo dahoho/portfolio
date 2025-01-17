@@ -24,7 +24,7 @@ export const ReadingRecord = ({
   readingRecordArticles,
 }: ReadingRecordPropsType) => {
   const [activePage, setActivePage] = useState(1)
-  const pageSize = 5
+  const pageSize = 4
 
   if (readingRecordArticles.length === 0) return null
 

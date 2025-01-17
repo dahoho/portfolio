@@ -33,7 +33,7 @@ export const Articles = ({ zennArticles }: ArticlesProps) => {
   const articles: ZennArticleType[] = zennArticles.articles.slice(0, 10)
 
   const [activePage, setActivePage] = useState(1)
-  const pageSize = 5
+  const pageSize = 4
 
   const paginatedArticles = chunk(articles, pageSize)
   const currentArticles = paginatedArticles[activePage - 1] || []
