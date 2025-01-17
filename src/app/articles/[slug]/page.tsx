@@ -66,7 +66,7 @@ export default async function Article({ params }: ParamsType) {
             {article.bookUrl}
           </a>
         </p>
-        <div className="prose mt-12 prose-h1:dark:text-textDark prose-h2:dark:text-textDark prose-h1:text-text prose-h2:text-text prose-h1:text-xl prose-h2:text-lg dark:text-textDark text-text">
+        <div className="prose mt-12 prose-h1:dark:text-textDark prose-h2:dark:text-textDark prose-h1:text-text prose-h2:text-text prose-h1:text-xl prose-h2:text-lg dark:text-textDark text-text prose-h3:dark:text-textDark prose-h3:text-text  prose-h3:text-base pose-h3:font-bold">
           <div dangerouslySetInnerHTML={{ __html: article.body }} />
         </div>
       </div>
