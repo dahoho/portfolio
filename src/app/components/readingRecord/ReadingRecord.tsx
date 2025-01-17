@@ -2,9 +2,8 @@
 
 import { InnerLayout } from '@/app/components/layout/inner'
 import { Section } from '@/app/components/layout/section'
-import { Heading } from '@/app/lib/mantine'
+import { Heading, PaginationItem } from '@/app/lib/mantine'
 import { ArticleType } from '@/app/types/article'
-import { Pagination } from '@mantine/core'
 import dayjs from 'dayjs'
 import Link from 'next/link'
 import { useState } from 'react'
@@ -61,7 +60,7 @@ export const ReadingRecord = ({
           })}
         </ul>
         <div className="flex justify-center mt-8">
-          <Pagination
+          <PaginationItem
             total={paginatedArticles.length}
             value={activePage}
             onChange={setActivePage}

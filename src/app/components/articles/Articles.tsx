@@ -2,8 +2,7 @@
 
 import { InnerLayout } from '@/app/components/layout/inner'
 import { Section } from '@/app/components/layout/section'
-import { Heading } from '@/app/lib/mantine'
-import { Pagination } from '@mantine/core'
+import { Heading, PaginationItem } from '@/app/lib/mantine'
 import dayjs from 'dayjs'
 import Image from 'next/image'
 import { useState } from 'react'
@@ -73,7 +72,7 @@ export const Articles = ({ zennArticles }: ArticlesProps) => {
           })}
         </ul>
         <div className="flex justify-center mt-8">
-          <Pagination
+          <PaginationItem
             total={paginatedArticles.length}
             value={activePage}
             onChange={setActivePage}

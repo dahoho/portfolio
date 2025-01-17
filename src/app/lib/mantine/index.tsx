@@ -1,4 +1,5 @@
 export { AppMantineProvider } from './AppMantineProvider'
 export { Heading } from './Heading'
+export { PaginationItem } from './PaginationItem'
 export { ThemeSwitch } from './ThemeSwitch'
 export { UserAvatar } from './UserAvatar'
