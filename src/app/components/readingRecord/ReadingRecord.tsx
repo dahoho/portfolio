@@ -10,7 +10,7 @@ import Link from 'next/link'
 import { useState } from 'react'
 
 type ReadingRecordPropsType = {
-  articles: ArticleType[]
+  readingRecordArticles: ArticleType[]
 }
 
 const chunk = <T,>(array: T[], size: number): T[][] => {
@@ -21,13 +21,15 @@ const chunk = <T,>(array: T[], size: number): T[][] => {
   return [head, ...chunk(tail, size)]
 }
 
-export const ReadingRecord = ({ articles }: ReadingRecordPropsType) => {
+export const ReadingRecord = ({
+  readingRecordArticles,
+}: ReadingRecordPropsType) => {
   const [activePage, setActivePage] = useState(1)
   const pageSize = 5
 
-  if (articles.length === 0) return null
+  if (readingRecordArticles.length === 0) return null
 
-  const paginatedArticles = chunk(articles, pageSize)
+  const paginatedArticles = chunk(readingRecordArticles, pageSize)
   const currentArticles = paginatedArticles[activePage - 1] || []
 
   return (

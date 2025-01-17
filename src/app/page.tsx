@@ -6,13 +6,19 @@ import { ReadingRecord } from '@/app/components/readingRecord'
 import { getArticles } from '@/app/lib/newt'
 
 const Home = async () => {
-  const articles = await getArticles()
+  const readingRecordArticles = await getArticles()
+
+  const response = await fetch(
+    'https://zenn.dev/api/articles?username=rh820&order=latest',
+  )
+  const zennArticles = await response.json()
+
   return (
     <>
       <ContainerLayout>
         <Profile />
-        <Articles />
-        <ReadingRecord articles={articles} />
+        <Articles zennArticles={zennArticles} />
+        <ReadingRecord readingRecordArticles={readingRecordArticles} />
         <Product />
       </ContainerLayout>
     </>

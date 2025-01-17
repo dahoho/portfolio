@@ -1,8 +1,12 @@
+'use client'
+
 import { InnerLayout } from '@/app/components/layout/inner'
 import { Section } from '@/app/components/layout/section'
 import { Heading } from '@/app/lib/mantine'
+import { Pagination } from '@mantine/core'
 import dayjs from 'dayjs'
 import Image from 'next/image'
+import { useState } from 'react'
 
 type ZennArticleType = {
   id: number
@@ -12,19 +16,35 @@ type ZennArticleType = {
   published_at: string
 }
 
-export const Articles = async () => {
-  const response = await fetch(
-    'https://zenn.dev/api/articles?username=rh820&order=latest',
-  )
-  const data = await response.json()
-  const articles: ZennArticleType[] = data.articles.slice(0, 10)
+type ArticlesProps = {
+  zennArticles: {
+    articles: ZennArticleType[]
+  }
+}
+
+const chunk = <T,>(array: T[], size: number): T[][] => {
+  if (!array.length) return []
+
+  const head = array.slice(0, size)
+  const tail = array.slice(size)
+  return [head, ...chunk(tail, size)]
+}
+
+export const Articles = ({ zennArticles }: ArticlesProps) => {
+  const articles: ZennArticleType[] = zennArticles.articles.slice(0, 10)
+
+  const [activePage, setActivePage] = useState(1)
+  const pageSize = 5
+
+  const paginatedArticles = chunk(articles, pageSize)
+  const currentArticles = paginatedArticles[activePage - 1] || []
 
   return (
     <Section>
       <Heading order={2}>Articles</Heading>
       <InnerLayout>
         <ul className="flex flex-col gap-4 mt-4">
-          {articles.map((article) => {
+          {currentArticles.map((article) => {
             return (
               <li
                 key={article.id}
@@ -52,6 +72,13 @@ export const Articles = async () => {
             )
           })}
         </ul>
+        <div className="flex justify-center mt-8">
+          <Pagination
+            total={paginatedArticles.length}
+            value={activePage}
+            onChange={setActivePage}
+          />
+        </div>
       </InnerLayout>
     </Section>
   )
