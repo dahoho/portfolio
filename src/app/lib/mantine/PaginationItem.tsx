@@ -11,5 +11,12 @@ export const PaginationItem = ({
   value,
   onChange,
 }: PaginationItemProps) => {
-  return <Pagination total={total} value={value} onChange={onChange} />
+  return (
+    <Pagination
+      total={total}
+      value={value}
+      onChange={onChange}
+      color="#38bdf8"
+    />
+  )
 }
