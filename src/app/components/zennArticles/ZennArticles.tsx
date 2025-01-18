@@ -3,13 +3,22 @@
 import { InnerLayout } from '@/app/components/layout/inner'
 import { Section } from '@/app/components/layout/section'
 import { Heading, PaginationItem } from '@/app/lib/mantine'
-import { ArticleType } from '@/app/types/article'
 import dayjs from 'dayjs'
-import Link from 'next/link'
+import Image from 'next/image'
 import { useState } from 'react'
 
-type BookReviewPropsType = {
-  bookReviewArticles: ArticleType[]
+type ZennArticleType = {
+  id: number
+  path: string
+  emoji: string
+  title: string
+  published_at: string
+}
+
+type ArticlesProps = {
+  zennArticles: {
+    articles: ZennArticleType[]
+  }
 }
 
 const chunk = <T,>(array: T[], size: number): T[][] => {
@@ -20,38 +29,44 @@ const chunk = <T,>(array: T[], size: number): T[][] => {
   return [head, ...chunk(tail, size)]
 }
 
-export const BookReview = ({ bookReviewArticles }: BookReviewPropsType) => {
+export const ZennArticles = ({ zennArticles }: ArticlesProps) => {
+  const articles: ZennArticleType[] = zennArticles.articles.slice(0, 10)
+
   const [activePage, setActivePage] = useState(1)
   const pageSize = 4
 
-  if (bookReviewArticles.length === 0) return null
-
-  const paginatedArticles = chunk(bookReviewArticles, pageSize)
+  const paginatedArticles = chunk(articles, pageSize)
   const currentArticles = paginatedArticles[activePage - 1] || []
 
   return (
     <Section>
-      <Heading order={2}>Book Review</Heading>
+      <Heading order={2}>Articles</Heading>
       <InnerLayout>
         <ul className="flex flex-col gap-4 mt-4">
           {currentArticles.map((article) => {
             return (
               <li
-                key={article._id}
+                key={article.id}
                 className="bg-card dark:bg-cardDark rounded-md"
               >
-                <Link href={`bookReview/${article.slug}`} className="block p-3">
-                  <p className="font-bold">{`【要約】${article.title}`}</p>
+                <a
+                  href={`https://zenn.dev/${article.path}`}
+                  target="_blank"
+                  rel="noreferrer"
+                  className="block p-3"
+                >
+                  <div className="flex gap-2">
+                    <span>{article.emoji}</span>
+                    <p className="font-bold">{article.title}</p>
+                  </div>
                   <time
-                    dateTime={dayjs(article._sys.createdAt).format(
-                      'YYYY-MM-DD',
-                    )}
+                    dateTime={dayjs(article.published_at).format('YYYY-MM-DD')}
                     className="text-xs mt-2 flex gap-1 items-center"
                   >
-                    <span className="text-xs">📚</span>
-                    {dayjs(article._sys.createdAt).format('YYYY-MM-DD')}
+                    <Image src="zenn.svg" alt="Zenn" width={12} height={12} />
+                    {dayjs(article.published_at).format('YYYY-MM-DD')}
                   </time>
-                </Link>
+                </a>
               </li>
             )
           })}

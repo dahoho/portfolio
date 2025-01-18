@@ -9,9 +9,9 @@ const client = createClient({
   apiType: 'cdn',
 })
 
-export const getArticles = cache(async () => {
+export const getBlogArticles = cache(async () => {
   const { items } = await client.getContents<ArticleType>({
-    appUid: 'BookReview',
+    appUid: 'Blog',
     modelUid: 'article',
     query: {
       select: [
@@ -29,9 +29,9 @@ export const getArticles = cache(async () => {
   return items
 })
 
-export const getArticleBySlug = cache(async (slug: string) => {
+export const getBlogArticleBySlug = cache(async (slug: string) => {
   const article = await client.getFirstContent<ArticleType>({
-    appUid: 'BookReview',
+    appUid: 'Blog',
     modelUid: 'article',
     query: {
       slug,

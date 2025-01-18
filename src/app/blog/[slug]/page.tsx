@@ -1,7 +1,7 @@
 import { ContainerLayout } from '@/app/components/layout/containerLayout'
 import { ShareButton } from '@/app/components/shareButton'
 import { ButtonItem, Heading } from '@/app/lib/mantine'
-import { getArticleBySlug, getArticles } from '@/app/lib/newt'
+import { getBlogArticleBySlug, getBlogArticles } from '@/app/lib/newt/Blog'
 import dayjs from 'dayjs'
 import type { Metadata } from 'next'
 import Image from 'next/image'
@@ -11,7 +11,7 @@ type ParamsType = {
 }
 
 export async function generateStaticParams() {
-  const articles = await getArticles()
+  const articles = await getBlogArticles()
   return articles.map((article) => ({
     slug: article.slug,
   }))
@@ -23,17 +23,17 @@ export const generateMetadata = async ({
   params,
 }: ParamsType): Promise<Metadata> => {
   const { slug } = await params
-  const article = await getArticleBySlug(slug)
+  const article = await getBlogArticleBySlug(slug)
 
   return {
     title: `${article?.title} | portfolio`,
-    description: `${article?.title}の要約・メモページです`,
+    description: `ブログページです`,
   }
 }
 
-export default async function Article({ params }: ParamsType) {
+export default async function Blog({ params }: ParamsType) {
   const { slug } = await params
-  const article = await getArticleBySlug(slug)
+  const article = await getBlogArticleBySlug(slug)
   if (!article) return
 
   return (
@@ -55,18 +55,7 @@ export default async function Article({ params }: ParamsType) {
         {dayjs(article._sys.createdAt).format('YYYY-MM-DD')}に公開
       </time>
       <div className="mt-8 sm:mt-20">
-        <Heading order={2}>{`【要約】${article.title}`}</Heading>
-        <p className="mt-4">
-          Amazon：
-          <a
-            href={article.bookUrl}
-            className="underline sm:hover:no-underline"
-            target="_blank"
-            rel="noreferrer"
-          >
-            {article.bookUrl}
-          </a>
-        </p>
+        <Heading order={2}>{article.title}</Heading>
         <div
           className="prose mt-12 prose-h2:dark:text-textDark
         prose-h2:text-text prose-h2:text-xl prose-h2:border-b prose-h2:border-border prose-h2:pb-3 prose-h3:dark:text-textDark prose-h3:text-text prose-h3:text-base prose-h3:mt-8 prose-h3:leading-7 prose-h4:dark:text-textDark prose-h4:text-text  prose-h4:text-base pose-h4:font-bold dark:text-textDark text-text text-sm leading-6"

@@ -19,11 +19,6 @@ const SNS_LIST_ITEM = [
     alt: 'Zenn',
   },
   {
-    iconPath: '/note.svg',
-    url: 'https://note.com/dahoho',
-    alt: 'note',
-  },
-  {
     iconPath: '/sizu.svg',
     iconPathDark: '/sizu-dark.svg',
     url: 'https://sizu.me/hody',
