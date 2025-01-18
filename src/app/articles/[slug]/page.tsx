@@ -1,4 +1,5 @@
 import { ContainerLayout } from '@/app/components/layout/containerLayout'
+import { ShareButton } from '@/app/components/shareButton'
 import { ButtonItem, Heading } from '@/app/lib/mantine'
 import { getArticleBySlug, getArticles } from '@/app/lib/newt'
 import dayjs from 'dayjs'
@@ -76,6 +77,7 @@ export default async function Article({ params }: ParamsType) {
       <div className="text-center mt-20">
         <ButtonItem>Back</ButtonItem>
       </div>
+      <ShareButton slug={article.slug} title={article.title} />
     </ContainerLayout>
   )
 }

@@ -43,7 +43,7 @@ export const SnsList = () => {
               alt={item.alt}
               width={24}
               height={24}
-              className={item.iconPathDark ? 'dark:hidden' : ''} //
+              className={item.iconPathDark ? 'dark:hidden' : ''}
             />
             {/* ダークモード画像 */}
             {item.iconPathDark && (
