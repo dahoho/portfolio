@@ -40,7 +40,7 @@ export const ZennArticles = ({ zennArticles }: ArticlesProps) => {
 
   return (
     <Section>
-      <Heading order={2}>Articles</Heading>
+      <Heading order={2}>Zenn</Heading>
       <InnerLayout>
         <ul className="flex flex-col gap-4 mt-4">
           {currentArticles.map((article) => {
