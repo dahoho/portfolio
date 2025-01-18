@@ -44,7 +44,7 @@ export default async function Blog({ params }: ParamsType) {
           alt={article.coverImage.altText}
           layout="fill"
           style={{
-            objectFit: 'contain',
+            objectFit: 'cover',
           }}
         />
       </div>
@@ -58,7 +58,7 @@ export default async function Blog({ params }: ParamsType) {
         <Heading order={2}>{article.title}</Heading>
         <div
           className="prose mt-12 prose-h2:dark:text-textDark
-        prose-h2:text-text prose-h2:text-xl prose-h2:border-b prose-h2:border-border prose-h2:pb-3 prose-h3:dark:text-textDark prose-h3:text-text prose-h3:text-base prose-h3:mt-8 prose-h3:leading-7 prose-h4:dark:text-textDark prose-h4:text-text  prose-h4:text-base pose-h4:font-bold dark:text-textDark text-text text-sm leading-6"
+        prose-h2:text-text prose-h2:text-xl prose-h2:border-b prose-h2:border-border prose-h2:pb-3 prose-h3:dark:text-textDark prose-h3:text-text prose-h3:text-base prose-h3:mt-8 prose-h3:leading-7 prose-h4:dark:text-textDark prose-h4:text-text  prose-h4:text-base pose-h4:font-bold dark:text-textDark text-text leading-7"
         >
           <div dangerouslySetInnerHTML={{ __html: article.body }} />
         </div>
