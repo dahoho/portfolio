@@ -11,7 +11,7 @@ const client = createClient({
 
 export const getArticles = cache(async () => {
   const { items } = await client.getContents<ArticleType>({
-    appUid: 'ReadingRecord',
+    appUid: 'BookReview',
     modelUid: 'article',
     query: {
       select: [
@@ -31,7 +31,7 @@ export const getArticles = cache(async () => {
 
 export const getArticleBySlug = cache(async (slug: string) => {
   const article = await client.getFirstContent<ArticleType>({
-    appUid: 'ReadingRecord',
+    appUid: 'BookReview',
     modelUid: 'article',
     query: {
       slug,

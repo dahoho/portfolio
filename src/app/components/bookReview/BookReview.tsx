@@ -8,8 +8,8 @@ import dayjs from 'dayjs'
 import Link from 'next/link'
 import { useState } from 'react'
 
-type ReadingRecordPropsType = {
-  readingRecordArticles: ArticleType[]
+type BookReviewPropsType = {
+  bookReviewArticles: ArticleType[]
 }
 
 const chunk = <T,>(array: T[], size: number): T[][] => {
@@ -20,22 +20,19 @@ const chunk = <T,>(array: T[], size: number): T[][] => {
   return [head, ...chunk(tail, size)]
 }
 
-export const ReadingRecord = ({
-  readingRecordArticles,
-}: ReadingRecordPropsType) => {
+export const BookReview = ({ bookReviewArticles }: BookReviewPropsType) => {
   const [activePage, setActivePage] = useState(1)
   const pageSize = 4
 
-  if (readingRecordArticles.length === 0) return null
+  if (bookReviewArticles.length === 0) return null
 
-  const paginatedArticles = chunk(readingRecordArticles, pageSize)
+  const paginatedArticles = chunk(bookReviewArticles, pageSize)
   const currentArticles = paginatedArticles[activePage - 1] || []
 
   return (
     <Section>
-      <Heading order={2}>ReadingRecord</Heading>
+      <Heading order={2}>Book Review</Heading>
       <InnerLayout>
-        <p className="text-xs">読んだ本の要約やメモ</p>
         <ul className="flex flex-col gap-4 mt-4">
           {currentArticles.map((article) => {
             return (
@@ -44,7 +41,7 @@ export const ReadingRecord = ({
                 className="bg-card dark:bg-cardDark rounded-md"
               >
                 <Link href={`articles/${article.slug}`} className="block p-3">
-                  <p className="font-bold">{article.title}</p>
+                  <p className="font-bold">{`【要約】${article.title}`}</p>
                   <time
                     dateTime={dayjs(article._sys.createdAt).format(
                       'YYYY-MM-DD',

@@ -55,7 +55,7 @@ export default async function Article({ params }: ParamsType) {
         {dayjs(article._sys.createdAt).format('YYYY-MM-DD')}に公開
       </time>
       <div className="mt-8 sm:mt-20">
-        <Heading order={2}>{article.title}</Heading>
+        <Heading order={2}>{`【要約】${article.title}`}</Heading>
         <p className="mt-4">
           Amazon：
           <a
