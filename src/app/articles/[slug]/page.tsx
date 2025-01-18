@@ -18,15 +18,15 @@ export async function generateStaticParams() {
 
 export const dynamicParams = false
 
-export async function generateMetadata({
+export const generateMetadata = async ({
   params,
-}: ParamsType): Promise<Metadata> {
+}: ParamsType): Promise<Metadata> => {
   const { slug } = await params
   const article = await getArticleBySlug(slug)
 
   return {
-    title: article?.title,
-    description: '投稿詳細ページです',
+    title: `${article?.title} | portfolio`,
+    description: `${article?.title}の要約・メモページです`,
   }
 }
 

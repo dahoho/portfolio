@@ -6,7 +6,7 @@ import { Button } from '@mantine/core'
 export const ButtonItem = ({ children }: ChildrenType) => {
   return (
     <Button
-      variant="outline"
+      variant="filled"
       color="#38bdf8"
       size="lg"
       onClick={() => history.back()}
