@@ -5,6 +5,7 @@ import { getBlogArticleBySlug, getBlogArticles } from '@/app/lib/newt/Blog'
 import dayjs from 'dayjs'
 import type { Metadata } from 'next'
 import Image from 'next/image'
+import { tv } from 'tailwind-variants'
 
 type ParamsType = {
   params: Promise<{ slug: string }>
@@ -31,6 +32,32 @@ export const generateMetadata = async ({
   }
 }
 
+const detailContent = tv({
+  base: [
+    'prose',
+    'mt-12',
+    'prose-h2:dark:text-textDark',
+    'prose-h2:text-text',
+    'prose-h2:text-2xl',
+    'prose-h2:border-b',
+    'prose-h2:border-border',
+    'prose-h2:pb-3',
+    'prose-h3:dark:text-textDark',
+    'prose-h3:text-text',
+    'prose-h3:text-xl',
+    'prose-h3:mt-8',
+    'prose-h3:leading-7',
+    'prose-h4:dark:text-textDark',
+    'prose-h4:text-text',
+    'prose-h4:text-base',
+    'pose-h4:font-bold',
+    'dark:text-textDark',
+    'text-text',
+    'leading-7',
+    'prose-a:text-accent',
+  ],
+})
+
 export default async function Blog({ params }: ParamsType) {
   const { slug } = await params
   const article = await getBlogArticleBySlug(slug)
@@ -56,10 +83,7 @@ export default async function Blog({ params }: ParamsType) {
       </time>
       <div className="mt-8 sm:mt-20">
         <Heading order={2}>{article.title}</Heading>
-        <div
-          className="prose mt-12 prose-h2:dark:text-textDark
-        prose-h2:text-text prose-h2:text-2xl prose-h2:border-b prose-h2:border-border prose-h2:pb-3 prose-h3:dark:text-textDark prose-h3:text-text prose-h3:text-xl prose-h3:mt-8 prose-h3:leading-7 prose-h4:dark:text-textDark prose-h4:text-text  prose-h4:text-base pose-h4:font-bold dark:text-textDark text-text leading-7 prose-a:text-accent"
-        >
+        <div className={detailContent()}>
           <div dangerouslySetInnerHTML={{ __html: article.body }} />
         </div>
       </div>
