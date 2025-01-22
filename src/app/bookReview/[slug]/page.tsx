@@ -5,7 +5,7 @@ import {
   getBookReviewArticleBySlug,
   getBookReviewArticles,
 } from '@/app/lib/newt/BookReview'
-import dayjs from 'dayjs'
+import { formatDate } from '@/app/utils/dateFormat'
 import type { Metadata } from 'next'
 import Image from 'next/image'
 import { tv } from 'tailwind-variants'
@@ -35,30 +35,38 @@ export const generateMetadata = async ({
   }
 }
 
-const detailContent = tv({
-  base: [
-    'prose',
-    'mt-12',
-    'prose-h2:dark:text-textDark',
-    'prose-h2:text-text',
-    'prose-h2:text-2xl',
-    'prose-h2:border-b',
-    'prose-h2:border-border',
-    'prose-h2:pb-3',
-    'prose-h3:dark:text-textDark',
-    'prose-h3:text-text',
-    'prose-h3:text-xl',
-    'prose-h3:mt-8',
-    'prose-h3:leading-7',
-    'prose-h4:dark:text-textDark',
-    'prose-h4:text-text',
-    'prose-h4:text-base',
-    'pose-h4:font-bold',
-    'dark:text-textDark',
-    'text-text',
-    'leading-7',
-    'prose-a:text-accent',
-  ],
+const detailPage = tv({
+  slots: {
+    imageWrapper: ['w-full', 'h-40', 'sm:h-64', 'relative', '-z-10'],
+    time: ['mt-8', 'block', 'text-center'],
+    contentWrapper: ['mt-8', 'sm:mt-20'],
+    backButton: ['mt-20', 'text-center'],
+    url: ['underline', 'sm:hover:no-underline'],
+    textLink: ['mt-4'],
+    content: [
+      'prose',
+      'mt-12',
+      'prose-h2:dark:text-textDark',
+      'prose-h2:text-text',
+      'prose-h2:text-2xl',
+      'prose-h2:border-b',
+      'prose-h2:border-border',
+      'prose-h2:pb-3',
+      'prose-h3:dark:text-textDark',
+      'prose-h3:text-text',
+      'prose-h3:text-xl',
+      'prose-h3:mt-8',
+      'prose-h3:leading-7',
+      'prose-h4:dark:text-textDark',
+      'prose-h4:text-text',
+      'prose-h4:text-base',
+      'pose-h4:font-bold',
+      'dark:text-textDark',
+      'text-text',
+      'leading-7',
+      'prose-a:text-accent',
+    ],
+  },
 })
 
 export default async function Article({ params }: ParamsType) {
@@ -66,9 +74,19 @@ export default async function Article({ params }: ParamsType) {
   const article = await getBookReviewArticleBySlug(slug)
   if (!article) return
 
+  const {
+    content,
+    imageWrapper,
+    time,
+    contentWrapper,
+    backButton,
+    url,
+    textLink,
+  } = detailPage()
+
   return (
     <ContainerLayout>
-      <div className="w-full h-40 sm:h-64 relative -z-10">
+      <div className={imageWrapper()}>
         <Image
           src={article.coverImage.src}
           alt={article.coverImage.altText}
@@ -78,30 +96,27 @@ export default async function Article({ params }: ParamsType) {
           }}
         />
       </div>
-      <time
-        dateTime={dayjs(article._sys.createdAt).format('YYYY-MM-DD')}
-        className="mt-8 block text-center"
-      >
-        {dayjs(article._sys.createdAt).format('YYYY-MM-DD')}に公開
+      <time dateTime={formatDate(article._sys.createdAt)} className={time()}>
+        {formatDate(article._sys.createdAt)}に公開
       </time>
-      <div className="mt-8 sm:mt-20">
+      <div className={contentWrapper()}>
         <Heading order={2}>{`【要約】${article.title}`}</Heading>
-        <p className="mt-4">
+        <p className={textLink()}>
           Amazon：
           <a
             href={article.bookUrl}
-            className="underline sm:hover:no-underline"
+            className={url()}
             target="_blank"
             rel="noreferrer"
           >
             {article.bookUrl}
           </a>
         </p>
-        <div className={detailContent()}>
+        <div className={content()}>
           <div dangerouslySetInnerHTML={{ __html: article.body }} />
         </div>
       </div>
-      <div className="text-center mt-20">
+      <div className={backButton()}>
         <ButtonItem>Back</ButtonItem>
       </div>
       <ShareButton slug={article.slug} title={article.title} />
