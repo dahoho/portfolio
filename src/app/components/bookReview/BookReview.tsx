@@ -40,7 +40,6 @@ export const BookReview = ({ bookReviewArticles }: BookReviewPropsType) => {
       <InnerLayout>
         <ul className="flex flex-col gap-4 mt-4">
           {currentArticles.map((article) => {
-            console.log('article._sys.costomorder', article._sys.customOrder)
             return (
               <li
                 key={article._id}
