@@ -26,7 +26,12 @@ export const BookReview = ({ bookReviewArticles }: BookReviewPropsType) => {
 
   if (bookReviewArticles.length === 0) return null
 
-  const paginatedArticles = chunk(bookReviewArticles, pageSize)
+  // カスタムオーダー順に並び替え
+  const sortedArticles = [...bookReviewArticles].sort((a, b) => {
+    return b._sys.customOrder - a._sys.customOrder
+  })
+
+  const paginatedArticles = chunk(sortedArticles, pageSize)
   const currentArticles = paginatedArticles[activePage - 1] || []
 
   return (
@@ -35,6 +40,7 @@ export const BookReview = ({ bookReviewArticles }: BookReviewPropsType) => {
       <InnerLayout>
         <ul className="flex flex-col gap-4 mt-4">
           {currentArticles.map((article) => {
+            console.log('article._sys.costomorder', article._sys.customOrder)
             return (
               <li
                 key={article._id}

@@ -26,7 +26,12 @@ export const Blog = ({ blogArticles }: BlogType) => {
 
   if (blogArticles.length === 0) return null
 
-  const paginatedArticles = chunk(blogArticles, pageSize)
+  // カスタムオーダー順に並び替え
+  const sortedArticles = [...blogArticles].sort((a, b) => {
+    return b._sys.customOrder - a._sys.customOrder
+  })
+
+  const paginatedArticles = chunk(sortedArticles, pageSize)
   const currentArticles = paginatedArticles[activePage - 1] || []
 
   return (
