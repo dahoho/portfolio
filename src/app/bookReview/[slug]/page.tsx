@@ -1,6 +1,7 @@
 import { ContainerLayout } from '@/app/components/layout/containerLayout'
 import { ShareButton } from '@/app/components/shareButton'
-import { ButtonItem, Heading } from '@/app/lib/mantine'
+import { LinkButton } from '@/app/components/ui/linkButton'
+import { Heading } from '@/app/lib/mantine'
 import {
   getBookReviewArticleBySlug,
   getBookReviewArticles,
@@ -40,7 +41,7 @@ const detailPage = tv({
     imageWrapper: ['w-full', 'h-40', 'sm:h-64', 'relative', '-z-10'],
     time: ['mt-8', 'block', 'text-center'],
     contentWrapper: ['mt-8', 'sm:mt-20'],
-    backButton: ['mt-20', 'text-center'],
+    backButton: ['mt-20', 'flex', 'justify-center'],
     url: ['underline', 'sm:hover:no-underline'],
     textLink: ['mt-4'],
     content: [
@@ -119,7 +120,7 @@ export default async function Article({ params }: ParamsType) {
         </div>
       </div>
       <div className={backButton()}>
-        <ButtonItem>Back</ButtonItem>
+        <LinkButton path="/">トップに戻る</LinkButton>
       </div>
       <ShareButton slug={article.slug} title={article.title} />
     </ContainerLayout>

@@ -1,5 +1,5 @@
 import { ContainerLayout } from '@/app/components/layout/containerLayout'
-import { ButtonItem } from '@/app/lib/mantine'
+import { LinkButton } from '@/app/components/ui/linkButton'
 
 const Privacy = () => {
   return (
@@ -8,8 +8,8 @@ const Privacy = () => {
         <p className="leading-8">
           当サイトでは、Googleによるアクセス解析ツール「Googleアナリティクス」を使用しています。このGoogleアナリティクスはデータの収集のためにCookieを使用しています。このデータは匿名で収集されており、個人を特定するものではありません。
         </p>
-        <div className="text-center mt-20">
-          <ButtonItem>Back</ButtonItem>
+        <div className="mt-20 flex justify-center">
+          <LinkButton path="/">トップに戻る</LinkButton>
         </div>
       </ContainerLayout>
     </>

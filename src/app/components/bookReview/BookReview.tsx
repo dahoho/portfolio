@@ -2,10 +2,12 @@
 
 import { InnerLayout } from '@/app/components/layout/inner'
 import { Section } from '@/app/components/layout/section'
+import { LinkButton } from '@/app/components/ui/linkButton'
 import { Heading, PaginationItem } from '@/app/lib/mantine'
 import { ArticleType } from '@/app/types/article'
 import dayjs from 'dayjs'
 import Link from 'next/link'
+import { usePathname } from 'next/navigation'
 import { useState } from 'react'
 
 type BookReviewPropsType = {
@@ -21,8 +23,10 @@ const chunk = <T,>(array: T[], size: number): T[][] => {
 }
 
 export const BookReview = ({ bookReviewArticles }: BookReviewPropsType) => {
+  const pathname = usePathname()
   const [activePage, setActivePage] = useState(1)
-  const pageSize = 4
+
+  const pageSize = pathname === '/' ? 5 : 10
 
   if (bookReviewArticles.length === 0) return null
 
@@ -62,11 +66,15 @@ export const BookReview = ({ bookReviewArticles }: BookReviewPropsType) => {
           })}
         </ul>
         <div className="flex justify-center mt-8">
-          <PaginationItem
-            total={paginatedArticles.length}
-            value={activePage}
-            onChange={setActivePage}
-          />
+          {pathname === '/' ? (
+            <LinkButton path="/bookReview">もっとみる</LinkButton>
+          ) : (
+            <PaginationItem
+              total={paginatedArticles.length}
+              value={activePage}
+              onChange={setActivePage}
+            />
+          )}
         </div>
       </InnerLayout>
     </Section>

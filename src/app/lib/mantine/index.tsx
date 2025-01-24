@@ -1,5 +1,4 @@
 export { AppMantineProvider } from './AppMantineProvider'
-export { ButtonItem } from './ButtonItem'
 export { Heading } from './Heading'
 export { PaginationItem } from './PaginationItem'
 export { ThemeSwitch } from './ThemeSwitch'

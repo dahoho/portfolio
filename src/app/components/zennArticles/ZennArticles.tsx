@@ -2,9 +2,12 @@
 
 import { InnerLayout } from '@/app/components/layout/inner'
 import { Section } from '@/app/components/layout/section'
+import { LinkButton } from '@/app/components/ui/linkButton'
+
 import { Heading, PaginationItem } from '@/app/lib/mantine'
 import dayjs from 'dayjs'
 import Image from 'next/image'
+import { usePathname } from 'next/navigation'
 import { useState } from 'react'
 
 type ZennArticleType = {
@@ -30,7 +33,11 @@ const chunk = <T,>(array: T[], size: number): T[][] => {
 }
 
 export const ZennArticles = ({ zennArticles }: ArticlesProps) => {
-  const articles: ZennArticleType[] = zennArticles.articles.slice(0, 10)
+  const pathname = usePathname()
+  const articles: ZennArticleType[] =
+    pathname === '/'
+      ? zennArticles.articles.slice(0, 5)
+      : zennArticles.articles.slice(0, 10)
 
   const [activePage, setActivePage] = useState(1)
   const pageSize = 4
@@ -72,11 +79,15 @@ export const ZennArticles = ({ zennArticles }: ArticlesProps) => {
           })}
         </ul>
         <div className="flex justify-center mt-8">
-          <PaginationItem
-            total={paginatedArticles.length}
-            value={activePage}
-            onChange={setActivePage}
-          />
+          {pathname === '/' ? (
+            <LinkButton path="/zenn">もっとみる</LinkButton>
+          ) : (
+            <PaginationItem
+              total={paginatedArticles.length}
+              value={activePage}
+              onChange={setActivePage}
+            />
+          )}
         </div>
       </InnerLayout>
     </Section>
