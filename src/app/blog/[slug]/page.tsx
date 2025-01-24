@@ -5,7 +5,6 @@ import { Heading } from '@/app/lib/mantine'
 import { getBlogArticleBySlug, getBlogArticles } from '@/app/lib/newt/Blog'
 import { formatDate } from '@/app/utils/dateFormat'
 import type { Metadata } from 'next'
-import Image from 'next/image'
 import { tv } from 'tailwind-variants'
 
 type ParamsType = {
@@ -35,8 +34,7 @@ export const generateMetadata = async ({
 
 const detailPage = tv({
   slots: {
-    imageWrapper: ['w-full', 'h-40', 'sm:h-64', 'relative', '-z-10'],
-    time: ['mt-8', 'block', 'text-center'],
+    time: ['mt-4', 'block', 'text-center'],
     contentWrapper: ['mt-8', 'sm:mt-20'],
     backButton: ['mt-20', 'flex', 'justify-center'],
     content: [
@@ -72,26 +70,16 @@ export default async function Blog({ params }: ParamsType) {
   const { slug } = await params
   const article = await getBlogArticleBySlug(slug)
   if (!article) return
-  const { content, imageWrapper, time, contentWrapper, backButton } =
-    detailPage()
+  const { content, time, contentWrapper, backButton } = detailPage()
 
   return (
     <ContainerLayout>
-      <div className={imageWrapper()}>
-        <Image
-          src={article.coverImage.src}
-          alt={article.coverImage.altText}
-          layout="fill"
-          style={{
-            objectFit: 'cover',
-          }}
-        />
-      </div>
-      <time dateTime={formatDate(article._sys.createdAt)} className={time()}>
-        {formatDate(article._sys.createdAt)}に公開
-      </time>
+      <div className="text-7xl text-center">{article.emoji.value}</div>
       <div className={contentWrapper()}>
         <Heading order={2}>{article.title}</Heading>
+        <time dateTime={formatDate(article._sys.createdAt)} className={time()}>
+          {formatDate(article._sys.createdAt)}に公開
+        </time>
         <div className={content()}>
           <div dangerouslySetInnerHTML={{ __html: article.body }} />
         </div>

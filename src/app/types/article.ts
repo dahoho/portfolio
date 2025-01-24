@@ -6,6 +6,10 @@ export type ArticleType = {
     createdAt: string
     updatedAt: string
   }
+  emoji: {
+    type: string
+    value: string
+  }
   title: string
   slug: string
   bookUrl: string

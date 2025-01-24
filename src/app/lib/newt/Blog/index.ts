@@ -19,10 +19,10 @@ export const getBlogArticles = cache(async () => {
         'title',
         'slug',
         'body',
-        'coverImage',
         'tags',
         '_sys',
         'bookUrl',
+        'emoji',
       ],
     },
   })
@@ -40,10 +40,10 @@ export const getBlogArticleBySlug = cache(async (slug: string) => {
         'title',
         'slug',
         'body',
-        'coverImage',
         'tags',
         '_sys',
         'bookUrl',
+        'emoji',
       ],
     },
   })

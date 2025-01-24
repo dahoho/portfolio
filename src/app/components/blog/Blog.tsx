@@ -49,14 +49,16 @@ export const Blog = ({ blogArticles }: BlogType) => {
                 className="bg-card dark:bg-cardDark rounded-md"
               >
                 <Link href={`blog/${article.slug}`} className="block p-3">
-                  <p className="font-bold">{article.title}</p>
+                  <p className="font-bold flex gap-2">
+                    <span>{article.emoji.value}</span>
+                    {article.title}
+                  </p>
                   <time
                     dateTime={dayjs(article._sys.createdAt).format(
                       'YYYY-MM-DD',
                     )}
                     className="text-xs mt-2 flex gap-1 items-center"
                   >
-                    <span className="text-xs">✍️</span>
                     {dayjs(article._sys.createdAt).format('YYYY-MM-DD')}
                   </time>
                 </Link>
