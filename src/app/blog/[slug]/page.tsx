@@ -63,6 +63,7 @@ const detailPage = tv({
       'text-text',
       'leading-7',
       'prose-a:text-accent',
+      'prose-a:break-all',
     ],
   },
 })

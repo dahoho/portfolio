@@ -1,5 +1,6 @@
 import { BookReview } from '@/app/components/bookReview'
 import { ContainerLayout } from '@/app/components/layout/containerLayout'
+import { LinkButton } from '@/app/components/ui/linkButton'
 import { getBookReviewArticles } from '@/app/lib/newt/BookReview'
 
 const bookReviewArticles = await getBookReviewArticles()
@@ -8,6 +9,9 @@ const BookReviewPage = () => {
   return (
     <ContainerLayout>
       <BookReview bookReviewArticles={bookReviewArticles} />
+      <div className="mt-20 flex justify-center">
+        <LinkButton path="/">トップに戻る</LinkButton>
+      </div>
     </ContainerLayout>
   )
 }
