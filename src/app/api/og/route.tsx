@@ -61,25 +61,12 @@ export const GET = (req: NextRequest) => {
                   fontWeight: 'bold',
                   color: '#000',
                   padding: '0 120px',
-                  lineHeight: 1.3,
+                  lineHeight: 1.5,
                   marginBottom: '30px',
                   wordWrap: 'break-word',
                 }}
               >
                 {title}
-              </div>
-              <div
-                style={{
-                  width: '100%',
-                  fontSize: 40,
-                  fontStyle: 'normal',
-                  fontWeight: 'bold',
-                  color: '#000',
-                  padding: '0 120px',
-                  lineHeight: 1.3,
-                }}
-              >
-                ✏️ Hodii
               </div>
             </div>
           </div>
