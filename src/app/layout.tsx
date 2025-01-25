@@ -16,7 +16,7 @@ const noto = Noto_Sans_JP({
 
 export const metadata: Metadata = {
   title: 'portfolio',
-  description: "'hody's portfolio site",
+  description: 'hodii portfolio site',
 }
 
 const RootLayout = ({

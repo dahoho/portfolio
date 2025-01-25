@@ -12,7 +12,7 @@ export const Footer = () => {
       >
         プライバシーポリシー
       </Link>
-      &copy; {currentYear} Hody
+      &copy; {currentYear} hodii
     </footer>
   )
 }
