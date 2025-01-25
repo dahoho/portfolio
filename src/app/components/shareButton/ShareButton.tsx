@@ -15,9 +15,9 @@ export const ShareButton = (props: Props) => {
 
   const twitterLink = `https://twitter.com/intent/tweet?text=${encodeURIComponent(
     title,
-  )}&url=${PORTFOLIO_URL}articles/${slug}/`
-  const facebookLink = `https://www.facebook.com/sharer.php?u=${PORTFOLIO_URL}articles/${slug}/`
-  const hatenaLink = `https://b.hatena.ne.jp/entry/${PORTFOLIO_URL}articles/${slug}/`
+  )}&url=${PORTFOLIO_URL}blog/${slug}/`
+  const facebookLink = `https://www.facebook.com/sharer.php?u=${PORTFOLIO_URL}blog/${slug}/`
+  const hatenaLink = `https://b.hatena.ne.jp/entry/${PORTFOLIO_URL}blog/${slug}/`
 
   return (
     <div className="bg-card rounded-md mt-20 p-6">
