@@ -8,11 +8,16 @@ import {
 } from '@/app/lib/mantine'
 import { useTheme } from 'next-themes'
 import Link from 'next/link'
-import { useState } from 'react'
+import { useEffect, useState } from 'react'
 
 export const Header = () => {
   const { theme, setTheme } = useTheme()
   const [isMenuOpen, setIsMenuOpen] = useState(false)
+  const [burgerColor, setBurgerColor] = useState('#334155')
+
+  useEffect(() => {
+    setBurgerColor(theme === 'dark' ? '#f8fafc' : '#334155')
+  }, [theme])
 
   const toggleMenu = () => setIsMenuOpen(!isMenuOpen)
 
@@ -29,7 +34,7 @@ export const Header = () => {
         <BurgerButton
           opened={isMenuOpen}
           toggle={toggleMenu}
-          color={theme === 'dark' ? '#f8fafc' : '#334155'}
+          color={burgerColor}
         />
         <DrawerMenu opened={isMenuOpen} close={toggleMenu}>
           <nav className="text-text">

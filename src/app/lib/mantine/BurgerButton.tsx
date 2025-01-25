@@ -11,7 +11,6 @@ export const BurgerButton = ({
   toggle,
   color,
 }: BurgerButtonPropsType) => {
-  console.log('color:', color)
   return (
     <Burger
       opened={opened}
