@@ -3,14 +3,20 @@ import { Burger } from '@mantine/core'
 type BurgerButtonPropsType = {
   opened: boolean
   toggle: () => void
+  color: string
 }
 
-export const BurgerButton = ({ opened, toggle }: BurgerButtonPropsType) => {
+export const BurgerButton = ({
+  opened,
+  toggle,
+  color,
+}: BurgerButtonPropsType) => {
+  console.log('color:', color)
   return (
     <Burger
       opened={opened}
       onClick={toggle}
-      color="#F8FAFC"
+      color={color}
       aria-label="Toggle navigation"
     />
   )

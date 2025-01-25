@@ -26,7 +26,11 @@ export const Header = () => {
   return (
     <header className="h-16 px-5 flex items-center justify-between sticky top-0 left-0  backdrop-blur">
       <div>
-        <BurgerButton opened={isMenuOpen} toggle={toggleMenu} />
+        <BurgerButton
+          opened={isMenuOpen}
+          toggle={toggleMenu}
+          color={theme === 'dark' ? '#f8fafc' : '#334155'}
+        />
         <DrawerMenu opened={isMenuOpen} close={toggleMenu}>
           <nav className="text-text">
             <ul className="list-none flex flex-col gap-5 text-xl mt-6">
