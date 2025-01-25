@@ -50,6 +50,7 @@ const detailPage = tv({
     textLink: ['mt-4'],
     content: [
       'prose',
+      'max-w-full',
       'mt-12',
       'prose-h2:dark:text-textDark',
       'prose-h2:text-text',

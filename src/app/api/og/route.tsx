@@ -79,7 +79,7 @@ export const GET = (req: NextRequest) => {
                   lineHeight: 1.3,
                 }}
               >
-                ✏️ Hody
+                ✏️ Hodii
               </div>
             </div>
           </div>
