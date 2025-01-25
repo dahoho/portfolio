@@ -12,6 +12,7 @@ import { useEffect, useState } from 'react'
 
 export const Header = () => {
   const { theme, setTheme } = useTheme()
+  const [mounted, setMounted] = useState(false)
   const [isMenuOpen, setIsMenuOpen] = useState(false)
   const [burgerColor, setBurgerColor] = useState('#334155')
 
@@ -27,6 +28,14 @@ export const Header = () => {
     { title: 'Blog', href: '/blog' },
     { title: 'BookReview', href: '/bookReview' },
   ]
+
+  useEffect(() => {
+    setMounted(true)
+  }, [])
+
+  if (!mounted) {
+    return null
+  }
 
   return (
     <header className="h-16 px-5 flex items-center justify-between sticky top-0 left-0  backdrop-blur">
