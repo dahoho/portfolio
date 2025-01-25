@@ -16,8 +16,9 @@ export const GET = (req: NextRequest) => {
       (
         <div
           style={{
+            position: 'relative',
             background:
-              ' linear-gradient(90deg, rgba(253, 146, 146, 1), rgba(209, 254, 212, 1));',
+              ' linear-gradient(90deg, rgba(251, 213, 251, 1), rgba(149, 233, 243, 1));',
             backgroundSize: '100% 100%',
             height: '100%',
             width: '100%',
@@ -31,31 +32,56 @@ export const GET = (req: NextRequest) => {
         >
           <div
             style={{
-              width: '100%',
-              fontSize: 60,
-              fontStyle: 'normal',
-              fontWeight: 'bold',
-              color: '#000',
-              padding: '0 120px',
-              lineHeight: 1.3,
-              marginBottom: '30px',
-              wordWrap: 'break-word',
+              width: '95%',
+              height: '90%',
+              background: '#fff',
+              display: 'flex',
+              justifyContent: 'center',
+              position: 'absolute',
+              top: '50%',
+              left: '50%',
+              transform: 'translate(-50%, -50%)',
+              borderRadius: '20px',
             }}
           >
-            {title}
-          </div>
-          <div
-            style={{
-              width: '100%',
-              fontSize: 40,
-              fontStyle: 'normal',
-              fontWeight: 'bold',
-              color: '#000',
-              padding: '0 120px',
-              lineHeight: 1.3,
-            }}
-          >
-            ✏️ Hody
+            <div
+              style={{
+                width: '100%',
+                display: 'flex',
+                flexDirection: 'column',
+                alignItems: 'center',
+                justifyContent: 'center',
+              }}
+            >
+              <div
+                style={{
+                  width: '100%',
+                  fontSize: 60,
+                  fontStyle: 'normal',
+                  fontWeight: 'bold',
+                  color: '#000',
+                  padding: '0 120px',
+                  lineHeight: 1.3,
+                  marginBottom: '30px',
+                  wordWrap: 'break-word',
+                }}
+              >
+                {title}
+              </div>
+              <div
+                style={{
+                  width: '100%',
+                  fontSize: 40,
+                  fontStyle: 'normal',
+                  fontWeight: 'bold',
+                  color: '#000',
+                  padding: '0 120px',
+                  lineHeight: 1.3,
+                }}
+              >
+                ✏️ Hody
+              </div>
+            </div>
           </div>
         </div>
       ),
