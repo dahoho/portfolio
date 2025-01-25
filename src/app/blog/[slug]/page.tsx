@@ -5,6 +5,10 @@ import { Heading } from '@/app/lib/mantine'
 import { getBlogArticleBySlug, getBlogArticles } from '@/app/lib/newt/Blog'
 import { formatDate } from '@/app/utils/dateFormat'
 import type { Metadata } from 'next'
+import { ClassAttributes, HTMLAttributes } from 'react'
+import ReactMarkdown, { ExtraProps } from 'react-markdown'
+import SyntaxHighlighter from 'react-syntax-highlighter/dist/esm/default-highlight'
+import { monokaiSublime } from 'react-syntax-highlighter/dist/esm/styles/hljs'
 import { tv } from 'tailwind-variants'
 
 type ParamsType = {
@@ -72,6 +76,47 @@ export default async function Blog({ params }: ParamsType) {
   if (!article) return
   const { content, time, contentWrapper, backButton } = detailPage()
 
+  const Pre = ({
+    children,
+    ...props
+  }: ClassAttributes<HTMLPreElement> &
+    HTMLAttributes<HTMLPreElement> &
+    ExtraProps) => {
+    if (!children || typeof children !== 'object') {
+      return <code {...props}>{children}</code>
+    }
+    const childType = 'type' in children ? children.type : ''
+    if (childType !== 'code') {
+      return <code {...props}>{children}</code>
+    }
+
+    const childProps =
+      'props' in children
+        ? (children.props as { className?: string; children?: React.ReactNode })
+        : {}
+    const { className, children: code } = childProps
+    const classList = className ? className.split(':') : []
+    const language = classList[0]?.replace('language-', '')
+    const fileName = classList[1]
+
+    return (
+      <>
+        {fileName && (
+          <span className="block bg-black px-3 py-4 rounded-t-md text-xs">
+            {fileName}
+          </span>
+        )}
+        <SyntaxHighlighter
+          language={language}
+          style={monokaiSublime}
+          className={fileName ? 'rounded-t-none mt-0' : ''}
+        >
+          {String(code).replace(/\n$/, '')}
+        </SyntaxHighlighter>
+      </>
+    )
+  }
+
   return (
     <ContainerLayout>
       <div className="text-7xl text-center">{article.emoji.value}</div>
@@ -81,7 +126,13 @@ export default async function Blog({ params }: ParamsType) {
           {formatDate(article._sys.createdAt)}に公開
         </time>
         <div className={content()}>
-          <div dangerouslySetInnerHTML={{ __html: article.body }} />
+          <ReactMarkdown
+            components={{
+              pre: Pre,
+            }}
+          >
+            {article.body}
+          </ReactMarkdown>
         </div>
       </div>
       <div className={backButton()}>

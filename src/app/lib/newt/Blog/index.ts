@@ -24,6 +24,9 @@ export const getBlogArticles = cache(async () => {
         'bookUrl',
         'emoji',
       ],
+      body: {
+        fmt: 'text',
+      },
     },
   })
   return items
@@ -45,6 +48,9 @@ export const getBlogArticleBySlug = cache(async (slug: string) => {
         'bookUrl',
         'emoji',
       ],
+      body: {
+        fmt: 'text',
+      },
     },
   })
   return article
