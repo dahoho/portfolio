@@ -30,9 +30,28 @@ export const generateMetadata = async ({
   const { slug } = await params
   const article = await getBlogArticleBySlug(slug)
 
+  const ogImageUrl = new URL(
+    `/api/og?title=${encodeURIComponent(article?.title || '')}`,
+    process.env.NEXT_PUBLIC_BASE_URL,
+  ).toString()
+
   return {
     title: `${article?.title} | portfolio`,
     description: `ブログページです`,
+    openGraph: {
+      type: 'article',
+      title: article?.title,
+      description: `ブログページです`,
+      url: `${process.env.NEXT_PUBLIC_BASE_URL}/blog/${slug}`,
+      images: [
+        {
+          url: ogImageUrl,
+          width: 1200,
+          height: 630,
+          alt: article?.title,
+        },
+      ],
+    },
   }
 }
 
