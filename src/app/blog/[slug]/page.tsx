@@ -52,6 +52,12 @@ export const generateMetadata = async ({
         },
       ],
     },
+    twitter: {
+      card: 'summary_large_image',
+      title: article?.title,
+      description: `ブログページです`,
+      images: [ogImageUrl],
+    },
   }
 }
 
