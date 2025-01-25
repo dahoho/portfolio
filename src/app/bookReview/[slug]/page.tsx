@@ -34,9 +34,34 @@ export const generateMetadata = async ({
   const { slug } = await params
   const article = await getBookReviewArticleBySlug(slug)
 
+  const ogImageUrl = new URL(
+    `/api/og?title=${encodeURIComponent(article?.title || '')}`,
+    process.env.NEXT_PUBLIC_BASE_URL,
+  ).toString()
+
   return {
     title: `${article?.title} | portfolio`,
     description: `${article?.title}の要約・メモページです`,
+    openGraph: {
+      type: 'article',
+      title: `${article?.title} | portfolio`,
+      description: `${article?.title}の要約・メモページです`,
+      url: `${process.env.NEXT_PUBLIC_BASE_URL}/bookReview/${slug}`,
+      images: [
+        {
+          url: ogImageUrl,
+          width: 1200,
+          height: 630,
+          alt: article?.title,
+        },
+      ],
+    },
+    twitter: {
+      card: 'summary_large_image',
+      title: `${article?.title} | portfolio`,
+      description: `${article?.title}の要約・メモページです`,
+      images: [ogImageUrl],
+    },
   }
 }
 
