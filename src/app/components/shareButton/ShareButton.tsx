@@ -4,20 +4,21 @@ import Image from 'next/image'
 type Props = {
   slug: string
   title: string
+  category: string
 }
 
 export const ShareButton = (props: Props) => {
-  const { slug, title } = props
+  const { slug, title, category } = props
 
-  if (!slug || !title) {
+  if (!slug || !title || !category) {
     return null
   }
 
   const twitterLink = `https://twitter.com/intent/tweet?text=${encodeURIComponent(
     title,
-  )}&url=${PORTFOLIO_URL}blog/${slug}/`
-  const facebookLink = `https://www.facebook.com/sharer.php?u=${PORTFOLIO_URL}blog/${slug}/`
-  const hatenaLink = `https://b.hatena.ne.jp/entry/${PORTFOLIO_URL}blog/${slug}/`
+  )}&url=${PORTFOLIO_URL}${category}/${slug}/`
+  const facebookLink = `https://www.facebook.com/sharer.php?u=${PORTFOLIO_URL}${category}/${slug}/`
+  const hatenaLink = `https://b.hatena.ne.jp/entry/${PORTFOLIO_URL}${category}/${slug}/`
 
   return (
     <div className="bg-card rounded-md mt-20 p-6">

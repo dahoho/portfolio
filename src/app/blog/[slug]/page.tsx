@@ -166,7 +166,7 @@ export default async function Blog({ params }: ParamsType) {
       <div className={backButton()}>
         <LinkButton path="/">トップに戻る</LinkButton>
       </div>
-      <ShareButton slug={article.slug} title={article.title} />
+      <ShareButton slug={article.slug} title={article.title} category="blog" />
     </ContainerLayout>
   )
 }
