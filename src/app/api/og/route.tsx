@@ -16,7 +16,8 @@ export const GET = (req: NextRequest) => {
       (
         <div
           style={{
-            backgroundColor: '#fff',
+            background:
+              ' linear-gradient(90deg, rgba(253, 146, 146, 1), rgba(209, 254, 212, 1));',
             backgroundSize: '100% 100%',
             height: '100%',
             width: '100%',
