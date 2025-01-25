@@ -1,1 +1,1 @@
-export const PORTFOLIO_URL = 'https://portfolio-dahohos-projects.vercel.app/'
+export const PORTFOLIO_URL = 'https://www.hodii.dev/'
