@@ -24,6 +24,9 @@ export const getBookReviewArticles = cache(async () => {
         '_sys',
         'bookUrl',
       ],
+      body: {
+        fmt: 'text',
+      },
     },
   })
   return items
@@ -45,6 +48,9 @@ export const getBookReviewArticleBySlug = cache(async (slug: string) => {
         '_sys',
         'bookUrl',
       ],
+      body: {
+        fmt: 'text',
+      },
     },
   })
   return article
