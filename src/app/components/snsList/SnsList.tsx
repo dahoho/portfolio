@@ -10,7 +10,7 @@ const SNS_LIST_ITEM = [
   {
     iconPath: '/x.png',
     iconPathDark: '/x-dark.svg',
-    url: 'https://x.com/hody820',
+    url: 'https://x.com/hodii0820',
     alt: 'X',
   },
   {
