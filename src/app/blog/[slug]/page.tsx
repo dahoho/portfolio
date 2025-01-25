@@ -68,6 +68,7 @@ const detailPage = tv({
     backButton: ['mt-20', 'flex', 'justify-center'],
     content: [
       'prose',
+      'max-w-full',
       'mt-12',
       'prose-h2:dark:text-textDark',
       'prose-h2:text-text',
@@ -146,7 +147,9 @@ export default async function Blog({ params }: ParamsType) {
     <ContainerLayout>
       <div className="text-7xl text-center">{article.emoji.value}</div>
       <div className={contentWrapper()}>
-        <Heading order={2}>{article.title}</Heading>
+        <Heading order={2}>
+          <span className="w-fit mx-auto block">{article.title}</span>
+        </Heading>
         <time dateTime={formatDate(article._sys.createdAt)} className={time()}>
           {formatDate(article._sys.createdAt)}に公開
         </time>

@@ -23,9 +23,9 @@ export const Header = () => {
 
   const NAV_ITEMS = [
     { title: 'Home', href: '/' },
-    { title: 'Zenn', href: 'zenn' },
-    { title: 'Blog', href: 'blog' },
-    { title: 'BookReview', href: 'bookReview' },
+    { title: 'Zenn', href: '/zenn' },
+    { title: 'Blog', href: '/blog' },
+    { title: 'BookReview', href: '/bookReview' },
   ]
 
   return (

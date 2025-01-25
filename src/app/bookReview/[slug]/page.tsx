@@ -152,7 +152,11 @@ export default async function Article({ params }: ParamsType) {
         {formatDate(article._sys.createdAt)}に公開
       </time>
       <div className={contentWrapper()}>
-        <Heading order={2}>{`【要約】${article.title}`}</Heading>
+        <Heading order={2}>
+          <span className="w-fit mx-auto block">
+            {`【要約】${article.title}`}
+          </span>
+        </Heading>
         <p className={textLink()}>
           Amazon：
           <a
