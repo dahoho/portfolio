@@ -1,4 +1,6 @@
 export { AppMantineProvider } from './AppMantineProvider'
+export { BurgerButton } from './BurgerButton'
+export { DrawerMenu } from './DrawerMenu'
 export { Heading } from './Heading'
 export { PaginationItem } from './PaginationItem'
 export { ThemeSwitch } from './ThemeSwitch'
