@@ -5,6 +5,8 @@ import { Section } from '@/app/components/layout/section'
 import { LinkButton } from '@/app/components/ui/linkButton'
 import { Heading, PaginationItem } from '@/app/lib/mantine'
 import { ArticleType } from '@/app/types/article'
+import { chunk } from '@/app/utils/chunk'
+import { sortArticlesByCustomOrder } from '@/app/utils/sortArticlesByCustomOrder'
 import dayjs from 'dayjs'
 import Link from 'next/link'
 import { usePathname } from 'next/navigation'
@@ -12,14 +14,6 @@ import { useState } from 'react'
 
 type BookReviewPropsType = {
   bookReviewArticles: ArticleType[]
-}
-
-const chunk = <T,>(array: T[], size: number): T[][] => {
-  if (!array.length) return []
-
-  const head = array.slice(0, size)
-  const tail = array.slice(size)
-  return [head, ...chunk(tail, size)]
 }
 
 export const BookReview = ({ bookReviewArticles }: BookReviewPropsType) => {
@@ -30,10 +24,7 @@ export const BookReview = ({ bookReviewArticles }: BookReviewPropsType) => {
 
   if (bookReviewArticles.length === 0) return null
 
-  // カスタムオーダー順に並び替え
-  const sortedArticles = [...bookReviewArticles].sort((a, b) => {
-    return b._sys.customOrder - a._sys.customOrder
-  })
+  const sortedArticles = sortArticlesByCustomOrder(bookReviewArticles)
 
   const paginatedArticles = chunk(sortedArticles, pageSize)
   const currentArticles = paginatedArticles[activePage - 1] || []
@@ -49,7 +40,10 @@ export const BookReview = ({ bookReviewArticles }: BookReviewPropsType) => {
                 key={article._id}
                 className="bg-card dark:bg-cardDark rounded-md"
               >
-                <Link href={`bookReview/${article.slug}`} className="block p-3">
+                <Link
+                  href={`/bookReview/${article.slug}`}
+                  className="block p-3"
+                >
                   <p className="font-bold">{`【要約】${article.title}`}</p>
                   <time
                     dateTime={dayjs(article._sys.createdAt).format(

@@ -1,7 +1,13 @@
+// 投稿記事の型定義
 export type ArticleType = {
   _id: string
   _sys: {
-    raw: [object]
+    raw: {
+      createdAt: string
+      updatedAt: string
+      firstPublishedAt: string
+      publishedAt: string
+    }
     customOrder: number
     createdAt: string
     updatedAt: string
@@ -12,9 +18,9 @@ export type ArticleType = {
   }
   title: string
   slug: string
-  bookUrl: string
+  bookUrl?: string
   body: string
-  coverImage: {
+  coverImage?: {
     _id: string
     altText: string
     description: string

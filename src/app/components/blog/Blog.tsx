@@ -5,6 +5,8 @@ import { Section } from '@/app/components/layout/section'
 import { LinkButton } from '@/app/components/ui/linkButton'
 import { Heading, PaginationItem } from '@/app/lib/mantine'
 import { ArticleType } from '@/app/types/article'
+import { chunk } from '@/app/utils/chunk'
+import { sortArticlesByCustomOrder } from '@/app/utils/sortArticlesByCustomOrder'
 import dayjs from 'dayjs'
 import Link from 'next/link'
 import { usePathname } from 'next/navigation'
@@ -14,14 +16,6 @@ type BlogType = {
   blogArticles: ArticleType[]
 }
 
-const chunk = <T,>(array: T[], size: number): T[][] => {
-  if (!array.length) return []
-
-  const head = array.slice(0, size)
-  const tail = array.slice(size)
-  return [head, ...chunk(tail, size)]
-}
-
 export const Blog = ({ blogArticles }: BlogType) => {
   const [activePage, setActivePage] = useState(1)
   const pathname = usePathname()
@@ -29,10 +23,8 @@ export const Blog = ({ blogArticles }: BlogType) => {
 
   if (blogArticles.length === 0) return null
 
-  // カスタムオーダー順に並び替え
-  const sortedArticles = [...blogArticles].sort((a, b) => {
-    return b._sys.customOrder - a._sys.customOrder
-  })
+  const sortedArticles = sortArticlesByCustomOrder(blogArticles)
+  console.log(sortedArticles)
 
   const paginatedArticles = chunk(sortedArticles, pageSize)
   const currentArticles = paginatedArticles[activePage - 1] || []
@@ -48,7 +40,7 @@ export const Blog = ({ blogArticles }: BlogType) => {
                 key={article._id}
                 className="bg-card dark:bg-cardDark rounded-md"
               >
-                <Link href={`blog/${article.slug}`} className="block p-3">
+                <Link href={`/blog/${article.slug}`} className="block p-3">
                   <p className="font-bold flex gap-2">
                     <span>{article.emoji.value}</span>
                     {article.title}

@@ -166,14 +166,16 @@ export default async function Article({ params }: ParamsType) {
   return (
     <ContainerLayout>
       <div className={imageWrapper()}>
-        <Image
-          src={article.coverImage.src}
-          alt={article.coverImage.altText}
-          layout="fill"
-          style={{
-            objectFit: 'contain',
-          }}
-        />
+        {article.coverImage && (
+          <Image
+            src={article.coverImage.src}
+            alt={article.coverImage.altText}
+            layout="fill"
+            style={{
+              objectFit: 'contain',
+            }}
+          />
+        )}
       </div>
       <time dateTime={formatDate(article._sys.createdAt)} className={time()}>
         {formatDate(article._sys.createdAt)}に公開
