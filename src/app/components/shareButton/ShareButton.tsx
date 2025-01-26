@@ -1,15 +1,17 @@
 import { NEXT_PUBLIC_BASE_URL } from '@/app/config'
 import Image from 'next/image'
 
-type Props = {
+type ShareButtonPropsType = {
   slug: string
   title: string
   category: string
 }
 
-export const ShareButton = (props: Props) => {
-  const { slug, title, category } = props
-
+export const ShareButton = ({
+  slug,
+  title,
+  category,
+}: ShareButtonPropsType) => {
   if (!slug || !title || !category) {
     return null
   }
