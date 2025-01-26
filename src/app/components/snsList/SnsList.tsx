@@ -28,7 +28,7 @@ const SNS_LIST_ITEM = [
 
 export const SnsList = () => {
   return (
-    <ul className="flex gap-4 leading-loose mt-5">
+    <ul className="flex gap-4 leading-loose mt-8">
       {SNS_LIST_ITEM.map((item) => (
         <li key={item.url}>
           <a href={item.url} target="_blank" rel="noopener noreferrer">

@@ -32,7 +32,7 @@ export const Profile = () => {
     <Section>
       <Heading order={2}>Profile</Heading>
       <InnerLayout>
-        <div className="flex flex-col gap-2">
+        <div className="flex flex-col gap-6">
           {PROFILE_ITEMS.map((item) => {
             return (
               <dl key={item.key} className="flex">
