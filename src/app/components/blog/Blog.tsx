@@ -24,7 +24,6 @@ export const Blog = ({ blogArticles }: BlogType) => {
   if (blogArticles.length === 0) return null
 
   const sortedArticles = sortArticlesByCustomOrder(blogArticles)
-  console.log(sortedArticles)
 
   const paginatedArticles = chunk(sortedArticles, pageSize)
   const currentArticles = paginatedArticles[activePage - 1] || []
