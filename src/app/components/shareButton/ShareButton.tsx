@@ -1,4 +1,4 @@
-import { PORTFOLIO_URL } from '@/app/constants'
+import { NEXT_PUBLIC_BASE_URL } from '@/app/config'
 import Image from 'next/image'
 
 type Props = {
@@ -14,11 +14,12 @@ export const ShareButton = (props: Props) => {
     return null
   }
 
+  const currentUrl = `${NEXT_PUBLIC_BASE_URL}/${category}/${slug}/`
   const twitterLink = `https://twitter.com/intent/tweet?text=${encodeURIComponent(
     title,
-  )}&url=${PORTFOLIO_URL}${category}/${slug}/`
-  const facebookLink = `https://www.facebook.com/sharer.php?u=${PORTFOLIO_URL}${category}/${slug}/`
-  const hatenaLink = `https://b.hatena.ne.jp/entry/${PORTFOLIO_URL}${category}/${slug}/`
+  )}&url=${currentUrl}`
+  const facebookLink = `https://www.facebook.com/sharer.php?u=${currentUrl}`
+  const hatenaLink = `https://b.hatena.ne.jp/entry/${currentUrl}`
 
   return (
     <div className="bg-card rounded-md mt-20 p-6">

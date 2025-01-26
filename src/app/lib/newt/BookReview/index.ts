@@ -1,11 +1,12 @@
+import { NEWT_CDN_API_TOKEN, NEWT_SPACE_UID } from '@/app/config'
 import { ArticleType } from '@/app/types/article'
 import { createClient } from 'newt-client-js'
 import { cache } from 'react'
 import 'server-only'
 
 const client = createClient({
-  spaceUid: process.env.NEWT_SPACE_UID + '',
-  token: process.env.NEWT_CDN_API_TOKEN + '',
+  spaceUid: NEWT_SPACE_UID + '',
+  token: NEWT_CDN_API_TOKEN + '',
   apiType: 'cdn',
 })
 

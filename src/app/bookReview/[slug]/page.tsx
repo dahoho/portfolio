@@ -1,6 +1,7 @@
 import { ContainerLayout } from '@/app/components/layout/containerLayout'
 import { ShareButton } from '@/app/components/shareButton'
 import { LinkButton } from '@/app/components/ui/linkButton'
+import { NEXT_PUBLIC_BASE_URL } from '@/app/config'
 import { Heading } from '@/app/lib/mantine'
 import {
   getBookReviewArticleBySlug,
@@ -36,7 +37,7 @@ export const generateMetadata = async ({
 
   const ogImageUrl = new URL(
     `/api/og?title=${encodeURIComponent(article?.title || '')}`,
-    process.env.NEXT_PUBLIC_BASE_URL,
+    NEXT_PUBLIC_BASE_URL,
   ).toString()
 
   return {
@@ -46,7 +47,7 @@ export const generateMetadata = async ({
       type: 'article',
       title: `${article?.title} | portfolio`,
       description: `${article?.title}の要約・メモページです`,
-      url: `${process.env.NEXT_PUBLIC_BASE_URL}/bookReview/${slug}`,
+      url: `${NEXT_PUBLIC_BASE_URL}/bookReview/${slug}`,
       images: [
         {
           url: ogImageUrl,

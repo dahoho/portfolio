@@ -1,3 +1,5 @@
+import { NEXT_PUBLIC_GA_ID } from '@/app/config'
+
 declare global {
   interface Window {
     // eslint-disable-next-line @typescript-eslint/no-explicit-any
@@ -5,7 +7,7 @@ declare global {
   }
 }
 
-export const GA_TAG_ID = process.env.NEXT_PUBLIC_GA_ID || ''
+export const GA_TAG_ID = NEXT_PUBLIC_GA_ID || ''
 
 export const IS_GATAG = GA_TAG_ID !== ''
 

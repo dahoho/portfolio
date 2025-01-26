@@ -1,6 +1,7 @@
 import { ContainerLayout } from '@/app/components/layout/containerLayout'
 import { ShareButton } from '@/app/components/shareButton'
 import { LinkButton } from '@/app/components/ui/linkButton'
+import { NEXT_PUBLIC_BASE_URL } from '@/app/config'
 import { Heading } from '@/app/lib/mantine'
 import { getBlogArticleBySlug, getBlogArticles } from '@/app/lib/newt/Blog'
 import { formatDate } from '@/app/utils/dateFormat'
@@ -32,7 +33,7 @@ export const generateMetadata = async ({
 
   const ogImageUrl = new URL(
     `/api/og?title=${encodeURIComponent(article?.title || '')}`,
-    process.env.NEXT_PUBLIC_BASE_URL,
+    NEXT_PUBLIC_BASE_URL,
   ).toString()
 
   return {
@@ -42,7 +43,7 @@ export const generateMetadata = async ({
       type: 'article',
       title: article?.title,
       description: `ブログページです`,
-      url: `${process.env.NEXT_PUBLIC_BASE_URL}/blog/${slug}`,
+      url: `${NEXT_PUBLIC_BASE_URL}/blog/${slug}`,
       images: [
         {
           url: ogImageUrl,
