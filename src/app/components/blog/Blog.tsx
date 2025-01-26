@@ -9,11 +9,11 @@ import { ArticleType } from '@/app/types/article'
 import dayjs from 'dayjs'
 import Link from 'next/link'
 
-type BlogType = {
+type BlogPropsType = {
   blogArticles: ArticleType[]
 }
 
-export const Blog = ({ blogArticles }: BlogType) => {
+export const Blog = ({ blogArticles }: BlogPropsType) => {
   const {
     activePage,
     setActivePage,
