@@ -27,12 +27,13 @@ type ArticlesProps = {
 
 export const ZennArticles = ({ zennArticles }: ArticlesProps) => {
   const pathname = usePathname()
-
   const isHomePage = pathname === '/'
   const articles = zennArticles.articles
 
   const [activePage, setActivePage] = useState(1)
-  const pageSize = 5
+  const TOP_PAGE_SIZE = 5
+  const OTHER_PAGE_SIZE = 10
+  const pageSize = isHomePage ? TOP_PAGE_SIZE : OTHER_PAGE_SIZE
 
   const paginatedArticles = chunk(articles, pageSize)
   const currentArticles = paginatedArticles[activePage - 1] || []

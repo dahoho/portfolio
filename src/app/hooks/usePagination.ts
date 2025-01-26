@@ -8,7 +8,9 @@ export const usePageNation = (articles: ArticleType[]) => {
   const [activePage, setActivePage] = useState(1)
   const pathname = usePathname()
   const isHomePage = pathname === '/'
-  const pageSize = isHomePage ? 5 : 10
+  const TOP_PAGE_SIZE = 5
+  const OTHER_PAGE_SIZE = 10
+  const pageSize = isHomePage ? TOP_PAGE_SIZE : OTHER_PAGE_SIZE
 
   const sortedArticles = sortArticlesByCustomOrder(articles)
 
