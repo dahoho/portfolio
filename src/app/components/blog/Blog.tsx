@@ -3,30 +3,26 @@
 import { InnerLayout } from '@/app/components/layout/inner'
 import { Section } from '@/app/components/layout/section'
 import { LinkButton } from '@/app/components/ui/linkButton'
+import { usePageNation } from '@/app/hooks/usePagination'
 import { Heading, PaginationItem } from '@/app/lib/mantine'
 import { ArticleType } from '@/app/types/article'
-import { chunk } from '@/app/utils/chunk'
-import { sortArticlesByCustomOrder } from '@/app/utils/sortArticlesByCustomOrder'
 import dayjs from 'dayjs'
 import Link from 'next/link'
-import { usePathname } from 'next/navigation'
-import { useState } from 'react'
 
 type BlogType = {
   blogArticles: ArticleType[]
 }
 
 export const Blog = ({ blogArticles }: BlogType) => {
-  const [activePage, setActivePage] = useState(1)
-  const pathname = usePathname()
-  const pageSize = pathname === '/' ? 5 : 10
+  const {
+    activePage,
+    setActivePage,
+    currentArticles,
+    paginatedArticles,
+    isHomePage,
+  } = usePageNation(blogArticles)
 
   if (blogArticles.length === 0) return null
-
-  const sortedArticles = sortArticlesByCustomOrder(blogArticles)
-
-  const paginatedArticles = chunk(sortedArticles, pageSize)
-  const currentArticles = paginatedArticles[activePage - 1] || []
 
   return (
     <Section>
@@ -58,7 +54,7 @@ export const Blog = ({ blogArticles }: BlogType) => {
           })}
         </ul>
         <div className="flex justify-center mt-8">
-          {pathname === '/' ? (
+          {isHomePage ? (
             <LinkButton path="/blog">もっとみる</LinkButton>
           ) : (
             <PaginationItem

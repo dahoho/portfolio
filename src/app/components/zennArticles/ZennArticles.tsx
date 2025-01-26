@@ -5,6 +5,7 @@ import { Section } from '@/app/components/layout/section'
 import { LinkButton } from '@/app/components/ui/linkButton'
 
 import { Heading, PaginationItem } from '@/app/lib/mantine'
+import { chunk } from '@/app/utils/chunk'
 import dayjs from 'dayjs'
 import Image from 'next/image'
 import { usePathname } from 'next/navigation'
@@ -24,23 +25,14 @@ type ArticlesProps = {
   }
 }
 
-const chunk = <T,>(array: T[], size: number): T[][] => {
-  if (!array.length) return []
-
-  const head = array.slice(0, size)
-  const tail = array.slice(size)
-  return [head, ...chunk(tail, size)]
-}
-
 export const ZennArticles = ({ zennArticles }: ArticlesProps) => {
   const pathname = usePathname()
-  const articles: ZennArticleType[] =
-    pathname === '/'
-      ? zennArticles.articles.slice(0, 5)
-      : zennArticles.articles.slice(0, 10)
+
+  const isHomePage = pathname === '/'
+  const articles = zennArticles.articles
 
   const [activePage, setActivePage] = useState(1)
-  const pageSize = 4
+  const pageSize = 5
 
   const paginatedArticles = chunk(articles, pageSize)
   const currentArticles = paginatedArticles[activePage - 1] || []
@@ -79,7 +71,7 @@ export const ZennArticles = ({ zennArticles }: ArticlesProps) => {
           })}
         </ul>
         <div className="flex justify-center mt-8">
-          {pathname === '/' ? (
+          {isHomePage ? (
             <LinkButton path="/zenn">もっとみる</LinkButton>
           ) : (
             <PaginationItem

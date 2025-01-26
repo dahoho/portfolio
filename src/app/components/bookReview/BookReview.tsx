@@ -3,31 +3,26 @@
 import { InnerLayout } from '@/app/components/layout/inner'
 import { Section } from '@/app/components/layout/section'
 import { LinkButton } from '@/app/components/ui/linkButton'
+import { usePageNation } from '@/app/hooks/usePagination'
 import { Heading, PaginationItem } from '@/app/lib/mantine'
 import { ArticleType } from '@/app/types/article'
-import { chunk } from '@/app/utils/chunk'
-import { sortArticlesByCustomOrder } from '@/app/utils/sortArticlesByCustomOrder'
 import dayjs from 'dayjs'
 import Link from 'next/link'
-import { usePathname } from 'next/navigation'
-import { useState } from 'react'
 
 type BookReviewPropsType = {
   bookReviewArticles: ArticleType[]
 }
 
 export const BookReview = ({ bookReviewArticles }: BookReviewPropsType) => {
-  const pathname = usePathname()
-  const [activePage, setActivePage] = useState(1)
-
-  const pageSize = pathname === '/' ? 5 : 10
+  const {
+    activePage,
+    setActivePage,
+    currentArticles,
+    paginatedArticles,
+    isHomePage,
+  } = usePageNation(bookReviewArticles)
 
   if (bookReviewArticles.length === 0) return null
-
-  const sortedArticles = sortArticlesByCustomOrder(bookReviewArticles)
-
-  const paginatedArticles = chunk(sortedArticles, pageSize)
-  const currentArticles = paginatedArticles[activePage - 1] || []
 
   return (
     <Section>
@@ -60,7 +55,7 @@ export const BookReview = ({ bookReviewArticles }: BookReviewPropsType) => {
           })}
         </ul>
         <div className="flex justify-center mt-8">
-          {pathname === '/' ? (
+          {isHomePage ? (
             <LinkButton path="/bookReview">もっとみる</LinkButton>
           ) : (
             <PaginationItem
