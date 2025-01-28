@@ -1,6 +1,6 @@
-import { ContainerLayout } from '@/app/components/layout/containerLayout'
-import { LinkButton } from '@/app/components/ui/linkButton'
-import { ZennArticles } from '@/app/components/zennArticles'
+import { ContainerLayout } from '@/components/layout/containerLayout'
+import { LinkButton } from '@/components/ui/linkButton'
+import { ZennArticles } from '@/components/zennArticles'
 
 const response = await fetch(
   'https://zenn.dev/api/articles?username=rh820&order=latest',

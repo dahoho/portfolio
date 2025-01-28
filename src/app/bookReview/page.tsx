@@ -1,7 +1,7 @@
-import { BookReview } from '@/app/components/bookReview'
-import { ContainerLayout } from '@/app/components/layout/containerLayout'
-import { LinkButton } from '@/app/components/ui/linkButton'
-import { getBookReviewArticles } from '@/app/lib/newt/BookReview'
+import { BookReview } from '@/components/bookReview'
+import { ContainerLayout } from '@/components/layout/containerLayout'
+import { LinkButton } from '@/components/ui/linkButton'
+import { getBookReviewArticles } from '@/lib/newt/BookReview'
 
 const bookReviewArticles = await getBookReviewArticles()
 

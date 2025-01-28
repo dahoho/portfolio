@@ -1,5 +1,5 @@
-import { ContainerLayout } from '@/app/components/layout/containerLayout'
-import { LinkButton } from '@/app/components/ui/linkButton'
+import { ContainerLayout } from '@/components/layout/containerLayout'
+import { LinkButton } from '@/components/ui/linkButton'
 
 const Privacy = () => {
   return (

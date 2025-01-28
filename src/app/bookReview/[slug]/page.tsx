@@ -1,13 +1,14 @@
-import { ContainerLayout } from '@/app/components/layout/containerLayout'
-import { ShareButton } from '@/app/components/shareButton'
-import { LinkButton } from '@/app/components/ui/linkButton'
-import { NEXT_PUBLIC_BASE_URL } from '@/app/config'
-import { Heading } from '@/app/lib/mantine'
+import { ContainerLayout } from '@/components/layout/containerLayout'
+import { ShareButton } from '@/components/shareButton'
+import { LinkButton } from '@/components/ui/linkButton'
+import { NEXT_PUBLIC_BASE_URL } from '@/config'
+import { Heading } from '@/lib/mantine'
 import {
   getBookReviewArticleBySlug,
   getBookReviewArticles,
-} from '@/app/lib/newt/BookReview'
-import { formatDate } from '@/app/utils/dateFormat'
+} from '@/lib/newt/BookReview'
+import { formatDate } from '@/utils/dateFormat'
+
 import type { Metadata } from 'next'
 import Image from 'next/image'
 import { ClassAttributes, HTMLAttributes } from 'react'

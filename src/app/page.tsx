@@ -1,11 +1,11 @@
-import { Blog } from '@/app/components/blog'
-import { BookReview } from '@/app/components/bookReview/BookReview'
-import { ContainerLayout } from '@/app/components/layout/containerLayout'
-import { Product } from '@/app/components/product'
-import { Profile } from '@/app/components/profile'
-import { ZennArticles } from '@/app/components/zennArticles'
-import { getBlogArticles } from '@/app/lib/newt/Blog'
-import { getBookReviewArticles } from '@/app/lib/newt/BookReview'
+import { Blog } from '@/components/blog'
+import { BookReview } from '@/components/bookReview'
+import { ContainerLayout } from '@/components/layout/containerLayout'
+import { Product } from '@/components/product'
+import { Profile } from '@/components/profile'
+import { ZennArticles } from '@/components/zennArticles'
+import { getBlogArticles } from '@/lib/newt/Blog'
+import { getBookReviewArticles } from '@/lib/newt/BookReview'
 
 const Home = async () => {
   const bookReviewArticles = await getBookReviewArticles()

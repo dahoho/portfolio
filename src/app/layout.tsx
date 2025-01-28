@@ -1,13 +1,12 @@
-import { AppMantineProvider } from '@/app/lib/mantine'
-import { AppThemeProvider } from '@/app/lib/themeProvider'
-
-import GoogleAnalytics from '@/app/components/GoogleAnalytics/GoogleAnalytics'
+import GoogleAnalytics from '@/components/GoogleAnalytics/GoogleAnalytics'
+import { AppMantineProvider } from '@/lib/mantine'
+import { AppThemeProvider } from '@/lib/themeProvider'
 import { ColorSchemeScript, mantineHtmlProps } from '@mantine/core'
 import '@mantine/core/styles.css'
 import type { Metadata } from 'next'
 import { Noto_Sans_JP } from 'next/font/google'
 import { Suspense } from 'react'
-import './styles/globals.css'
+import '../styles/globals.css'
 
 // Noto Sans JP フォントの設定
 const noto = Noto_Sans_JP({
