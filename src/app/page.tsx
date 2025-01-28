@@ -2,7 +2,6 @@ import { Blog } from '@/components/blog'
 import { BookReview } from '@/components/bookReview'
 import { ContainerLayout } from '@/components/layout/containerLayout'
 import { Product } from '@/components/product'
-import { Profile } from '@/components/profile'
 import { ZennArticles } from '@/components/zennArticles'
 import { getBlogArticles } from '@/lib/newt/Blog'
 import { getBookReviewArticles } from '@/lib/newt/BookReview'
@@ -19,7 +18,6 @@ const Home = async () => {
   return (
     <>
       <ContainerLayout>
-        <Profile />
         <ZennArticles zennArticles={zennArticles} />
         <Blog blogArticles={bookArticles} />
         <BookReview bookReviewArticles={bookReviewArticles} />
