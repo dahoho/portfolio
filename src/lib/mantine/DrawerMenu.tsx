@@ -17,6 +17,8 @@ export const DrawerMenu = ({
       onClose={close}
       withCloseButton={true}
       closeButtonProps={{ size: 'xl' }}
+      overlayProps={{ backgroundOpacity: 0.5, blur: 4 }}
+      size="xs"
     >
       {children}
     </Drawer>
