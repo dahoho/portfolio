@@ -38,7 +38,7 @@ export const generateMetadata = async ({
   ).toString()
 
   return {
-    title: `${article?.title} | portfolio`,
+    title: `${article?.title} | hodii.dev`,
     description: `ブログページです`,
     openGraph: {
       type: 'article',

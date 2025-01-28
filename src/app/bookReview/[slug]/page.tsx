@@ -42,11 +42,11 @@ export const generateMetadata = async ({
   ).toString()
 
   return {
-    title: `${article?.title} | portfolio`,
+    title: `${article?.title} | hodii.dev`,
     description: `${article?.title}の要約・メモページです`,
     openGraph: {
       type: 'article',
-      title: `${article?.title} | portfolio`,
+      title: `${article?.title} | hodii.dev`,
       description: `${article?.title}の要約・メモページです`,
       url: `${NEXT_PUBLIC_BASE_URL}/bookReview/${slug}`,
       images: [
@@ -60,7 +60,7 @@ export const generateMetadata = async ({
     },
     twitter: {
       card: 'summary_large_image',
-      title: `${article?.title} | portfolio`,
+      title: `${article?.title} | hodii.dev`,
       description: `${article?.title}の要約・メモページです`,
       images: [ogImageUrl],
     },
