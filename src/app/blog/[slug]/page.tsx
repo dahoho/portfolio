@@ -2,6 +2,7 @@ import { ContainerLayout } from '@/components/layout/containerLayout'
 import { ShareButton } from '@/components/shareButton'
 import { LinkButton } from '@/components/ui/linkButton'
 import { NEXT_PUBLIC_BASE_URL } from '@/config'
+import { SITE_NAME } from '@/constants'
 import { Heading } from '@/lib/mantine'
 import { getBlogArticleBySlug, getBlogArticles } from '@/lib/newt/Blog'
 import { formatDate } from '@/utils/dateFormat'
@@ -38,7 +39,7 @@ export const generateMetadata = async ({
   ).toString()
 
   return {
-    title: `${article?.title} | hodii.dev`,
+    title: `${article?.title} | ${SITE_NAME}`,
     description: `ブログページです`,
     openGraph: {
       type: 'article',

@@ -1,3 +1,4 @@
+import { SITE_NAME } from '@/constants'
 import dayjs from 'dayjs'
 import Link from 'next/link'
 
@@ -12,7 +13,7 @@ export const Footer = () => {
       >
         プライバシーポリシー
       </Link>
-      &copy; {currentYear} hodii.dev
+      &copy; {currentYear} {SITE_NAME}
     </footer>
   )
 }

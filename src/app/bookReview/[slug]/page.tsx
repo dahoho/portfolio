@@ -2,6 +2,7 @@ import { ContainerLayout } from '@/components/layout/containerLayout'
 import { ShareButton } from '@/components/shareButton'
 import { LinkButton } from '@/components/ui/linkButton'
 import { NEXT_PUBLIC_BASE_URL } from '@/config'
+import { SITE_NAME } from '@/constants'
 import { Heading } from '@/lib/mantine'
 import {
   getBookReviewArticleBySlug,
@@ -42,11 +43,11 @@ export const generateMetadata = async ({
   ).toString()
 
   return {
-    title: `${article?.title} | hodii.dev`,
+    title: `${article?.title} | ${SITE_NAME}`,
     description: `${article?.title}の要約・メモページです`,
     openGraph: {
       type: 'article',
-      title: `${article?.title} | hodii.dev`,
+      title: `${article?.title} | ${SITE_NAME}`,
       description: `${article?.title}の要約・メモページです`,
       url: `${NEXT_PUBLIC_BASE_URL}/bookReview/${slug}`,
       images: [
@@ -60,7 +61,7 @@ export const generateMetadata = async ({
     },
     twitter: {
       card: 'summary_large_image',
-      title: `${article?.title} | hodii.dev`,
+      title: `${article?.title} | ${SITE_NAME}`,
       description: `${article?.title}の要約・メモページです`,
       images: [ogImageUrl],
     },

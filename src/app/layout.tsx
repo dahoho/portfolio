@@ -1,4 +1,5 @@
 import GoogleAnalytics from '@/components/GoogleAnalytics/GoogleAnalytics'
+import { SITE_NAME } from '@/constants'
 import { AppMantineProvider } from '@/lib/mantine'
 import { AppThemeProvider } from '@/lib/themeProvider'
 import { ColorSchemeScript, mantineHtmlProps } from '@mantine/core'
@@ -14,8 +15,8 @@ const noto = Noto_Sans_JP({
 })
 
 export const metadata: Metadata = {
-  title: 'hodii.dev',
-  description: 'hodii.dev',
+  title: SITE_NAME,
+  description: SITE_NAME,
 }
 
 const RootLayout = ({
@@ -39,7 +40,7 @@ const RootLayout = ({
           sizes="180x180"
           href="/favicons/apple-touch-icon.png"
         />
-        <meta name="apple-mobile-web-app-title" content="hodii.dev" />
+        <meta name="apple-mobile-web-app-title" content={SITE_NAME} />
         <link rel="manifest" href="/favicons/site.webmanifest" />
         <Suspense fallback={null}>
           <GoogleAnalytics />

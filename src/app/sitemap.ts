@@ -1,3 +1,4 @@
+import { SITE_NAME } from '@/constants'
 import { getBlogArticles } from '@/lib/newt/Blog'
 import { getBookReviewArticles } from '@/lib/newt/BookReview'
 import { MetadataRoute } from 'next'
@@ -5,31 +6,31 @@ import { MetadataRoute } from 'next'
 const sitemap = async (): Promise<MetadataRoute.Sitemap> => {
   const defaultPages: MetadataRoute.Sitemap = [
     {
-      url: 'https://www.hodii.dev',
+      url: `https://www.${SITE_NAME}`,
       lastModified: new Date(),
       changeFrequency: 'monthly',
       priority: 1,
     },
     {
-      url: 'https://www.hodii.dev/zenn',
+      url: `https://www.${SITE_NAME}/zenn`,
       lastModified: new Date(),
       changeFrequency: 'monthly',
       priority: 0.8,
     },
     {
-      url: 'https://www.hodii.dev/blog',
+      url: `https://www.${SITE_NAME}/blog`,
       lastModified: new Date(),
       changeFrequency: 'weekly',
       priority: 0.5,
     },
     {
-      url: 'https://www.hodii.dev/bookReview',
+      url: `https://www.${SITE_NAME}/bookReview`,
       lastModified: new Date(),
       changeFrequency: 'weekly',
       priority: 0.5,
     },
     {
-      url: 'https://www.hodii.dev/privacy',
+      url: `https://www.${SITE_NAME}/privacy`,
       lastModified: new Date(),
       changeFrequency: 'monthly',
       priority: 1,
@@ -39,7 +40,7 @@ const sitemap = async (): Promise<MetadataRoute.Sitemap> => {
   const blogArticles = await getBlogArticles()
 
   const blogPages: MetadataRoute.Sitemap = blogArticles.map((article) => ({
-    url: `https://www.hodii.dev/blog/${article.slug}`,
+    url: `https://www.${SITE_NAME}/blog/${article.slug}`,
     lastModified: new Date(article._sys.createdAt),
   }))
 
@@ -47,7 +48,7 @@ const sitemap = async (): Promise<MetadataRoute.Sitemap> => {
 
   const bookReviewPages: MetadataRoute.Sitemap = bookReviewArticles.map(
     (article) => ({
-      url: `https://www.hodii.dev/bookReview/${article.slug}`,
+      url: `https://www.${SITE_NAME}/bookReview/${article.slug}`,
       lastModified: new Date(article._sys.createdAt),
     }),
   )
