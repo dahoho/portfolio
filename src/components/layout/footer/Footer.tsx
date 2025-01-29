@@ -12,7 +12,7 @@ export const Footer = () => {
       >
         プライバシーポリシー
       </Link>
-      &copy; {currentYear} hodii
+      &copy; {currentYear} hodii.dev
     </footer>
   )
 }
