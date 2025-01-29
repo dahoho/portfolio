@@ -28,6 +28,12 @@ const sitemap = async (): Promise<MetadataRoute.Sitemap> => {
       changeFrequency: 'weekly',
       priority: 0.5,
     },
+    {
+      url: 'https://www.hodii.dev/privacy',
+      lastModified: new Date(),
+      changeFrequency: 'monthly',
+      priority: 1,
+    },
   ]
 
   const blogArticles = await getBlogArticles()
