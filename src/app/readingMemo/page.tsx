@@ -1,14 +1,14 @@
-import { BookReview } from '@/components/bookReview'
 import { ContainerLayout } from '@/components/layout/containerLayout'
+import { ReadingMemo } from '@/components/readingMemo'
 import { LinkButton } from '@/components/ui/linkButton'
-import { getBookReviewArticles } from '@/lib/newt/BookReview'
+import { getReadingMemoArticles } from '@/lib/newt/ReadingMemo'
 
-const bookReviewArticles = await getBookReviewArticles()
+const readingMemoArticles = await getReadingMemoArticles()
 
-const BookReviewPage = () => {
+const ReadingMemoPage = () => {
   return (
     <ContainerLayout>
-      <BookReview bookReviewArticles={bookReviewArticles} />
+      <ReadingMemo readingMemoArticles={readingMemoArticles} />
       <div className="mt-20 flex justify-center">
         <LinkButton path="/">トップに戻る</LinkButton>
       </div>
@@ -16,4 +16,4 @@ const BookReviewPage = () => {
   )
 }
 
-export default BookReviewPage
+export default ReadingMemoPage

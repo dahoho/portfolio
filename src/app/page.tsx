@@ -1,13 +1,13 @@
 import { Blog } from '@/components/blog'
-import { BookReview } from '@/components/bookReview'
 import { ContainerLayout } from '@/components/layout/containerLayout'
 import { Product } from '@/components/product'
+import { ReadingMemo } from '@/components/readingMemo'
 import { ZennArticles } from '@/components/zennArticles'
 import { getBlogArticles } from '@/lib/newt/Blog'
-import { getBookReviewArticles } from '@/lib/newt/BookReview'
+import { getReadingMemoArticles } from '@/lib/newt/ReadingMemo'
 
 const Home = async () => {
-  const bookReviewArticles = await getBookReviewArticles()
+  const readingMemoArticles = await getReadingMemoArticles()
   const bookArticles = await getBlogArticles()
 
   const response = await fetch(
@@ -20,7 +20,7 @@ const Home = async () => {
       <ContainerLayout>
         <ZennArticles zennArticles={zennArticles} />
         <Blog blogArticles={bookArticles} />
-        <BookReview bookReviewArticles={bookReviewArticles} />
+        <ReadingMemo readingMemoArticles={readingMemoArticles} />
         <Product />
       </ContainerLayout>
     </>

@@ -10,24 +10,24 @@ import { ArticleType } from '@/types/article'
 import dayjs from 'dayjs'
 import Link from 'next/link'
 
-type BookReviewPropsType = {
-  bookReviewArticles: ArticleType[]
+type ReadingMemoPropsType = {
+  readingMemoArticles: ArticleType[]
 }
 
-export const BookReview = ({ bookReviewArticles }: BookReviewPropsType) => {
+export const ReadingMemo = ({ readingMemoArticles }: ReadingMemoPropsType) => {
   const {
     activePage,
     setActivePage,
     currentArticles,
     paginatedArticles,
     isHomePage,
-  } = usePageNation(bookReviewArticles)
+  } = usePageNation(readingMemoArticles)
 
-  if (bookReviewArticles.length === 0) return null
+  if (readingMemoArticles.length === 0) return null
 
   return (
     <Section>
-      <Heading order={2}>Book Review</Heading>
+      <Heading order={2}>Reading Memo</Heading>
       <InnerLayout>
         <ul className="flex flex-col gap-4 mt-4">
           {currentArticles.map((article) => {
@@ -37,10 +37,10 @@ export const BookReview = ({ bookReviewArticles }: BookReviewPropsType) => {
                 className="bg-card dark:bg-cardDark rounded-md"
               >
                 <Link
-                  href={`/bookReview/${article.slug}`}
+                  href={`/readingMemo/${article.slug}`}
                   className="block p-3"
                 >
-                  <p className="font-bold">{`【要約】${article.title}`}</p>
+                  <p className="font-bold">{`【読書メモ】${article.title}`}</p>
                   <time
                     dateTime={dayjs(article._sys.createdAt).format(
                       'YYYY-MM-DD',
@@ -57,7 +57,7 @@ export const BookReview = ({ bookReviewArticles }: BookReviewPropsType) => {
         </ul>
         <div className="flex justify-center mt-8">
           {isHomePage ? (
-            <LinkButton path="/bookReview">もっとみる</LinkButton>
+            <LinkButton path="/readingMemo">もっとみる</LinkButton>
           ) : (
             <PaginationItem
               total={paginatedArticles.length}

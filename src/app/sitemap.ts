@@ -1,6 +1,6 @@
 import { SITE_NAME } from '@/constants'
 import { getBlogArticles } from '@/lib/newt/Blog'
-import { getBookReviewArticles } from '@/lib/newt/BookReview'
+import { getReadingMemoArticles } from '@/lib/newt/ReadingMemo'
 import { MetadataRoute } from 'next'
 
 const sitemap = async (): Promise<MetadataRoute.Sitemap> => {
@@ -24,7 +24,7 @@ const sitemap = async (): Promise<MetadataRoute.Sitemap> => {
       priority: 0.5,
     },
     {
-      url: `https://www.${SITE_NAME}/bookReview`,
+      url: `https://www.${SITE_NAME}/readingMemo`,
       lastModified: new Date(),
       changeFrequency: 'weekly',
       priority: 0.5,
@@ -44,16 +44,16 @@ const sitemap = async (): Promise<MetadataRoute.Sitemap> => {
     lastModified: new Date(article._sys.createdAt),
   }))
 
-  const bookReviewArticles = await getBookReviewArticles()
+  const readingMemoArticles = await getReadingMemoArticles()
 
-  const bookReviewPages: MetadataRoute.Sitemap = bookReviewArticles.map(
+  const readingMemoPages: MetadataRoute.Sitemap = readingMemoArticles.map(
     (article) => ({
-      url: `https://www.${SITE_NAME}/bookReview/${article.slug}`,
+      url: `https://www.${SITE_NAME}/readingMemo/${article.slug}`,
       lastModified: new Date(article._sys.createdAt),
     }),
   )
 
-  return [...defaultPages, ...blogPages, ...bookReviewPages]
+  return [...defaultPages, ...blogPages, ...readingMemoPages]
 }
 
 export default sitemap

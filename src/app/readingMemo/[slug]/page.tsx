@@ -5,9 +5,9 @@ import { NEXT_PUBLIC_BASE_URL } from '@/config'
 import { SITE_NAME } from '@/constants'
 import { Heading } from '@/lib/mantine'
 import {
-  getBookReviewArticleBySlug,
-  getBookReviewArticles,
-} from '@/lib/newt/BookReview'
+  getReadingMemoArticleBySlug,
+  getReadingMemoArticles,
+} from '@/lib/newt/ReadingMemo'
 import { formatDate } from '@/utils/dateFormat'
 
 import type { Metadata } from 'next'
@@ -23,7 +23,7 @@ type ParamsType = {
 }
 
 export async function generateStaticParams() {
-  const articles = await getBookReviewArticles()
+  const articles = await getReadingMemoArticles()
   return articles.map((article) => ({
     slug: article.slug,
   }))
@@ -35,7 +35,7 @@ export const generateMetadata = async ({
   params,
 }: ParamsType): Promise<Metadata> => {
   const { slug } = await params
-  const article = await getBookReviewArticleBySlug(slug)
+  const article = await getReadingMemoArticleBySlug(slug)
 
   const ogImageUrl = new URL(
     `/api/og?title=${encodeURIComponent(article?.title || '')}`,
@@ -44,12 +44,12 @@ export const generateMetadata = async ({
 
   return {
     title: `${article?.title} | ${SITE_NAME}`,
-    description: `${article?.title}の要約・メモページです`,
+    description: `${article?.title}　読書メモページ`,
     openGraph: {
       type: 'article',
       title: `${article?.title} | ${SITE_NAME}`,
-      description: `${article?.title}の要約・メモページです`,
-      url: `${NEXT_PUBLIC_BASE_URL}/bookReview/${slug}`,
+      description: `${article?.title}　読書メモページ`,
+      url: `${NEXT_PUBLIC_BASE_URL}/readingMemo/${slug}`,
       images: [
         {
           url: ogImageUrl,
@@ -62,7 +62,7 @@ export const generateMetadata = async ({
     twitter: {
       card: 'summary_large_image',
       title: `${article?.title} | ${SITE_NAME}`,
-      description: `${article?.title}の要約・メモページです`,
+      description: `${article?.title}　読書メモページ`,
       images: [ogImageUrl],
     },
   }
@@ -108,7 +108,7 @@ const detailPage = tv({
 
 export default async function Article({ params }: ParamsType) {
   const { slug } = await params
-  const article = await getBookReviewArticleBySlug(slug)
+  const article = await getReadingMemoArticleBySlug(slug)
   if (!article) return
 
   const {
@@ -185,7 +185,7 @@ export default async function Article({ params }: ParamsType) {
       <div className={contentWrapper()}>
         <Heading order={2}>
           <span className="w-fit mx-auto block">
-            {`【要約】${article.title}`}
+            {`【読書メモ】${article.title}`}
           </span>
         </Heading>
         <p className={textLink()}>
@@ -215,7 +215,7 @@ export default async function Article({ params }: ParamsType) {
       <ShareButton
         slug={article.slug}
         title={article.title}
-        category="bookReview"
+        category="readingMemo"
       />
     </ContainerLayout>
   )
