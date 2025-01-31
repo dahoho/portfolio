@@ -16,14 +16,12 @@ const Home = async () => {
   const zennArticles = await response.json()
 
   return (
-    <>
-      <ContainerLayout>
-        <ZennArticles zennArticles={zennArticles} />
-        <Blog blogArticles={bookArticles} />
-        <ReadingMemo readingMemoArticles={readingMemoArticles} />
-        <Product />
-      </ContainerLayout>
-    </>
+    <ContainerLayout>
+      <ZennArticles zennArticles={zennArticles} />
+      <Blog blogArticles={bookArticles} />
+      <ReadingMemo readingMemoArticles={readingMemoArticles} />
+      <Product />
+    </ContainerLayout>
   )
 }
 
