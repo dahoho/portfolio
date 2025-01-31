@@ -173,6 +173,7 @@ export default async function Article({ params }: ParamsType) {
             src={article.coverImage.src}
             alt={article.coverImage.altText}
             layout="fill"
+            priority={true}
             style={{
               objectFit: 'contain',
             }}
