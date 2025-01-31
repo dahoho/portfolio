@@ -4,7 +4,7 @@ import { Drawer } from '@mantine/core'
 type DrawerMenuPropsType = {
   opened: boolean
   close: () => void
-  theme: 'dark' | 'light'
+  theme: string | undefined
 } & ChildrenType
 
 export const DrawerMenu = ({
