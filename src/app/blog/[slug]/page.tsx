@@ -11,7 +11,7 @@ import type { Metadata } from 'next'
 import { ClassAttributes, HTMLAttributes } from 'react'
 import ReactMarkdown, { ExtraProps } from 'react-markdown'
 import SyntaxHighlighter from 'react-syntax-highlighter/dist/esm/default-highlight'
-import { monokaiSublime } from 'react-syntax-highlighter/dist/esm/styles/hljs'
+import { atomOneDark } from 'react-syntax-highlighter/dist/esm/styles/hljs'
 import { tv } from 'tailwind-variants'
 
 type ParamsType = {
@@ -137,7 +137,7 @@ export default async function Blog({ params }: ParamsType) {
         )}
         <SyntaxHighlighter
           language={language}
-          style={monokaiSublime}
+          style={atomOneDark}
           className={fileName ? 'rounded-t-none mt-0' : ''}
         >
           {String(code).replace(/\n$/, '')}
