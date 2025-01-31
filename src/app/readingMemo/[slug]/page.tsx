@@ -75,7 +75,7 @@ const detailPage = tv({
     contentWrapper: ['mt-8', 'sm:mt-20'],
     backButton: ['mt-20', 'flex', 'justify-center'],
     url: ['underline', 'sm:hover:no-underline'],
-    textLink: ['mt-4'],
+    textLink: ['mt-6'],
     content: [
       'prose',
       'max-w-full',
