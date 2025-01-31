@@ -131,7 +131,7 @@ export default async function Blog({ params }: ParamsType) {
     return (
       <>
         {fileName && (
-          <span className="block bg-black px-3 py-4 rounded-t-md text-xs">
+          <span className="block dark:bg-cardDark bg-black text-white px-3 py-4 rounded-t-md text-xs">
             {fileName}
           </span>
         )}
