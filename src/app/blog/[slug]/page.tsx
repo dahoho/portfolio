@@ -93,7 +93,7 @@ const detailPage = tv({
       'dark:text-textDark',
       'text-text',
       'leading-7',
-      'prose-a:text-accent',
+      'prose-a:text-link',
       'prose-a:break-all',
     ],
   },

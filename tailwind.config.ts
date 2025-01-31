@@ -12,14 +12,15 @@ export default {
   theme: {
     extend: {
       colors: {
-        text: '#334155',
+        text: '#2B2C2C',
         background: '#ffffff',
-        card: '#ECF5FF',
-        backgroundDark: '#0f172a',
-        cardDark: '#1e293b',
+        card: '#EDF2F6',
+        backgroundDark: '#030712',
+        cardDark: '#1C202A',
         textDark: '#f8fafc',
         border: '#e5e7eb',
         accent: '#38bdf8',
+        link: '#2B7FFF',
       },
     },
     // Mantineと一致させる https://mantine.dev/styles/responsive/

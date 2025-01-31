@@ -14,10 +14,10 @@ export const Header = () => {
   const { theme, setTheme } = useTheme()
   const [mounted, setMounted] = useState(false)
   const [isMenuOpen, setIsMenuOpen] = useState(false)
-  const [burgerColor, setBurgerColor] = useState('#334155')
+  const [burgerColor, setBurgerColor] = useState('#2B2C2C')
 
   useEffect(() => {
-    setBurgerColor(theme === 'dark' ? '#f8fafc' : '#334155')
+    setBurgerColor(theme === 'dark' ? '#f8fafc' : '#2B2C2C')
   }, [theme])
 
   const toggleMenu = () => setIsMenuOpen(!isMenuOpen)
