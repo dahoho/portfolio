@@ -1,14 +1,14 @@
-import { Blog } from '@/components/blog'
 import { ContainerLayout } from '@/components/layout/containerLayout'
+import { Memo } from '@/components/memo'
 import { LinkButton } from '@/components/ui/linkButton'
-import { getBlogArticles } from '@/lib/newt/Blog'
+import { getMemoArticles } from '@/lib/newt/memo'
 
-const blogArticles = await getBlogArticles()
+const memoArticles = await getMemoArticles()
 
-const BlogArticles = () => {
+const MemoArticles = () => {
   return (
     <ContainerLayout>
-      <Blog blogArticles={blogArticles} />
+      <Memo memoArticles={memoArticles} />
       <div className="mt-20 flex justify-center">
         <LinkButton path="/">トップに戻る</LinkButton>
       </div>
@@ -16,4 +16,4 @@ const BlogArticles = () => {
   )
 }
 
-export default BlogArticles
+export default MemoArticles
