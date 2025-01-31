@@ -45,8 +45,8 @@ export const Header = () => {
           toggle={toggleMenu}
           color={burgerColor}
         />
-        <DrawerMenu opened={isMenuOpen} close={toggleMenu}>
-          <nav className="text-text">
+        <DrawerMenu opened={isMenuOpen} close={toggleMenu} theme={theme}>
+          <nav className="dark:text-textDark text-text">
             <ul className="list-none flex flex-col gap-5 text-xl mt-6">
               {NAV_ITEMS.map((item) => (
                 <li key={item.title} onClick={toggleMenu}>
