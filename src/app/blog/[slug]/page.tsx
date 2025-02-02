@@ -101,8 +101,11 @@ const detailPage = tv({
 
 export default async function Blog({ params }: ParamsType) {
   const { slug } = await params
+
   const article = await getBlogArticleBySlug(slug)
+
   if (!article) return
+
   const { content, time, contentWrapper, backButton } = detailPage()
 
   const Pre = ({
@@ -114,7 +117,9 @@ export default async function Blog({ params }: ParamsType) {
     if (!children || typeof children !== 'object') {
       return <code {...props}>{children}</code>
     }
+
     const childType = 'type' in children ? children.type : ''
+
     if (childType !== 'code') {
       return <code {...props}>{children}</code>
     }

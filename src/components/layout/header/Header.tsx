@@ -33,9 +33,7 @@ export const Header = () => {
     setMounted(true)
   }, [])
 
-  if (!mounted) {
-    return null
-  }
+  if (!mounted) return null
 
   return (
     <header className="h-16 px-5 flex items-center justify-between sticky top-0 left-0  backdrop-blur">

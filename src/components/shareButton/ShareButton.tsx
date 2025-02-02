@@ -12,9 +12,7 @@ export const ShareButton = ({
   title,
   category,
 }: ShareButtonPropsType) => {
-  if (!slug || !title || !category) {
-    return null
-  }
+  if (!slug || !title || !category) return null
 
   const currentUrl = `${NEXT_PUBLIC_BASE_URL}/${category}/${slug}/`
   const twitterLink = `https://twitter.com/intent/tweet?text=${encodeURIComponent(

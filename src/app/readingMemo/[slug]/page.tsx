@@ -108,7 +108,9 @@ const detailPage = tv({
 
 export default async function Article({ params }: ParamsType) {
   const { slug } = await params
+
   const article = await getReadingMemoArticleBySlug(slug)
+
   if (!article) return
 
   const {
