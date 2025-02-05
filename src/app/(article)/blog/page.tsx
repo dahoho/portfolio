@@ -1,20 +1,7 @@
-import { Blog } from '@/components/blog/_containers'
-import { ContainerLayout } from '@/components/layout/containerLayout/_containers'
-import { LinkButton } from '@/components/ui/linkButton/_containers'
+import { BlogArticle } from '@/app/(article)/blog/_containers'
 
-import { getBlogArticles } from '@/lib/newt/Blog'
-
-const blogArticles = await getBlogArticles()
-
-const BlogArticles = () => {
-  return (
-    <ContainerLayout>
-      <Blog blogArticles={blogArticles} />
-      <div className="mt-20 flex justify-center">
-        <LinkButton path="/">トップに戻る</LinkButton>
-      </div>
-    </ContainerLayout>
-  )
+const BlogArticlePage = () => {
+  return <BlogArticle />
 }
 
-export default BlogArticles
+export default BlogArticlePage

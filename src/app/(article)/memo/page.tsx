@@ -1,20 +1,7 @@
-import { ContainerLayout } from '@/components/layout/containerLayout/_containers'
-import { Memo } from '@/components/memo/_containers'
-import { LinkButton } from '@/components/ui/linkButton/_containers'
-
-import { getMemoArticles } from '@/lib/newt/memo'
-
-const memoArticles = await getMemoArticles()
+import { MemoArticleContainer } from '@/app/(article)/memo/_containers/container'
 
 const MemoArticles = () => {
-  return (
-    <ContainerLayout>
-      <Memo memoArticles={memoArticles} />
-      <div className="mt-20 flex justify-center">
-        <LinkButton path="/">トップに戻る</LinkButton>
-      </div>
-    </ContainerLayout>
-  )
+  return <MemoArticleContainer />
 }
 
 export default MemoArticles
