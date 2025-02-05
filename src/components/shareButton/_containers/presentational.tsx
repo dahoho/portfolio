@@ -1,26 +1,16 @@
-import { NEXT_PUBLIC_BASE_URL } from '@/config'
 import Image from 'next/image'
 
-type ShareButtonPropsType = {
-  slug: string
-  title: string
-  category: string
+type ShareButtonPresentationalPropsType = {
+  twitterLink: string
+  facebookLink: string
+  hatenaLink: string
 }
 
-export const ShareButton = ({
-  slug,
-  title,
-  category,
-}: ShareButtonPropsType) => {
-  if (!slug || !title || !category) return null
-
-  const currentUrl = `${NEXT_PUBLIC_BASE_URL}/${category}/${slug}/`
-  const twitterLink = `https://twitter.com/intent/tweet?text=${encodeURIComponent(
-    title,
-  )}&url=${currentUrl}`
-  const facebookLink = `https://www.facebook.com/sharer.php?u=${currentUrl}`
-  const hatenaLink = `https://b.hatena.ne.jp/entry/${currentUrl}`
-
+export const ShareButtonPresentational = ({
+  twitterLink,
+  facebookLink,
+  hatenaLink,
+}: ShareButtonPresentationalPropsType) => {
   return (
     <div className="bg-card rounded-md mt-20 p-6">
       <h3 className="text-text font-bold pb-4 text-center">記事をシェアする</h3>

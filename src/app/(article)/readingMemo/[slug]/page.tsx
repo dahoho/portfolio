@@ -1,5 +1,6 @@
 import { ContainerLayout } from '@/components/layout/containerLayout/_containers'
-import { ShareButton } from '@/components/shareButton'
+import { ShareButton } from '@/components/shareButton/_containers'
+
 import { LinkButton } from '@/components/ui/linkButton'
 import { NEXT_PUBLIC_BASE_URL } from '@/config'
 import { SITE_NAME } from '@/constants'
