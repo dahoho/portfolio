@@ -2,7 +2,7 @@ import { InnerLayout } from '@/components/layout/inner'
 import { Section } from '@/components/layout/section'
 import { Heading } from '@/lib/mantine'
 
-export const Product = () => {
+export const ProductPresentational = () => {
   return (
     <Section>
       <Heading order={2}>Product</Heading>

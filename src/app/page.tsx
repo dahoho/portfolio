@@ -1,8 +1,8 @@
 import { Blog } from '@/components/blog/_containers'
 import { ContainerLayout } from '@/components/layout/containerLayout/_containers'
 import { Memo } from '@/components/memo/_containers'
+import { Product } from '@/components/product/_containers'
 
-import { Product } from '@/components/product'
 import { ReadingMemo } from '@/components/readingMemo/_containers'
 
 import { ZennArticles } from '@/components/zennArticles/_containers'
