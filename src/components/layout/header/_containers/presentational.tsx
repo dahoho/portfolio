@@ -1,40 +1,29 @@
-'use client'
-
 import {
   BurgerButton,
   DrawerMenu,
   ThemeSwitch,
   UserAvatar,
 } from '@/lib/mantine'
-import { useTheme } from 'next-themes'
 import Link from 'next/link'
-import { useEffect, useState } from 'react'
+import { Dispatch, SetStateAction } from 'react'
 
-export const Header = () => {
-  const { theme, setTheme } = useTheme()
-  const [mounted, setMounted] = useState(false)
-  const [isMenuOpen, setIsMenuOpen] = useState(false)
-  const [burgerColor, setBurgerColor] = useState('#2B2C2C')
+type HeaderPresentationalProps = {
+  isMenuOpen: boolean
+  toggleMenu: () => void
+  burgerColor: string
+  theme?: string
+  NAV_ITEMS: { title: string; href: string }[]
+  setTheme: Dispatch<SetStateAction<string>>
+}
 
-  useEffect(() => {
-    setBurgerColor(theme === 'dark' ? '#f8fafc' : '#2B2C2C')
-  }, [theme])
-
-  const toggleMenu = () => setIsMenuOpen(!isMenuOpen)
-
-  const NAV_ITEMS = [
-    { title: 'Home', href: '/' },
-    { title: 'Zenn', href: '/zenn' },
-    { title: 'Blog', href: '/blog' },
-    { title: 'ReadingMemo', href: '/readingMemo' },
-  ]
-
-  useEffect(() => {
-    setMounted(true)
-  }, [])
-
-  if (!mounted) return null
-
+export const HeaderPresentational = ({
+  isMenuOpen,
+  toggleMenu,
+  burgerColor,
+  theme,
+  NAV_ITEMS,
+  setTheme,
+}: HeaderPresentationalProps) => {
   return (
     <header className="h-16 px-5 flex items-center justify-between sticky top-0 left-0  backdrop-blur">
       <div>
