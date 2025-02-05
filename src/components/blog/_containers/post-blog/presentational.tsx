@@ -1,30 +1,27 @@
-'use client'
-
 import { InnerLayout } from '@/components/layout/inner'
 import { Section } from '@/components/layout/section'
 import { LinkButton } from '@/components/ui/linkButton'
-
-import { usePageNation } from '@/hooks/usePagination'
 import { Heading, PaginationItem } from '@/lib/mantine'
 import { ArticleType } from '@/types/article'
 import dayjs from 'dayjs'
 import Link from 'next/link'
+import { Dispatch, SetStateAction } from 'react'
 
-type BlogPropsType = {
-  blogArticles: ArticleType[]
+type BlogPresentationalPropsType = {
+  activePage: number
+  setActivePage: Dispatch<SetStateAction<number>>
+  currentArticles: ArticleType[]
+  paginatedArticles: ArticleType[][]
+  isHomePage: boolean
 }
 
-export const Blog = ({ blogArticles }: BlogPropsType) => {
-  const {
-    activePage,
-    setActivePage,
-    currentArticles,
-    paginatedArticles,
-    isHomePage,
-  } = usePageNation(blogArticles)
-
-  if (blogArticles.length === 0) return null
-
+export const BlogPresentational = ({
+  activePage,
+  setActivePage,
+  currentArticles,
+  paginatedArticles,
+  isHomePage,
+}: BlogPresentationalPropsType) => {
   return (
     <Section>
       <Heading order={2}>Blog</Heading>

@@ -1,4 +1,4 @@
-import { Blog } from '@/components/blog'
+import { Blog } from '@/components/blog/_containers/post-blog'
 import { ContainerLayout } from '@/components/layout/containerLayout'
 import { Memo } from '@/components/memo'
 import { Product } from '@/components/product'
