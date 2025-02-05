@@ -1,1 +1,0 @@
-export { InnerLayout } from './InnerLayout'

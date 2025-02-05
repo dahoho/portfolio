@@ -1,5 +1,6 @@
-import { InnerLayout } from '@/components/layout/inner'
-import { Section } from '@/components/layout/section'
+import { InnerLayout } from '@/components/layout/inner/_containers'
+import { Section } from '@/components/layout/section/_containers'
+
 import { LinkButton } from '@/components/ui/linkButton/_containers'
 
 import { Heading, PaginationItem } from '@/lib/mantine'
