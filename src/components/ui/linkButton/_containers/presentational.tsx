@@ -1,11 +1,14 @@
 import { ChildrenType } from '@/types/children'
 import Link from 'next/link'
 
-type LinkButtonPropsType = {
+type LinkButtonPresentationalPropsType = {
   path: string
 } & ChildrenType
 
-export const LinkButton = ({ children, path }: LinkButtonPropsType) => {
+const LinkButtonPresentational = ({
+  children,
+  path,
+}: LinkButtonPresentationalPropsType) => {
   return (
     <Link
       href={path}
@@ -15,3 +18,5 @@ export const LinkButton = ({ children, path }: LinkButtonPropsType) => {
     </Link>
   )
 }
+
+export default LinkButtonPresentational

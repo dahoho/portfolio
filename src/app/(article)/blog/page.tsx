@@ -1,7 +1,7 @@
 import { Blog } from '@/components/blog/_containers'
 import { ContainerLayout } from '@/components/layout/containerLayout/_containers'
+import { LinkButton } from '@/components/ui/linkButton/_containers'
 
-import { LinkButton } from '@/components/ui/linkButton'
 import { getBlogArticles } from '@/lib/newt/Blog'
 
 const blogArticles = await getBlogArticles()

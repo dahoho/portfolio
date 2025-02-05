@@ -1,5 +1,6 @@
 import { ContainerLayout } from '@/components/layout/containerLayout/_containers'
-import { LinkButton } from '@/components/ui/linkButton'
+import { LinkButton } from '@/components/ui/linkButton/_containers'
+
 import { ZennArticles } from '@/components/zennArticles/_containers'
 
 const response = await fetch(

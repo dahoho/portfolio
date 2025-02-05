@@ -1,7 +1,7 @@
 import { ContainerLayout } from '@/components/layout/containerLayout/_containers'
 import { Memo } from '@/components/memo/_containers'
+import { LinkButton } from '@/components/ui/linkButton/_containers'
 
-import { LinkButton } from '@/components/ui/linkButton'
 import { getMemoArticles } from '@/lib/newt/memo'
 
 const memoArticles = await getMemoArticles()
