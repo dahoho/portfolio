@@ -1,7 +1,8 @@
 import { Footer } from '@/components/layout/footer'
 import { Header } from '@/components/layout/header'
 import { MainLayout } from '@/components/layout/main'
-import { SnsList } from '@/components/snsList'
+import { SnsList } from '@/components/snsList/_containers'
+
 import { ChildrenType } from '@/types/children'
 
 export const ContainerLayoutPresentational = ({ children }: ChildrenType) => {

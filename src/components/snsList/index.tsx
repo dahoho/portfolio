@@ -1,1 +1,0 @@
-export { SnsList } from './SnsList'

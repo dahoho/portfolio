@@ -1,35 +1,18 @@
 import Image from 'next/image'
 
-const SNS_LIST_ITEM = [
-  {
-    iconPath: '/github.svg',
-    iconPathDark: '/github-dark.svg',
-    url: 'https://github.com/dahoho',
-    alt: 'GitHub',
-  },
-  {
-    iconPath: '/x.png',
-    iconPathDark: '/x-dark.svg',
-    url: 'https://x.com/hodii0820',
-    alt: 'X',
-  },
-  {
-    iconPath: '/zenn.svg',
-    url: 'https://zenn.dev/rh820',
-    alt: 'Zenn',
-  },
-  {
-    iconPath: '/sizu.svg',
-    iconPathDark: '/sizu-dark.svg',
-    url: 'https://sizu.me/hody',
-    alt: 'sizu',
-  },
-]
+type SiteListItemType = {
+  siteListItem: {
+    iconPath: string
+    iconPathDark?: string
+    url: string
+    alt: string
+  }[]
+}
 
-export const SnsList = () => {
+export const SnsListPresentational = ({ siteListItem }: SiteListItemType) => {
   return (
     <ul className="flex justify-center gap-6 leading-loose">
-      {SNS_LIST_ITEM.map((item) => (
+      {siteListItem.map((item) => (
         <li key={item.url}>
           <a href={item.url} target="_blank" rel="noopener noreferrer">
             {/* 通常画像 */}
