@@ -1,4 +1,4 @@
-import GoogleAnalytics from '@/components/GoogleAnalytics/GoogleAnalytics'
+import { GoogleAnalytics } from '@/components/GoogleAnalytics/_containers'
 import { SITE_NAME } from '@/constants'
 import { AppMantineProvider } from '@/lib/mantine'
 import { AppThemeProvider } from '@/lib/themeProvider'
