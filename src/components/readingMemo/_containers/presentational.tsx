@@ -1,30 +1,27 @@
-'use client'
-
 import { InnerLayout } from '@/components/layout/inner'
 import { Section } from '@/components/layout/section'
 import { LinkButton } from '@/components/ui/linkButton'
-
-import { usePageNation } from '@/hooks/usePagination'
 import { Heading, PaginationItem } from '@/lib/mantine'
 import { ArticleType } from '@/types/article'
 import dayjs from 'dayjs'
 import Link from 'next/link'
+import { Dispatch, SetStateAction } from 'react'
 
-type ReadingMemoPropsType = {
-  readingMemoArticles: ArticleType[]
+type ReadingMemoPresentationalPropsType = {
+  activePage: number
+  setActivePage: Dispatch<SetStateAction<number>>
+  currentArticles: ArticleType[]
+  paginatedArticles: ArticleType[][]
+  isHomePage: boolean
 }
 
-export const ReadingMemo = ({ readingMemoArticles }: ReadingMemoPropsType) => {
-  const {
-    activePage,
-    setActivePage,
-    currentArticles,
-    paginatedArticles,
-    isHomePage,
-  } = usePageNation(readingMemoArticles)
-
-  if (readingMemoArticles.length === 0) return null
-
+export const ReadingMemoPresentational = ({
+  activePage,
+  setActivePage,
+  currentArticles,
+  paginatedArticles,
+  isHomePage,
+}: ReadingMemoPresentationalPropsType) => {
   return (
     <Section>
       <Heading order={2}>Reading Memo</Heading>

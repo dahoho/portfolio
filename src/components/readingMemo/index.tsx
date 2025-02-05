@@ -1,1 +1,0 @@
-export { ReadingMemo } from './ReadingMemo'

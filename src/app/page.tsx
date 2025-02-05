@@ -3,7 +3,8 @@ import { ContainerLayout } from '@/components/layout/containerLayout/_containers
 
 import { Memo } from '@/components/memo'
 import { Product } from '@/components/product'
-import { ReadingMemo } from '@/components/readingMemo'
+import { ReadingMemo } from '@/components/readingMemo/_containers'
+
 import { ZennArticles } from '@/components/zennArticles/_containers'
 
 import { getBlogArticles } from '@/lib/newt/Blog'
