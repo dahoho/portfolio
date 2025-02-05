@@ -1,7 +1,7 @@
 import { Blog } from '@/components/blog/_containers'
 import { ContainerLayout } from '@/components/layout/containerLayout/_containers'
+import { Memo } from '@/components/memo/_containers'
 
-import { Memo } from '@/components/memo'
 import { Product } from '@/components/product'
 import { ReadingMemo } from '@/components/readingMemo/_containers'
 

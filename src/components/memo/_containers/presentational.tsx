@@ -1,30 +1,27 @@
-'use client'
-
 import { InnerLayout } from '@/components/layout/inner'
 import { Section } from '@/components/layout/section'
 import { LinkButton } from '@/components/ui/linkButton'
-
-import { usePageNation } from '@/hooks/usePagination'
 import { Heading, PaginationItem } from '@/lib/mantine'
 import { ArticleType } from '@/types/article'
 import dayjs from 'dayjs'
 import Link from 'next/link'
+import { Dispatch, SetStateAction } from 'react'
 
-type MemoPropsType = {
-  memoArticles: ArticleType[]
+type MemoPresentationalPropsType = {
+  currentArticles: ArticleType[]
+  paginatedArticles: ArticleType[][]
+  activePage: number
+  setActivePage: Dispatch<SetStateAction<number>>
+  isHomePage: boolean
 }
 
-export const Memo = ({ memoArticles }: MemoPropsType) => {
-  const {
-    activePage,
-    setActivePage,
-    currentArticles,
-    paginatedArticles,
-    isHomePage,
-  } = usePageNation(memoArticles)
-
-  if (memoArticles.length === 0) return null
-
+export const MemoPresentational = ({
+  currentArticles,
+  paginatedArticles,
+  activePage,
+  setActivePage,
+  isHomePage,
+}: MemoPresentationalPropsType) => {
   return (
     <Section>
       <Heading order={2}>Memo</Heading>
