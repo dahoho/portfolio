@@ -1,4 +1,4 @@
-import { ContainerLayout } from '@/components/layout/containerLayout'
+import { ContainerLayout } from '@/components/layout/containerLayout/_containers'
 import { LinkButton } from '@/components/ui/linkButton'
 import { ZennArticles } from '@/components/zennArticles/_containers'
 

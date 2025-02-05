@@ -1,3 +1,5 @@
+'use client'
+
 import { GoogleAnalyticsPresentational } from '@/components/GoogleAnalytics/_containers/presentational'
 import { IS_GATAG, pageview } from '@/lib/gtag'
 import { usePathname, useSearchParams } from 'next/navigation'

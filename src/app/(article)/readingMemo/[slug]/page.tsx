@@ -1,4 +1,4 @@
-import { ContainerLayout } from '@/components/layout/containerLayout'
+import { ContainerLayout } from '@/components/layout/containerLayout/_containers'
 import { ShareButton } from '@/components/shareButton'
 import { LinkButton } from '@/components/ui/linkButton'
 import { NEXT_PUBLIC_BASE_URL } from '@/config'

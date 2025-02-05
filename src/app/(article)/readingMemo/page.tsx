@@ -1,4 +1,4 @@
-import { ContainerLayout } from '@/components/layout/containerLayout'
+import { ContainerLayout } from '@/components/layout/containerLayout/_containers'
 import { ReadingMemo } from '@/components/readingMemo'
 import { LinkButton } from '@/components/ui/linkButton'
 import { getReadingMemoArticles } from '@/lib/newt/ReadingMemo'
