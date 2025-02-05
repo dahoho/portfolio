@@ -1,6 +1,6 @@
 'use client'
 
-import { ZennArticlesPresentational } from '@/components/zennArticles/_containers/zenn-article/presentational'
+import { ZennArticlesPresentational } from '@/components/zennArticles/_containers/presentational'
 import { chunk } from '@/utils/chunk'
 import { usePathname } from 'next/navigation'
 import { useState } from 'react'

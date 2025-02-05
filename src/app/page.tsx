@@ -1,9 +1,9 @@
-import { Blog } from '@/components/blog/_containers/post-blog'
+import { Blog } from '@/components/blog/_containers'
 import { ContainerLayout } from '@/components/layout/containerLayout'
 import { Memo } from '@/components/memo'
 import { Product } from '@/components/product'
 import { ReadingMemo } from '@/components/readingMemo'
-import { ZennArticles } from '@/components/zennArticles/_containers/zenn-article'
+import { ZennArticles } from '@/components/zennArticles/_containers'
 
 import { getBlogArticles } from '@/lib/newt/Blog'
 import { getMemoArticles } from '@/lib/newt/memo'

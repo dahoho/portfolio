@@ -1,6 +1,6 @@
 'use client'
 
-import { BlogPresentational } from '@/components/blog/_containers/post-blog/presentational'
+import { BlogPresentational } from '@/components/blog/_containers/presentational'
 import { usePageNation } from '@/hooks/usePagination'
 import { ArticleType } from '@/types/article'
 

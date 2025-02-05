@@ -1,4 +1,4 @@
-import { Blog } from '@/components/blog/_containers/post-blog'
+import { Blog } from '@/components/blog/_containers'
 import { ContainerLayout } from '@/components/layout/containerLayout'
 import { LinkButton } from '@/components/ui/linkButton'
 import { getBlogArticles } from '@/lib/newt/Blog'
