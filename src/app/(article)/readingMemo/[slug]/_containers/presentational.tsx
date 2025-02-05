@@ -2,24 +2,13 @@ import { ContainerLayout } from '@/components/layout/containerLayout/_containers
 import { ShareButton } from '@/components/shareButton/_containers'
 import { LinkButton } from '@/components/ui/linkButton/_containers'
 import { Heading } from '@/lib/mantine'
+import { ArticleType } from '@/types/article'
 import { formatDate } from '@/utils/dateFormat'
 import Image from 'next/image'
 import ReactMarkdown, { ExtraProps } from 'react-markdown'
 
 type ReadingMemoDetailPresentationalType = {
-  article: {
-    title: string
-    coverImage: {
-      src: string
-      altText: string
-    }
-    _sys: {
-      createdAt: string
-    }
-    body: string
-    slug: string
-    bookUrl: string
-  }
+  article: ArticleType
   content: () => string
   imageWrapper: () => string
   time: () => string

@@ -1,1 +1,1 @@
-export { PrivacyContainer as Privacy } from './container'
+export { PrivacyContainer as PrivacyPage } from './container'
