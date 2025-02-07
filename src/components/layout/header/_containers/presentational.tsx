@@ -85,7 +85,7 @@ export const HeaderPresentational = ({
 
       <div className="flex items-center gap-6">
         <Switch
-          onClick={() => setTheme(theme === 'dark' ? 'light' : 'dark')}
+          onClick={() => setTheme(theme === 'light' ? 'dark' : 'light')}
           size="md"
           color="dark.4"
           onLabel={sunIcon}
