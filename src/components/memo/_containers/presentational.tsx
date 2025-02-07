@@ -3,8 +3,8 @@ import { Section } from '@/components/layout/section/_containers'
 
 import { LinkButton } from '@/components/ui/linkButton/_containers'
 
-import { Heading, PaginationItem } from '@/lib/mantine'
 import { ArticleType } from '@/types/article'
+import { Pagination, Title } from '@mantine/core'
 import dayjs from 'dayjs'
 import Link from 'next/link'
 import { Dispatch, SetStateAction } from 'react'
@@ -26,7 +26,7 @@ export const MemoPresentational = ({
 }: MemoPresentationalPropsType) => {
   return (
     <Section>
-      <Heading order={2}>Memo</Heading>
+      <Title order={2}>Memo</Title>
       <InnerLayout>
         <ul className="flex flex-col gap-4 mt-4">
           {currentArticles.map((article) => {
@@ -54,10 +54,11 @@ export const MemoPresentational = ({
           {isHomePage ? (
             <LinkButton path="/memo">もっとみる</LinkButton>
           ) : (
-            <PaginationItem
+            <Pagination
               total={paginatedArticles.length}
               value={activePage}
               onChange={setActivePage}
+              color="#38bdf8"
             />
           )}
         </div>

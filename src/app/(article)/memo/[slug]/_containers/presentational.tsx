@@ -1,8 +1,8 @@
 import { ContainerLayout } from '@/components/layout/containerLayout/_containers'
 import { ShareButton } from '@/components/shareButton/_containers'
 import { LinkButton } from '@/components/ui/linkButton/_containers'
-import { Heading } from '@/lib/mantine'
 import { formatDate } from '@/utils/dateFormat'
+import { Title } from '@mantine/core'
 import ReactMarkdown from 'react-markdown'
 
 type MemoDetailPresentationalType = {
@@ -33,9 +33,9 @@ export const MemoDetailPresentational = ({
     <ContainerLayout>
       <div className="text-7xl text-center">✏️</div>
       <div className={contentWrapper()}>
-        <Heading order={2}>
+        <Title order={2}>
           <span className="w-fit mx-auto block">{article.title}</span>
-        </Heading>
+        </Title>
         <time dateTime={formatDate(article._sys.createdAt)} className={time()}>
           {formatDate(article._sys.createdAt)}に公開
         </time>

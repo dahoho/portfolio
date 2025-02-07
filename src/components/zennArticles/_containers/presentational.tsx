@@ -3,7 +3,7 @@ import { Section } from '@/components/layout/section/_containers'
 
 import { LinkButton } from '@/components/ui/linkButton/_containers'
 
-import { Heading, PaginationItem } from '@/lib/mantine'
+import { Pagination, Title } from '@mantine/core'
 import dayjs from 'dayjs'
 import Image from 'next/image'
 import { Dispatch, SetStateAction } from 'react'
@@ -33,7 +33,7 @@ export const ZennArticlesPresentational = ({
 }: ZennArticlesPresentationalType) => {
   return (
     <Section>
-      <Heading order={2}>Zenn</Heading>
+      <Title order={2}>Zenn</Title>
       <InnerLayout>
         <ul className="flex flex-col gap-4 mt-4">
           {currentArticles.map((article) => {
@@ -68,10 +68,11 @@ export const ZennArticlesPresentational = ({
           {isHomePage ? (
             <LinkButton path="/zenn">もっとみる</LinkButton>
           ) : (
-            <PaginationItem
+            <Pagination
               total={paginatedArticles.length}
               value={activePage}
               onChange={setActivePage}
+              color="#38bdf8"
             />
           )}
         </div>

@@ -4,9 +4,9 @@ import { LinkButton } from '@/components/ui/linkButton/_containers'
 
 import { NEXT_PUBLIC_BASE_URL } from '@/config'
 import { SITE_NAME } from '@/constants'
-import { Heading } from '@/lib/mantine'
 import { getMemoArticleBySlug, getMemoArticles } from '@/lib/newt/memo'
 import { formatDate } from '@/utils/dateFormat'
+import { Title } from '@mantine/core'
 
 import type { Metadata } from 'next'
 import { ClassAttributes, HTMLAttributes } from 'react'
@@ -151,9 +151,9 @@ export default async function Memo({ params }: ParamsType) {
     <ContainerLayout>
       <div className="text-7xl text-center">✏️</div>
       <div className={contentWrapper()}>
-        <Heading order={2}>
+        <Title order={2}>
           <span className="w-fit mx-auto block">{article.title}</span>
-        </Heading>
+        </Title>
         <time dateTime={formatDate(article._sys.createdAt)} className={time()}>
           {formatDate(article._sys.createdAt)}に公開
         </time>

@@ -1,9 +1,12 @@
 import {
-  BurgerButton,
-  DrawerMenu,
-  ThemeSwitch,
-  UserAvatar,
-} from '@/lib/mantine'
+  Avatar,
+  Burger,
+  Drawer,
+  rem,
+  Switch,
+  useMantineTheme,
+} from '@mantine/core'
+import { IconMoonStars, IconSun } from '@tabler/icons-react'
 import Link from 'next/link'
 import { Dispatch, SetStateAction } from 'react'
 
@@ -24,15 +27,50 @@ export const HeaderPresentational = ({
   NAV_ITEMS,
   setTheme,
 }: HeaderPresentationalProps) => {
+  const MantineTheme = useMantineTheme()
+
+  const sunIcon = (
+    <IconSun
+      style={{ width: rem(16), height: rem(16) }}
+      stroke={2.5}
+      color={MantineTheme.colors.yellow[4]}
+    />
+  )
+
+  const moonIcon = (
+    <IconMoonStars
+      style={{ width: rem(16), height: rem(16) }}
+      stroke={2.5}
+      color={MantineTheme.colors.blue[6]}
+    />
+  )
   return (
     <header className="h-16 px-5 flex items-center justify-between sticky top-0 left-0  backdrop-blur">
       <div>
-        <BurgerButton
+        <Burger
           opened={isMenuOpen}
-          toggle={toggleMenu}
+          onClick={toggleMenu}
           color={burgerColor}
+          aria-label="Toggle navigation"
         />
-        <DrawerMenu opened={isMenuOpen} close={toggleMenu} theme={theme}>
+        <Drawer
+          opened={isMenuOpen}
+          onClose={toggleMenu}
+          withCloseButton={true}
+          closeButtonProps={{ size: 'xl' }}
+          overlayProps={{ backgroundOpacity: 0.5, blur: 4 }}
+          styles={{
+            header: {
+              backgroundColor: theme === 'dark' ? '#030712' : '#ffffff',
+            },
+            content: {
+              backgroundColor: theme === 'dark' ? '#030712' : '#ffffff',
+            },
+            close: {
+              color: theme === 'dark' ? '#ffffff' : '#030712',
+            },
+          }}
+        >
           <nav className="dark:text-textDark text-text">
             <ul className="list-none flex flex-col gap-5 text-xl mt-6">
               {NAV_ITEMS.map((item) => (
@@ -42,15 +80,19 @@ export const HeaderPresentational = ({
               ))}
             </ul>
           </nav>
-        </DrawerMenu>
+        </Drawer>
       </div>
 
       <div className="flex items-center gap-6">
-        <ThemeSwitch
-          handleClick={() => setTheme(theme === 'dark' ? 'light' : 'dark')}
+        <Switch
+          onClick={() => setTheme(theme === 'dark' ? 'light' : 'dark')}
+          size="md"
+          color="dark.4"
+          onLabel={sunIcon}
+          offLabel={moonIcon}
         />
         <a href="https://github.com/dahoho" target="_blank" rel="noreferrer">
-          <UserAvatar />
+          <Avatar src="/profile.png" alt="" />
         </a>
       </div>
     </header>

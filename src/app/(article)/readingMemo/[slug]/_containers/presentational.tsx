@@ -1,9 +1,9 @@
 import { ContainerLayout } from '@/components/layout/containerLayout/_containers'
 import { ShareButton } from '@/components/shareButton/_containers'
 import { LinkButton } from '@/components/ui/linkButton/_containers'
-import { Heading } from '@/lib/mantine'
 import { ArticleType } from '@/types/article'
 import { formatDate } from '@/utils/dateFormat'
+import { Title } from '@mantine/core'
 import Image from 'next/image'
 import ReactMarkdown, { ExtraProps } from 'react-markdown'
 
@@ -49,11 +49,11 @@ export const ReadingMemoDetailPresentational = ({
         {formatDate(article._sys.createdAt)}に公開
       </time>
       <div className={contentWrapper()}>
-        <Heading order={2}>
+        <Title order={2}>
           <span className="w-fit mx-auto block">
             {`【読書メモ】${article.title}`}
           </span>
-        </Heading>
+        </Title>
         <p className={textLink()}>
           Amazon：
           <a
