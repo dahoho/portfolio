@@ -33,5 +33,9 @@ export type ArticleType = {
     title: string
     width: number
   }
-  tags: string[]
+  tags: {
+    _id: string
+    name: string
+    slug: string
+  }[]
 }
