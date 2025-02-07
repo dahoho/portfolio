@@ -61,7 +61,7 @@ export const generateMetadata = async ({
 
 const detailPage = tv({
   slots: {
-    time: ['mt-4', 'block', 'text-center'],
+    time: ['mt-8', 'block', 'text-center'],
     contentWrapper: ['mt-8', 'sm:mt-20'],
     backButton: ['mt-20', 'flex', 'justify-center'],
     content: [
@@ -73,7 +73,11 @@ const detailPage = tv({
       'prose-h2:text-2xl',
       'prose-h2:border-b',
       'prose-h2:border-border',
-      'prose-h2:pb-3',
+      '[&>h2>a]:text-text',
+      '[&>h2>a]:dark:text-textDark',
+      '[&>h2>a]:no-underline',
+      '[&>h2>a]:block',
+      '[&>h2>a]:pb-3',
       'prose-h3:dark:text-textDark',
       'prose-h3:text-text',
       'prose-h3:text-xl',
@@ -87,7 +91,7 @@ const detailPage = tv({
       'prose-strong:text-text',
       'dark:text-textDark',
       'text-text',
-      'leading-7',
+      'leading-8',
       'prose-a:text-link',
       'prose-a:break-all',
     ],
@@ -126,7 +130,7 @@ export const MemoDetailContainer = async ({ params }: ParamsType) => {
     return (
       <>
         {fileName && (
-          <span className="block dark:bg-cardDark bg-black text-white px-3 py-4 rounded-t-md text-xs">
+          <span className="inline-block dark:bg-cardDark bg-black text-white p-2 rounded-t-md text-xs">
             {fileName}
           </span>
         )}
