@@ -1,9 +1,7 @@
 import { ZennArticlePresentational } from '@/app/(article)/zenn/_containers/presentational'
+import { getZennArticles } from '@/lib/zenn/fetcher'
 
-const response = await fetch(
-  'https://zenn.dev/api/articles?username=rh820&order=latest',
-)
-const zennArticles = await response.json()
+const zennArticles = await getZennArticles()
 
 export const ZennArticleContainer = () => {
   return <ZennArticlePresentational zennArticles={zennArticles} />

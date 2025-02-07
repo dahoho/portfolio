@@ -10,16 +10,13 @@ import { ZennArticles } from '@/components/zennArticles/_containers'
 import { getBlogArticles } from '@/lib/newt/Blog'
 import { getMemoArticles } from '@/lib/newt/memo'
 import { getReadingMemoArticles } from '@/lib/newt/ReadingMemo'
+import { getZennArticles } from '@/lib/zenn/fetcher'
 
 const Home = async () => {
   const readingMemoArticles = await getReadingMemoArticles()
   const bookArticles = await getBlogArticles()
   const memoArticles = await getMemoArticles()
-
-  const response = await fetch(
-    'https://zenn.dev/api/articles?username=rh820&order=latest',
-  )
-  const zennArticles = await response.json()
+  const zennArticles = await getZennArticles()
 
   return (
     <ContainerLayout>
