@@ -16,6 +16,11 @@ type BlogDetailPresentationalType = {
     }
     body: string
     slug: string
+    tags: {
+      _id: string
+      name: string
+      slug: string
+    }[]
   }
   Pre: React.ComponentType<ExtraProps>
   time: () => string
@@ -46,7 +51,16 @@ export const BlogDetailPresentational = ({
         <time dateTime={formatDate(article._sys.createdAt)} className={time()}>
           {formatDate(article._sys.createdAt)}に公開
         </time>
-
+        <ul className="flex flex-wrap gap-2 mt-6">
+          {article.tags.map((tag) => (
+            <li
+              key={tag.name}
+              className="inline-block dark:bg-cardDark bg-card rounded-md py-2 px-3 text-sm mr-2 dark:text-textDark text-text leading-none font-bold"
+            >
+              {tag.name}
+            </li>
+          ))}
+        </ul>
         <div className="mt-12 dark:bg-cardDark bg-card p-4 rounded-md">
           <h2 className="text-lg font-bold">目次</h2>
           <ul className="[&>li>a]:underline flex flex-col gap-4 mt-4 list-disc pl-4">

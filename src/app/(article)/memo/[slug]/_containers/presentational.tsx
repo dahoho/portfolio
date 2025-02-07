@@ -14,6 +14,11 @@ type MemoDetailPresentationalType = {
     _sys: {
       createdAt: string
     }
+    tags: {
+      _id: string
+      name: string
+      slug: string
+    }[]
   }
   content: () => string
   time: () => string
