@@ -41,7 +41,10 @@ export const MemoDetailPresentational = ({
         <Title order={2}>
           <span className="w-fit mx-auto block">{article.title}</span>
         </Title>
-        <time dateTime={formatDate(article._sys.createdAt)} className={time()}>
+        <time
+          dateTime={formatDate(article._sys.createdAt, true)}
+          className={time()}
+        >
           {formatDate(article._sys.createdAt)}に公開
         </time>
         <div className={content()}>

@@ -2,9 +2,9 @@ import { InnerLayout } from '@/components/layout/inner/_containers'
 import { Section } from '@/components/layout/section/_containers'
 
 import { LinkButton } from '@/components/ui/linkButton/_containers'
+import { formatDate } from '@/utils/dateFormat'
 
 import { Pagination, Title } from '@mantine/core'
-import dayjs from 'dayjs'
 import Image from 'next/image'
 import { Dispatch, SetStateAction } from 'react'
 
@@ -53,11 +53,11 @@ export const ZennArticlesPresentational = ({
                     <p className="font-bold">{article.title}</p>
                   </div>
                   <time
-                    dateTime={dayjs(article.published_at).format('YYYY-MM-DD')}
-                    className="text-xs mt-2 flex gap-1 items-center"
+                    dateTime={formatDate(article.published_at, true)}
+                    className="text-gray text-xs mt-3 flex gap-1 items-center"
                   >
                     <Image src="zenn.svg" alt="Zenn" width={12} height={12} />
-                    {dayjs(article.published_at).format('YYYY-MM-DD')}
+                    {formatDate(article.published_at)}
                   </time>
                 </a>
               </li>

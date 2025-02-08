@@ -48,14 +48,17 @@ export const BlogDetailPresentational = ({
         <Title order={2}>
           <span className="w-fit mx-auto block">{article.title}</span>
         </Title>
-        <time dateTime={formatDate(article._sys.createdAt)} className={time()}>
+        <time
+          dateTime={formatDate(article._sys.createdAt, true)}
+          className={time()}
+        >
           {formatDate(article._sys.createdAt)}に公開
         </time>
         <ul className="flex flex-wrap gap-2 mt-6">
           {article.tags.map((tag) => (
             <li
               key={tag.name}
-              className="inline-block dark:bg-cardDark bg-card rounded-md py-2 px-3 text-sm mr-2 dark:text-textDark text-text leading-none font-bold"
+              className="inline-block dark:bg-cardDark bg-card rounded-md py-2 px-3 text-sm mr-2 dark:text-textDark text-text leading-none "
             >
               {tag.name}
             </li>

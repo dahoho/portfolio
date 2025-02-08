@@ -4,8 +4,8 @@ import { Section } from '@/components/layout/section/_containers'
 import { LinkButton } from '@/components/ui/linkButton/_containers'
 
 import { ArticleType } from '@/types/article'
+import { formatDate } from '@/utils/dateFormat'
 import { Pagination, Title } from '@mantine/core'
-import dayjs from 'dayjs'
 import Link from 'next/link'
 import { Dispatch, SetStateAction } from 'react'
 
@@ -38,12 +38,10 @@ export const MemoPresentational = ({
                 <Link href={`/memo/${article.slug}`} className="block p-3">
                   <p className="font-bold flex gap-2">{article.title}</p>
                   <time
-                    dateTime={dayjs(article._sys.createdAt).format(
-                      'YYYY-MM-DD',
-                    )}
-                    className="text-xs mt-2 flex gap-1 items-center"
+                    dateTime={formatDate(article._sys.createdAt, true)}
+                    className="text-gray text-xs mt-3 flex gap-1 items-center"
                   >
-                    ✏️ {dayjs(article._sys.createdAt).format('YYYY-MM-DD')}
+                    ✏️ {formatDate(article._sys.createdAt)}
                   </time>
                 </Link>
               </li>

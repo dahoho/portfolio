@@ -45,7 +45,10 @@ export const ReadingMemoDetailPresentational = ({
           />
         )}
       </div>
-      <time dateTime={formatDate(article._sys.createdAt)} className={time()}>
+      <time
+        dateTime={formatDate(article._sys.createdAt, true)}
+        className={time()}
+      >
         {formatDate(article._sys.createdAt)}に公開
       </time>
       <div className={contentWrapper()}>
