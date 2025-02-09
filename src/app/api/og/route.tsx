@@ -1,3 +1,4 @@
+import { NEXT_PUBLIC_BASE_URL } from '@/config'
 import { ImageResponse } from 'next/og'
 import { NextRequest } from 'next/server'
 
@@ -42,6 +43,7 @@ export const GET = (req: NextRequest) => {
               left: '50%',
               transform: 'translate(-50%, -50%)',
               borderRadius: '20px',
+              padding: '60px 0',
             }}
           >
             <div
@@ -50,7 +52,7 @@ export const GET = (req: NextRequest) => {
                 display: 'flex',
                 flexDirection: 'column',
                 alignItems: 'center',
-                justifyContent: 'center',
+                justifyContent: 'space-between',
               }}
             >
               <div
@@ -67,6 +69,33 @@ export const GET = (req: NextRequest) => {
                 }}
               >
                 {title}
+              </div>
+
+              <div
+                style={{
+                  width: '100%',
+                  fontSize: 40,
+                  fontStyle: 'normal',
+                  fontWeight: 'bold',
+                  color: '#000',
+                  padding: '0 120px',
+                  lineHeight: 1.3,
+                  display: 'flex',
+                  alignItems: 'center',
+                  gap: 20,
+                }}
+              >
+                <span
+                  style={{
+                    display: 'block',
+                    backgroundImage: `url(${NEXT_PUBLIC_BASE_URL}/profile.png)`,
+                    backgroundSize: '100% 100%',
+                    height: 60,
+                    width: 60,
+                    borderRadius: '50%',
+                  }}
+                ></span>
+                <span>hodii.dev</span>
               </div>
             </div>
           </div>
