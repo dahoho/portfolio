@@ -23,7 +23,7 @@ export const ProductPresentational = () => {
                 <p className="font-bold">株式会社リアート様</p>
               </div>
               <div className="mt-4">
-                <p className="mt-1 text-xs">
+                <p className="mt-1 text-xs text-gray">
                   Astro / React / SCSS / microCMS / Netlify
                 </p>
               </div>
