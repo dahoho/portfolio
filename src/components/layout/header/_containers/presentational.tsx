@@ -92,9 +92,9 @@ export const HeaderPresentational = ({
           onLabel={sunIcon}
           offLabel={moonIcon}
         />
-        <a href="https://github.com/dahoho" target="_blank" rel="noreferrer">
+        <Link href="/">
           <Avatar src="/profile.png" alt="" />
-        </a>
+        </Link>
       </div>
     </header>
   )

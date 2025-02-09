@@ -21,7 +21,7 @@ export default {
         border: '#e5e7eb',
         accent: '#38bdf8',
         link: '#2B7FFF',
-        gray: '#9195A9',
+        gray: '#98A1AE',
       },
     },
     // Mantineと一致させる https://mantine.dev/styles/responsive/
