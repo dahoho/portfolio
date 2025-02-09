@@ -70,9 +70,8 @@ export const BlogDetailPresentational = ({
             </>
           )}
         </div>
-        <div className="mt-6 dark:bg-cardDark bg-card p-4 rounded-md">
-          <h2 className="text-lg font-bold">目次</h2>
-          <ul className="[&>li>a]:underline flex flex-col gap-4 mt-4 list-disc pl-4">
+        <div className="mt-6 dark:bg-cardDark bg-card p-6 rounded-md">
+          <ul className="[&>li>a]:underline flex flex-col gap-4 list-disc pl-4">
             <ReactMarkdown
               allowedElements={['h2']}
               components={{
