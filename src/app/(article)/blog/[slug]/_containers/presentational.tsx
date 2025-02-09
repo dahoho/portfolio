@@ -4,6 +4,7 @@ import { LinkButton } from '@/components/ui/linkButton/_containers'
 import { formatDate } from '@/utils/dateFormat'
 import { TagIcon } from '@heroicons/react/16/solid'
 import { Title } from '@mantine/core'
+import Link from 'next/link'
 import ReactMarkdown, { ExtraProps } from 'react-markdown'
 
 type BlogDetailPresentationalType = {
@@ -30,6 +31,7 @@ type BlogDetailPresentationalType = {
   content: () => string
   H2: React.ComponentType<ExtraProps>
   TocH2: React.ComponentType<ExtraProps>
+  isEnabled: boolean
 }
 
 export const BlogDetailPresentational = ({
@@ -41,6 +43,7 @@ export const BlogDetailPresentational = ({
   content,
   H2,
   TocH2,
+  isEnabled,
 }: BlogDetailPresentationalType) => {
   return (
     <ContainerLayout>
@@ -55,6 +58,11 @@ export const BlogDetailPresentational = ({
         >
           {formatDate(article._sys.createdAt)}に公開
         </time>
+        {isEnabled && (
+          <Link href="/api/disable-draft" prefetch={false}>
+            Draft Modeをやめる
+          </Link>
+        )}
         <div className="flex items-center gap-2 mt-12">
           {article.tags.length > 0 && (
             <>

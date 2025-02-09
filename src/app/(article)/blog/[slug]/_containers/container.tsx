@@ -198,6 +198,7 @@ export const BlogDetailContainer = async ({ params }: ParamsType) => {
       contentWrapper={contentWrapper}
       backButton={backButton}
       content={content}
+      isEnabled={isEnabled}
     />
   )
 }
