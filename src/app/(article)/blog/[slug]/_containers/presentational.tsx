@@ -59,7 +59,11 @@ export const BlogDetailPresentational = ({
           {formatDate(article._sys.createdAt)}に公開
         </time>
         {isEnabled && (
-          <Link href="/api/disable-draft" prefetch={false}>
+          <Link
+            href="/api/disable-draft"
+            prefetch={false}
+            className="block underline text-center mt-4"
+          >
             Draft Modeをやめる
           </Link>
         )}
