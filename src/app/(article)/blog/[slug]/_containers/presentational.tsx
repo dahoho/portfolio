@@ -56,15 +56,19 @@ export const BlogDetailPresentational = ({
           {formatDate(article._sys.createdAt)}に公開
         </time>
         <div className="flex items-center gap-2 mt-12">
-          <TagIcon className="w-5" />
-          <ul className="flex flex-wrap gap-2">
-            {article.tags.map((tag, index) => (
-              <li key={tag.name}>
-                {tag.name}
-                {index < article.tags.length - 1 && ','}
-              </li>
-            ))}
-          </ul>
+          {article.tags.length > 0 && (
+            <>
+              <TagIcon className="w-5" />
+              <ul className="flex flex-wrap gap-2">
+                {article.tags.map((tag, index) => (
+                  <li key={tag.name}>
+                    {tag.name}
+                    {index < article.tags.length - 1 && ','}
+                  </li>
+                ))}
+              </ul>
+            </>
+          )}
         </div>
         <div className="mt-6 dark:bg-cardDark bg-card p-4 rounded-md">
           <h2 className="text-lg font-bold">目次</h2>
