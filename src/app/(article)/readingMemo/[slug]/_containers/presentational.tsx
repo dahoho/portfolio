@@ -16,6 +16,8 @@ type ReadingMemoDetailPresentationalType = {
   backButton: () => string
   url: () => string
   textLink: () => string
+  H2: React.ComponentType<ExtraProps>
+  TocH2: React.ComponentType<ExtraProps>
   Pre: React.ComponentType<ExtraProps>
 }
 
@@ -29,6 +31,8 @@ export const ReadingMemoDetailPresentational = ({
   url,
   textLink,
   Pre,
+  H2,
+  TocH2,
 }: ReadingMemoDetailPresentationalType) => {
   return (
     <ContainerLayout>
@@ -68,10 +72,23 @@ export const ReadingMemoDetailPresentational = ({
             {article.bookUrl}
           </a>
         </p>
+        <div className="mt-6 dark:bg-cardDark bg-card p-6 rounded-md">
+          <ul className="[&>li>a]:underline flex flex-col gap-4 list-disc pl-4">
+            <ReactMarkdown
+              allowedElements={['h2']}
+              components={{
+                h2: TocH2,
+              }}
+            >
+              {article.body}
+            </ReactMarkdown>
+          </ul>
+        </div>
         <div className={content()}>
           <ReactMarkdown
             components={{
               pre: Pre,
+              h2: H2,
             }}
           >
             {article.body}

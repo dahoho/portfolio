@@ -102,6 +102,25 @@ const detailPage = tv({
   },
 })
 
+const H2 = ({
+  node,
+  children,
+}: ClassAttributes<HTMLHeadingElement> &
+  HTMLAttributes<HTMLHeadingElement> &
+  ExtraProps) => {
+  const title =
+    node?.children[0] && 'value' in node?.children[0]
+      ? node?.children[0].value
+      : ''
+  return (
+    <h2>
+      <a className="scroll-mt-[64px]" id={title} href={`#${title}`}>
+        {children}
+      </a>
+    </h2>
+  )
+}
+
 export const ReadingMemoDetailContainer = async ({ params }: ParamsType) => {
   const { slug } = await params
 
@@ -162,6 +181,23 @@ export const ReadingMemoDetailContainer = async ({ params }: ParamsType) => {
       </>
     )
   }
+
+  const TocH2 = ({
+    node,
+  }: ClassAttributes<HTMLHeadingElement> &
+    HTMLAttributes<HTMLHeadingElement> &
+    ExtraProps) => {
+    const title =
+      node?.children[0] && 'value' in node?.children[0]
+        ? node?.children[0].value
+        : ''
+    return (
+      <li key={title}>
+        <a href={`#${title}`}>{title}</a>
+      </li>
+    )
+  }
+
   return (
     <ReadingMemoDetailPresentational
       article={article}
@@ -173,6 +209,8 @@ export const ReadingMemoDetailContainer = async ({ params }: ParamsType) => {
       url={url}
       textLink={textLink}
       Pre={Pre}
+      H2={H2}
+      TocH2={TocH2}
     />
   )
 }
