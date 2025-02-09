@@ -62,7 +62,7 @@ export const BlogDetailPresentational = ({
           <Link
             href="/api/disable-draft"
             prefetch={false}
-            className="block underline text-center mt-4"
+            className="block underline text-center mt-8"
           >
             Draft Modeをやめる
           </Link>
