@@ -3,6 +3,7 @@ import { NEXT_PUBLIC_BASE_URL } from '@/config'
 import { SITE_NAME } from '@/constants'
 import { getBlogArticleBySlug, getBlogArticles } from '@/lib/newt/Blog'
 import { Metadata } from 'next'
+import { draftMode } from 'next/headers'
 import { ClassAttributes, HTMLAttributes } from 'react'
 import { ExtraProps } from 'react-markdown'
 import SyntaxHighlighter from 'react-syntax-highlighter'
@@ -20,13 +21,14 @@ export async function generateStaticParams() {
   }))
 }
 
-export const dynamicParams = false
+// export const dynamicParams = false
 
 export const generateMetadata = async ({
   params,
 }: ParamsType): Promise<Metadata> => {
+  const { isEnabled } = await draftMode()
   const { slug } = await params
-  const article = await getBlogArticleBySlug(slug)
+  const article = await getBlogArticleBySlug(slug, isEnabled)
 
   const ogImageUrl = new URL(
     `/api/og?title=${encodeURIComponent(article?.title || '')}`,
@@ -118,9 +120,10 @@ const H2 = ({
 }
 
 export const BlogDetailContainer = async ({ params }: ParamsType) => {
+  const { isEnabled } = await draftMode()
   const { slug } = await params
 
-  const article = await getBlogArticleBySlug(slug)
+  const article = await getBlogArticleBySlug(slug, isEnabled)
 
   if (!article) return
 

@@ -1,18 +1,26 @@
-import { NEWT_CDN_API_TOKEN, NEWT_SPACE_UID } from '@/config'
+import { NEWT_API_TOKEN, NEWT_CDN_API_TOKEN, NEWT_SPACE_UID } from '@/config'
 import { ArticleType } from '@/types/article'
 
 import { createClient } from 'newt-client-js'
 import { cache } from 'react'
 import 'server-only'
 
-const client = createClient({
+// Newt CDN APIのクライアント（公開コンテンツのみ取得）
+const cdnClient = createClient({
   spaceUid: NEWT_SPACE_UID + '',
   token: NEWT_CDN_API_TOKEN + '',
   apiType: 'cdn',
 })
 
+// Newt APIのクライアント（全コンテンツ取得）
+const apiClient = createClient({
+  spaceUid: NEWT_SPACE_UID + '',
+  token: NEWT_API_TOKEN + '',
+  apiType: 'api',
+})
+
 export const getBlogArticles = cache(async () => {
-  const { items } = await client.getContents<ArticleType>({
+  const { items } = await cdnClient.getContents<ArticleType>({
     appUid: 'Blog',
     modelUid: 'article',
     query: {
@@ -34,26 +42,29 @@ export const getBlogArticles = cache(async () => {
   return items
 })
 
-export const getBlogArticleBySlug = cache(async (slug: string) => {
-  const article = await client.getFirstContent<ArticleType>({
-    appUid: 'Blog',
-    modelUid: 'article',
-    query: {
-      slug,
-      select: [
-        '_id',
-        'title',
-        'slug',
-        'body',
-        'tags',
-        '_sys',
-        'bookUrl',
-        'emoji',
-      ],
-      body: {
-        fmt: 'text',
+export const getBlogArticleBySlug = cache(
+  async (slug: string, isDraft: boolean) => {
+    const client = isDraft ? apiClient : cdnClient
+    const article = await client.getFirstContent<ArticleType>({
+      appUid: 'Blog',
+      modelUid: 'article',
+      query: {
+        slug,
+        select: [
+          '_id',
+          'title',
+          'slug',
+          'body',
+          'tags',
+          '_sys',
+          'bookUrl',
+          'emoji',
+        ],
+        body: {
+          fmt: 'text',
+        },
       },
-    },
-  })
-  return article
-})
+    })
+    return article
+  },
+)
