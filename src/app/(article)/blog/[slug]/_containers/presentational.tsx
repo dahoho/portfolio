@@ -62,7 +62,7 @@ export const BlogDetailPresentational = ({
               <ul className="flex flex-wrap gap-2">
                 {article.tags.map((tag, index) => (
                   <li key={tag.name}>
-                    {tag.name}
+                    #{tag.name}
                     {index < article.tags.length - 1 && ','}
                   </li>
                 ))}
