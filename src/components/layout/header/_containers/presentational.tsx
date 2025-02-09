@@ -68,6 +68,7 @@ export const HeaderPresentational = ({
             },
             close: {
               color: theme === 'dark' ? '#ffffff' : '#030712',
+              background: 'transparent',
             },
           }}
         >
