@@ -7,7 +7,7 @@ import { getMemoArticleBySlug } from '@/lib/newt/memo'
 import type { Metadata } from 'next'
 
 type ParamsType = {
-  params: Promise<{ slug: string }>
+  params: { slug: string }
 }
 
 export const generateMetadata = async ({
