@@ -1,5 +1,6 @@
 import { tv } from 'tailwind-variants'
 
+// 詳細ページ記事コンテンツのスタイル
 export const detailPage = tv({
   slots: {
     imageWrapper: ['w-full', 'h-40', 'sm:h-64', 'relative', '-z-10'],
