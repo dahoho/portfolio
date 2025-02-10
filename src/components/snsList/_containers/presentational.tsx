@@ -1,18 +1,10 @@
+import { SNS_LIST_ITEM } from '@/constants'
 import Image from 'next/image'
 
-type SiteListItemType = {
-  siteListItem: {
-    iconPath: string
-    iconPathDark?: string
-    url: string
-    alt: string
-  }[]
-}
-
-export const SnsListPresentational = ({ siteListItem }: SiteListItemType) => {
+export const SnsListPresentational = () => {
   return (
     <ul className="flex justify-center gap-6 leading-loose">
-      {siteListItem.map((item) => (
+      {SNS_LIST_ITEM.map((item) => (
         <li key={item.url}>
           <a href={item.url} target="_blank" rel="noopener noreferrer">
             {/* 通常画像 */}

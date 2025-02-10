@@ -10,6 +10,7 @@ type ParamsType = {
 
 export const BlogDetailContainer = async ({ params }: ParamsType) => {
   const { isEnabled } = await draftMode()
+
   const { slug } = await params
 
   const article = await getBlogArticleBySlug(slug, isEnabled)

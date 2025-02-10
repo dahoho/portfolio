@@ -12,6 +12,7 @@ type ParamsType = {
 
 export async function generateStaticParams() {
   const articles = await getMemoArticles()
+
   return articles.map((article) => ({
     slug: article.slug,
   }))
@@ -21,7 +22,9 @@ export const dynamicParams = false
 
 export const MemoDetailContainer = async ({ params }: ParamsType) => {
   const { slug } = await params
+
   const article = await getMemoArticleBySlug(slug)
+
   if (!article) return
 
   const detailPage = tv({
