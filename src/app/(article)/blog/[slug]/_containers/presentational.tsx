@@ -1,11 +1,14 @@
 import { ContainerLayout } from '@/components/layout/containerLayout/_containers'
+import { H2 } from '@/components/markdown/h2/_containers'
+import { Pre } from '@/components/markdown/pre/_containers'
+import { TocH2 } from '@/components/markdown/tocH2/_containers'
 import { ShareButton } from '@/components/shareButton/_containers'
 import { LinkButton } from '@/components/ui/linkButton/_containers'
 import { formatDate } from '@/utils/dateFormat'
 import { TagIcon } from '@heroicons/react/16/solid'
 import { Title } from '@mantine/core'
 import Link from 'next/link'
-import ReactMarkdown, { ExtraProps } from 'react-markdown'
+import ReactMarkdown from 'react-markdown'
 
 type BlogDetailPresentationalType = {
   article: {
@@ -24,25 +27,19 @@ type BlogDetailPresentationalType = {
       slug: string
     }[]
   }
-  Pre: React.ComponentType<ExtraProps>
   time: () => string
   contentWrapper: () => string
   backButton: () => string
   content: () => string
-  H2: React.ComponentType<ExtraProps>
-  TocH2: React.ComponentType<ExtraProps>
   isEnabled: boolean
 }
 
 export const BlogDetailPresentational = ({
   article,
-  Pre,
   time,
   contentWrapper,
   backButton,
   content,
-  H2,
-  TocH2,
   isEnabled,
 }: BlogDetailPresentationalType) => {
   return (

@@ -1,4 +1,6 @@
 import { ContainerLayout } from '@/components/layout/containerLayout/_containers'
+import { H2 } from '@/components/markdown/h2/_containers'
+import { TocH2 } from '@/components/markdown/tocH2/_containers'
 import { ShareButton } from '@/components/shareButton/_containers'
 import { LinkButton } from '@/components/ui/linkButton/_containers'
 import { formatDate } from '@/utils/dateFormat'
@@ -47,10 +49,23 @@ export const MemoDetailPresentational = ({
         >
           {formatDate(article._sys.createdAt)}に公開
         </time>
+        <div className="mt-6 dark:bg-cardDark bg-card p-6 rounded-md">
+          <ul className="[&>li>a]:underline flex flex-col gap-4 list-disc pl-4">
+            <ReactMarkdown
+              allowedElements={['h2']}
+              components={{
+                h2: TocH2,
+              }}
+            >
+              {article.body}
+            </ReactMarkdown>
+          </ul>
+        </div>
         <div className={content()}>
           <ReactMarkdown
             components={{
               pre: Pre,
+              h2: H2,
             }}
           >
             {article.body}

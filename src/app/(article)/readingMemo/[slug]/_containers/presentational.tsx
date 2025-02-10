@@ -1,11 +1,14 @@
 import { ContainerLayout } from '@/components/layout/containerLayout/_containers'
+import { H2 } from '@/components/markdown/h2/_containers'
+import { Pre } from '@/components/markdown/pre/_containers'
+import { TocH2 } from '@/components/markdown/tocH2/_containers'
 import { ShareButton } from '@/components/shareButton/_containers'
 import { LinkButton } from '@/components/ui/linkButton/_containers'
 import { ArticleType } from '@/types/article'
 import { formatDate } from '@/utils/dateFormat'
 import { Title } from '@mantine/core'
 import Image from 'next/image'
-import ReactMarkdown, { ExtraProps } from 'react-markdown'
+import ReactMarkdown from 'react-markdown'
 
 type ReadingMemoDetailPresentationalType = {
   article: ArticleType
@@ -16,9 +19,6 @@ type ReadingMemoDetailPresentationalType = {
   backButton: () => string
   url: () => string
   textLink: () => string
-  H2: React.ComponentType<ExtraProps>
-  TocH2: React.ComponentType<ExtraProps>
-  Pre: React.ComponentType<ExtraProps>
 }
 
 export const ReadingMemoDetailPresentational = ({
@@ -30,9 +30,6 @@ export const ReadingMemoDetailPresentational = ({
   backButton,
   url,
   textLink,
-  Pre,
-  H2,
-  TocH2,
 }: ReadingMemoDetailPresentationalType) => {
   return (
     <ContainerLayout>
