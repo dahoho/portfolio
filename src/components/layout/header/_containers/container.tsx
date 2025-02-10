@@ -1,6 +1,7 @@
 'use client'
 
 import { HeaderPresentational } from '@/components/layout/header/_containers/presentational'
+import { NAV_ITEMS } from '@/constants'
 import { useTheme } from 'next-themes'
 import { useEffect, useState } from 'react'
 
@@ -15,13 +16,6 @@ export const HeaderContainer = () => {
   }, [theme])
 
   const toggleMenu = () => setIsMenuOpen(!isMenuOpen)
-
-  const NAV_ITEMS = [
-    { title: 'Home', href: '/' },
-    { title: 'Zenn', href: '/zenn' },
-    { title: 'Blog', href: '/blog' },
-    { title: 'ReadingMemo', href: '/readingMemo' },
-  ]
 
   useEffect(() => {
     setMounted(true)
