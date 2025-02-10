@@ -90,8 +90,8 @@ export const GET = (req: NextRequest) => {
                     display: 'block',
                     backgroundImage: `url(${NEXT_PUBLIC_BASE_URL}/profile.png)`,
                     backgroundSize: '100% 100%',
-                    height: 60,
-                    width: 60,
+                    height: 80,
+                    width: 80,
                     borderRadius: '50%',
                   }}
                 ></span>
