@@ -1,8 +1,5 @@
 import { MemoDetailPresentational } from '@/app/(article)/memo/[slug]/_containers/presentational'
-import { NEXT_PUBLIC_BASE_URL } from '@/config'
-import { SITE_NAME } from '@/constants'
 import { getMemoArticleBySlug, getMemoArticles } from '@/lib/newt/memo'
-import { Metadata } from 'next'
 import { ClassAttributes, HTMLAttributes } from 'react'
 import { ExtraProps } from 'react-markdown'
 import SyntaxHighlighter from 'react-syntax-highlighter'
@@ -21,43 +18,6 @@ export async function generateStaticParams() {
 }
 
 export const dynamicParams = false
-
-export const generateMetadata = async ({
-  params,
-}: ParamsType): Promise<Metadata> => {
-  const { slug } = await params
-  const article = await getMemoArticleBySlug(slug)
-
-  const ogImageUrl = new URL(
-    `/api/og?title=${encodeURIComponent(article?.title || '')}`,
-    NEXT_PUBLIC_BASE_URL,
-  ).toString()
-
-  return {
-    title: `${article?.title} | ${SITE_NAME}`,
-    description: `Memoページです`,
-    openGraph: {
-      type: 'article',
-      title: article?.title,
-      description: `Memoページです`,
-      url: `${NEXT_PUBLIC_BASE_URL}/memo/${slug}`,
-      images: [
-        {
-          url: ogImageUrl,
-          width: 1200,
-          height: 630,
-          alt: article?.title,
-        },
-      ],
-    },
-    twitter: {
-      card: 'summary_large_image',
-      title: article?.title,
-      description: `Memoページです`,
-      images: [ogImageUrl],
-    },
-  }
-}
 
 const detailPage = tv({
   slots: {
