@@ -8,7 +8,7 @@ import {
 import { Metadata } from 'next'
 
 type ParamsType = {
-  params: { slug: string }
+  params: Promise<{ slug: string }>
 }
 
 export async function generateStaticParams() {

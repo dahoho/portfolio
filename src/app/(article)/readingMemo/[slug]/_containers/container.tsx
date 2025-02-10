@@ -7,7 +7,7 @@ import { monokaiSublime } from 'react-syntax-highlighter/dist/esm/styles/hljs'
 import { tv } from 'tailwind-variants'
 
 type ParamsType = {
-  params: { slug: string }
+  params: Promise<{ slug: string }>
 }
 
 const detailPage = tv({
