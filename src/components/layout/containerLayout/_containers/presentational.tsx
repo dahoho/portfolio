@@ -8,7 +8,7 @@ import { ChildrenType } from '@/types/children'
 
 export const ContainerLayoutPresentational = ({ children }: ChildrenType) => {
   return (
-    <div className="grid grid-rows-[auto,1fr,auto] grid-cols-1 min-h-screen">
+    <div className="grid min-h-screen grid-cols-1 grid-rows-[auto,1fr,auto]">
       <Header />
       <MainLayout>{children}</MainLayout>
       <SnsList />

@@ -54,7 +54,7 @@ export const ReadingMemoDetailPresentational = ({
       </time>
       <div className={contentWrapper()}>
         <Title order={2}>
-          <span className="w-fit mx-auto block">
+          <span className="mx-auto block w-fit">
             {`【読書メモ】${article.title}`}
           </span>
         </Title>
@@ -69,8 +69,8 @@ export const ReadingMemoDetailPresentational = ({
             {article.bookUrl}
           </a>
         </p>
-        <div className="mt-6 dark:bg-cardDark bg-card p-6 rounded-md">
-          <ul className="[&>li>a]:underline flex flex-col gap-4 list-disc pl-4">
+        <div className="mt-6 rounded-md bg-card p-6 dark:bg-cardDark">
+          <ul className="flex list-disc flex-col gap-4 pl-4 [&>li>a]:underline">
             <ReactMarkdown
               allowedElements={['h2']}
               components={{

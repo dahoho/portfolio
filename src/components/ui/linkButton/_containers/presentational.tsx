@@ -12,7 +12,7 @@ const LinkButtonPresentational = ({
   return (
     <Link
       href={path}
-      className="bg-accent block py-3 px-4 rounded-md text-center font-bold text-textDark"
+      className="block rounded-md bg-accent px-4 py-3 text-center font-bold text-textDark"
     >
       {children}
     </Link>

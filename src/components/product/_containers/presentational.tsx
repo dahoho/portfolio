@@ -19,7 +19,7 @@ export const ProductPresentational = ({
           {productArticles.map((article) => (
             <li
               key={article._id}
-              className="bg-card dark:bg-cardDark rounded-md"
+              className="rounded-md bg-card dark:bg-cardDark"
             >
               <a
                 href={article.productUrl}
@@ -28,12 +28,12 @@ export const ProductPresentational = ({
                 className="block p-3"
               >
                 <div className="flex items-start gap-4">
-                  <span className="flex-shrink-0 text-xs bg-accent text-white p-1 rounded-sm font-bold">
+                  <span className="shrink-0 rounded-sm bg-accent p-1 text-xs font-bold text-white">
                     {article.category}
                   </span>
                   <p className="font-bold">{article.title}</p>
                 </div>
-                <ul className="flex flex-wrap  text-xs text-gray leading-6 mt-2">
+                <ul className="mt-2 flex  flex-wrap text-xs leading-6 text-gray">
                   {article.tags.map((tag, index) => (
                     <li key={tag.name}>
                       &nbsp;

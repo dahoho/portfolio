@@ -38,10 +38,10 @@ export const MemoDetailPresentational = ({
 }: MemoDetailPresentationalType) => {
   return (
     <ContainerLayout>
-      <div className="text-7xl text-center">✏️</div>
+      <div className="text-center text-7xl">✏️</div>
       <div className={contentWrapper()}>
         <Title order={2}>
-          <span className="w-fit mx-auto block">{article.title}</span>
+          <span className="mx-auto block w-fit">{article.title}</span>
         </Title>
         <time
           dateTime={formatDate(article._sys.createdAt, true)}
@@ -49,8 +49,8 @@ export const MemoDetailPresentational = ({
         >
           {formatDate(article._sys.createdAt)}に公開
         </time>
-        <div className="mt-6 dark:bg-cardDark bg-card p-6 rounded-md">
-          <ul className="[&>li>a]:underline flex flex-col gap-4 list-disc pl-4">
+        <div className="mt-6 rounded-md bg-card p-6 dark:bg-cardDark">
+          <ul className="flex list-disc flex-col gap-4 pl-4 [&>li>a]:underline">
             <ReactMarkdown
               allowedElements={['h2']}
               components={{

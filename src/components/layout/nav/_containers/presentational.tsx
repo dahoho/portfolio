@@ -42,8 +42,8 @@ export const NavPresentational = ({
           },
         }}
       >
-        <nav className="dark:text-textDark text-text">
-          <ul className="list-none flex flex-col gap-5 text-xl mt-6">
+        <nav className="text-text dark:text-textDark">
+          <ul className="mt-6 flex list-none flex-col gap-5 text-xl">
             {NAV_ITEMS.map((item) => (
               <li key={item.title} onClick={toggleMenu}>
                 <Link href={item.href}>{item.title}</Link>

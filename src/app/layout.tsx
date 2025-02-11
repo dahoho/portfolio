@@ -48,7 +48,7 @@ const RootLayout = ({
         <ColorSchemeScript />
       </head>
       <body
-        className={`${noto.className} bg-background dark:bg-backgroundDark text-text dark:text-textDark text-sm tracking-widest`}
+        className={`${noto.className} bg-background text-sm tracking-widest text-text dark:bg-backgroundDark dark:text-textDark`}
       >
         <AppThemeProvider>
           <AppMantineProvider>{children}</AppMantineProvider>

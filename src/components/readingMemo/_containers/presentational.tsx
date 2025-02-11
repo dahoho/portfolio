@@ -28,12 +28,12 @@ export const ReadingMemoPresentational = ({
     <Section>
       <Title order={2}>Reading Memo</Title>
       <InnerLayout>
-        <ul className="flex flex-col gap-4 mt-4">
+        <ul className="mt-4 flex flex-col gap-4">
           {currentArticles.map((article) => {
             return (
               <li
                 key={article._id}
-                className="bg-card dark:bg-cardDark rounded-md"
+                className="rounded-md bg-card dark:bg-cardDark"
               >
                 <Link
                   href={`/readingMemo/${article.slug}`}
@@ -42,7 +42,7 @@ export const ReadingMemoPresentational = ({
                   <p className="font-bold">{`【読書メモ】${article.title}`}</p>
                   <time
                     dateTime={formatDate(article._sys.createdAt, true)}
-                    className="text-gray text-xs mt-3 flex gap-1 items-center"
+                    className="mt-3 flex items-center gap-1 text-xs text-gray"
                   >
                     <span className="text-xs">📚</span>
                     {formatDate(article._sys.createdAt)}
@@ -52,7 +52,7 @@ export const ReadingMemoPresentational = ({
             )
           })}
         </ul>
-        <div className="flex justify-center mt-8">
+        <div className="mt-8 flex justify-center">
           {isHomePage ? (
             <LinkButton path="/readingMemo">もっとみる</LinkButton>
           ) : (

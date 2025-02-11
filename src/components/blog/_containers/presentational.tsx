@@ -28,21 +28,21 @@ export const BlogPresentational = ({
     <Section>
       <Title order={2}>Blog</Title>
       <InnerLayout>
-        <ul className="flex flex-col gap-4 mt-4">
+        <ul className="mt-4 flex flex-col gap-4">
           {currentArticles.map((article) => {
             return (
               <li
                 key={article._id}
-                className="bg-card dark:bg-cardDark rounded-md"
+                className="rounded-md bg-card dark:bg-cardDark"
               >
                 <Link href={`/blog/${article.slug}`} className="block p-3">
-                  <p className="font-bold flex gap-2">
+                  <p className="flex gap-2 font-bold">
                     <span>{article.emoji.value}</span>
                     {article.title}
                   </p>
                   <time
                     dateTime={formatDate(article._sys.createdAt, true)}
-                    className="text-gray text-xs mt-3 flex gap-1 items-center"
+                    className="mt-3 flex items-center gap-1 text-xs text-gray"
                   >
                     {formatDate(article._sys.createdAt)}
                   </time>
@@ -51,7 +51,7 @@ export const BlogPresentational = ({
             )
           })}
         </ul>
-        <div className="flex justify-center mt-8">
+        <div className="mt-8 flex justify-center">
           {isHomePage ? (
             <LinkButton path="/blog">もっとみる</LinkButton>
           ) : (

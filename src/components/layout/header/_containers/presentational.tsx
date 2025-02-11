@@ -16,7 +16,7 @@ export const HeaderPresentational = ({
   const mantineTheme = useMantineTheme()
 
   return (
-    <header className="h-16 px-5 flex items-center justify-between sticky top-0 left-0  backdrop-blur">
+    <header className="sticky left-0 top-0 flex h-16 items-center justify-between px-5  backdrop-blur">
       <Nav theme={theme} />
 
       <div className="flex items-center gap-6">

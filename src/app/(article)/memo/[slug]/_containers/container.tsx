@@ -95,14 +95,14 @@ export const MemoDetailContainer = async ({ params }: ParamsType) => {
     return (
       <>
         {fileName && (
-          <span className="inline-block dark:bg-cardDark bg-black text-white p-2 rounded-t-md text-xs">
+          <span className="inline-block rounded-t-md bg-black p-2 text-xs text-white dark:bg-cardDark">
             {fileName}
           </span>
         )}
         <SyntaxHighlighter
           language={language}
           style={atomOneDark}
-          className={fileName ? 'rounded-t-none mt-0' : ''}
+          className={fileName ? 'mt-0 rounded-t-none' : ''}
         >
           {String(code).replace(/\n$/, '')}
         </SyntaxHighlighter>

@@ -12,13 +12,13 @@ export const ShareButtonPresentational = ({
   hatenaLink,
 }: ShareButtonPresentationalPropsType) => {
   return (
-    <div className="bg-card rounded-md mt-20 p-6">
-      <h3 className="text-text font-bold pb-4 text-center">記事をシェアする</h3>
-      <ul className="flex flex-col sm:flex-row items-center justify-center gap-4 list-none p-0 m-0">
+    <div className="mt-20 rounded-md bg-card p-6">
+      <h3 className="pb-4 text-center font-bold text-text">記事をシェアする</h3>
+      <ul className="m-0 flex list-none flex-col items-center justify-center gap-4 p-0 sm:flex-row">
         <li>
           <a
             href={twitterLink}
-            className="flex items-center justify-center gap-2 rounded-md font-bold h-12 w-52 text-center no-underline transition-colors duration-300 ease-in-out border border-[#0f1419] text-[#0f1419]"
+            className="flex h-12 w-52 items-center justify-center gap-2 rounded-md border border-[#0f1419] text-center font-bold text-[#0f1419] no-underline transition-colors duration-300 ease-in-out"
             target="_blank"
             rel="noopener noreferrer"
           >
@@ -35,7 +35,7 @@ export const ShareButtonPresentational = ({
         <li>
           <a
             href={facebookLink}
-            className="flex items-center justify-center gap-2 rounded-md font-bold h-12 w-52 text-center no-underline transition-colors duration-300 ease-in-out border border-[#1877f2] text-[#1877f2]"
+            className="flex h-12 w-52 items-center justify-center gap-2 rounded-md border border-[#1877f2] text-center font-bold text-[#1877f2] no-underline transition-colors duration-300 ease-in-out"
             target="_blank"
             rel="noopener noreferrer"
           >
@@ -52,7 +52,7 @@ export const ShareButtonPresentational = ({
         <li>
           <a
             href={hatenaLink}
-            className="flex items-center justify-center gap-2 rounded-md font-bold h-12 w-52 text-center no-underline transition-colors duration-300 ease-in-out border border-[#00a4de] text-[#00a4de]"
+            className="flex h-12 w-52 items-center justify-center gap-2 rounded-md border border-[#00a4de] text-center font-bold text-[#00a4de] no-underline transition-colors duration-300 ease-in-out"
             target="_blank"
             rel="noopener noreferrer"
           >

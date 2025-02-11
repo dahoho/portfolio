@@ -44,10 +44,10 @@ export const BlogDetailPresentational = ({
 }: BlogDetailPresentationalType) => {
   return (
     <ContainerLayout>
-      <div className="text-7xl text-center">{article.emoji.value}</div>
+      <div className="text-center text-7xl">{article.emoji.value}</div>
       <div className={contentWrapper()}>
         <Title order={2}>
-          <span className="w-fit mx-auto block">{article.title}</span>
+          <span className="mx-auto block w-fit">{article.title}</span>
         </Title>
         <time
           dateTime={formatDate(article._sys.createdAt, true)}
@@ -59,12 +59,12 @@ export const BlogDetailPresentational = ({
           <Link
             href="/api/disable-draft"
             prefetch={false}
-            className="block underline text-center mt-8"
+            className="mt-8 block text-center underline"
           >
             Draft Modeをやめる
           </Link>
         )}
-        <div className="flex items-center gap-2 mt-12">
+        <div className="mt-12 flex items-center gap-2">
           {article.tags.length > 0 && (
             <>
               <TagIcon className="w-5" />
@@ -79,8 +79,8 @@ export const BlogDetailPresentational = ({
             </>
           )}
         </div>
-        <div className="mt-6 dark:bg-cardDark bg-card p-6 rounded-md">
-          <ul className="[&>li>a]:underline flex flex-col gap-4 list-disc pl-4">
+        <div className="mt-6 rounded-md bg-card p-6 dark:bg-cardDark">
+          <ul className="flex list-disc flex-col gap-4 pl-4 [&>li>a]:underline">
             <ReactMarkdown
               allowedElements={['h2']}
               components={{
