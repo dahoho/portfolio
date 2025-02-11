@@ -19,6 +19,8 @@ export type ArticleType = {
   title: string
   slug: string
   bookUrl?: string
+  productUrl?: string
+  category?: string
   body: string
   coverImage?: {
     _id: string

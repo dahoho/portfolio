@@ -9,6 +9,7 @@ import { ZennArticles } from '@/components/zennArticles/_containers'
 
 import { getBlogArticles } from '@/lib/newt/Blog'
 import { getMemoArticles } from '@/lib/newt/memo'
+import { getProductArticles } from '@/lib/newt/Product'
 import { getReadingMemoArticles } from '@/lib/newt/ReadingMemo'
 import { getZennArticles } from '@/lib/zenn/fetcher'
 
@@ -17,6 +18,8 @@ const Home = async () => {
   const bookArticles = await getBlogArticles()
   const memoArticles = await getMemoArticles()
   const zennArticles = await getZennArticles()
+  const productArticles = await getProductArticles()
+  console.log('productArticles:', productArticles)
 
   return (
     <ContainerLayout>
@@ -24,7 +27,7 @@ const Home = async () => {
       <Blog blogArticles={bookArticles} />
       <ReadingMemo readingMemoArticles={readingMemoArticles} />
       <Memo memoArticles={memoArticles} />
-      <Product />
+      <Product productArticles={productArticles} />
     </ContainerLayout>
   )
 }

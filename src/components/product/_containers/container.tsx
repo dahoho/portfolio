@@ -1,5 +1,10 @@
 import { ProductPresentational } from '@/components/product/_containers/presentational'
+import { ArticleType } from '@/types/article'
 
-export const ProductContainer = () => {
-  return <ProductPresentational />
+type ProductPropsType = {
+  productArticles: ArticleType[]
+}
+
+export const ProductContainer = ({ productArticles }: ProductPropsType) => {
+  return <ProductPresentational productArticles={productArticles} />
 }
