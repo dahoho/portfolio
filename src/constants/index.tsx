@@ -26,6 +26,11 @@ export const SNS_LIST_ITEM = [
     alt: 'Zenn',
   },
   {
+    iconPath: '/qiita.png',
+    url: 'https://qiita.com/dahoho',
+    alt: 'Qiita',
+  },
+  {
     iconPath: '/sizu.svg',
     iconPathDark: '/sizu-dark.svg',
     url: 'https://sizu.me/hody',
