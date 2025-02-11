@@ -19,7 +19,6 @@ const Home = async () => {
   const memoArticles = await getMemoArticles()
   const zennArticles = await getZennArticles()
   const productArticles = await getProductArticles()
-  console.log('productArticles:', productArticles)
 
   return (
     <ContainerLayout>
