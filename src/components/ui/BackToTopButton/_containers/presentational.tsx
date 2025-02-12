@@ -1,14 +1,14 @@
 import { ChildrenType } from '@/types/children'
 import Link from 'next/link'
 
-type LinkButtonPresentationalPropsType = {
+type BackToTopButtonPresentationalPropsType = {
   path: string
 } & ChildrenType
 
-const LinkButtonPresentational = ({
+const BackToTopButtonPresentational = ({
   children,
   path,
-}: LinkButtonPresentationalPropsType) => {
+}: BackToTopButtonPresentationalPropsType) => {
   return (
     <Link
       href={path}
@@ -19,4 +19,4 @@ const LinkButtonPresentational = ({
   )
 }
 
-export default LinkButtonPresentational
+export default BackToTopButtonPresentational

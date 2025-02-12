@@ -2,7 +2,7 @@ import { ContainerLayout } from '@/components/layout/containerLayout/_containers
 import { H2 } from '@/components/markdown/h2/_containers'
 import { TocH2 } from '@/components/markdown/tocH2/_containers'
 import { ShareButton } from '@/components/shareButton/_containers'
-import { LinkButton } from '@/components/ui/linkButton/_containers'
+import { BackToTopButton } from '@/components/ui/BackToTopButton/_containers'
 import { formatDate } from '@/utils/dateFormat'
 import { Title } from '@mantine/core'
 import ReactMarkdown from 'react-markdown'
@@ -73,7 +73,7 @@ export const MemoDetailPresentational = ({
         </div>
       </div>
       <div className={backButton()}>
-        <LinkButton path="/">トップに戻る</LinkButton>
+        <BackToTopButton path="/">トップに戻る</BackToTopButton>
       </div>
       <ShareButton slug={article.slug} title={article.title} category="memo" />
     </ContainerLayout>

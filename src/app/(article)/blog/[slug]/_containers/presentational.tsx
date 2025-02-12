@@ -3,7 +3,7 @@ import { H2 } from '@/components/markdown/h2/_containers'
 import { Pre } from '@/components/markdown/pre/_containers'
 import { TocH2 } from '@/components/markdown/tocH2/_containers'
 import { ShareButton } from '@/components/shareButton/_containers'
-import { LinkButton } from '@/components/ui/linkButton/_containers'
+import { BackToTopButton } from '@/components/ui/BackToTopButton/_containers'
 import { formatDate } from '@/utils/dateFormat'
 import { TagIcon } from '@heroicons/react/16/solid'
 import { Title } from '@mantine/core'
@@ -103,7 +103,7 @@ export const BlogDetailPresentational = ({
         </div>
       </div>
       <div className={backButton()}>
-        <LinkButton path="/">トップに戻る</LinkButton>
+        <BackToTopButton path="/">トップに戻る</BackToTopButton>
       </div>
       <ShareButton slug={article.slug} title={article.title} category="blog" />
     </ContainerLayout>

@@ -1,6 +1,6 @@
 import { ContainerLayout } from '@/components/layout/containerLayout/_containers'
 import { ReadingMemo } from '@/components/readingMemo/_containers'
-import { LinkButton } from '@/components/ui/linkButton/_containers'
+import { BackToTopButton } from '@/components/ui/BackToTopButton/_containers'
 import { ArticleType } from '@/types/article'
 
 type ReadingMemoArticlePresentationalType = {
@@ -14,7 +14,7 @@ export const ReadingMemoArticlePresentational = ({
     <ContainerLayout>
       <ReadingMemo readingMemoArticles={readingMemoArticles} />
       <div className="mt-20 flex justify-center">
-        <LinkButton path="/">トップに戻る</LinkButton>
+        <BackToTopButton path="/">トップに戻る</BackToTopButton>
       </div>
     </ContainerLayout>
   )

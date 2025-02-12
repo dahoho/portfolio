@@ -1,5 +1,5 @@
 import { ContainerLayout } from '@/components/layout/containerLayout/_containers'
-import { LinkButton } from '@/components/ui/linkButton/_containers'
+import { BackToTopButton } from '@/components/ui/BackToTopButton/_containers'
 import { ZennArticles } from '@/components/zennArticles/_containers'
 
 type ZennArticleType = {
@@ -21,7 +21,7 @@ export const ZennArticlePresentational = ({ zennArticles }: ArticlesProps) => {
     <ContainerLayout>
       <ZennArticles zennArticles={zennArticles} />
       <div className="mt-20 flex justify-center">
-        <LinkButton path="/">トップに戻る</LinkButton>
+        <BackToTopButton path="/">トップに戻る</BackToTopButton>
       </div>
     </ContainerLayout>
   )
