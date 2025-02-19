@@ -1,7 +1,6 @@
 import { InnerLayout } from '@/components/layout/inner/_containers'
 import { Section } from '@/components/layout/section/_containers'
-
-import { LinkButton } from '@/components/ui/linkButton/_containers'
+import { BackToTopButton } from '@/components/ui/backToTopButton/_containers'
 
 import { ArticleType } from '@/types/article'
 import { formatDate } from '@/utils/dateFormat'
@@ -53,7 +52,7 @@ export const BlogPresentational = ({
         </ul>
         <div className="mt-8 flex justify-center">
           {isHomePage ? (
-            <LinkButton path="/blog">もっとみる</LinkButton>
+            <BackToTopButton path="/blog">もっとみる</BackToTopButton>
           ) : (
             <Pagination
               total={paginatedArticles.length}

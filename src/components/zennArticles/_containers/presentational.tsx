@@ -1,7 +1,7 @@
 import { InnerLayout } from '@/components/layout/inner/_containers'
 import { Section } from '@/components/layout/section/_containers'
+import { BackToTopButton } from '@/components/ui/backToTopButton/_containers'
 
-import { LinkButton } from '@/components/ui/linkButton/_containers'
 import { formatDate } from '@/utils/dateFormat'
 
 import { Pagination, Title } from '@mantine/core'
@@ -66,7 +66,7 @@ export const ZennArticlesPresentational = ({
         </ul>
         <div className="mt-8 flex justify-center">
           {isHomePage ? (
-            <LinkButton path="/zenn">もっとみる</LinkButton>
+            <BackToTopButton path="/zenn">もっとみる</BackToTopButton>
           ) : (
             <Pagination
               total={paginatedArticles.length}

@@ -1,7 +1,6 @@
 import { InnerLayout } from '@/components/layout/inner/_containers'
 import { Section } from '@/components/layout/section/_containers'
-
-import { LinkButton } from '@/components/ui/linkButton/_containers'
+import { BackToTopButton } from '@/components/ui/backToTopButton/_containers'
 
 import { ArticleType } from '@/types/article'
 import { formatDate } from '@/utils/dateFormat'
@@ -28,18 +27,18 @@ export const MemoPresentational = ({
     <Section>
       <Title order={2}>Memo</Title>
       <InnerLayout>
-        <ul className="flex flex-col gap-4 mt-4">
+        <ul className="mt-4 flex flex-col gap-4">
           {currentArticles.map((article) => {
             return (
               <li
                 key={article._id}
-                className="bg-card dark:bg-cardDark rounded-md"
+                className="rounded-md bg-card dark:bg-cardDark"
               >
                 <Link href={`/memo/${article.slug}`} className="block p-3">
-                  <p className="font-bold flex gap-2">{article.title}</p>
+                  <p className="flex gap-2 font-bold">{article.title}</p>
                   <time
                     dateTime={formatDate(article._sys.createdAt, true)}
-                    className="text-gray text-xs mt-3 flex gap-1 items-center"
+                    className="mt-3 flex items-center gap-1 text-xs text-gray"
                   >
                     ✏️ {formatDate(article._sys.createdAt)}
                   </time>
@@ -48,9 +47,9 @@ export const MemoPresentational = ({
             )
           })}
         </ul>
-        <div className="flex justify-center mt-8">
+        <div className="mt-8 flex justify-center">
           {isHomePage ? (
-            <LinkButton path="/memo">もっとみる</LinkButton>
+            <BackToTopButton path="/memo">もっとみる</BackToTopButton>
           ) : (
             <Pagination
               total={paginatedArticles.length}

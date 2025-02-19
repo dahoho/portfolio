@@ -16,6 +16,11 @@ const eslintConfig = [
     'prettier',
     'plugin:tailwindcss/recommended',
   ),
+  {
+    rules: {
+      eqeqeq: 'error',
+    },
+  },
 ]
 
 export default eslintConfig
