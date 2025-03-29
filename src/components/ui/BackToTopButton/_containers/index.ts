@@ -1,1 +1,1 @@
-export { BackToTopButtonContainer as BackToTopButton } from './container'
+export { BackToTopButtonContainer as BackToTopButton } from '@/components/ui/BackToTopButton/_containers/container'
