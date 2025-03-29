@@ -2,7 +2,8 @@ import { ContainerLayout } from '@/components/layout/containerLayout/_containers
 import { H2 } from '@/components/markdown/h2/_containers'
 import { TocH2 } from '@/components/markdown/tocH2/_containers'
 import { ShareButton } from '@/components/shareButton/_containers'
-import { BackToTopButton } from '@/components/ui/BackToTopButton/_containers'
+import { BackToTopButton } from '@/components/ui/backToTopButton/_containers'
+
 import { formatDate } from '@/utils/dateFormat'
 import { Title } from '@mantine/core'
 import ReactMarkdown from 'react-markdown'

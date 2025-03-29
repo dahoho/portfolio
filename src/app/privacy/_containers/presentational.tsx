@@ -1,5 +1,5 @@
 import { ContainerLayout } from '@/components/layout/containerLayout/_containers'
-import { BackToTopButton } from '@/components/ui/BackToTopButton/_containers'
+import { BackToTopButton } from '@/components/ui/backToTopButton/_containers'
 
 export const PrivacyPresentational = () => {
   return (
