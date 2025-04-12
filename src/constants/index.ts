@@ -5,6 +5,7 @@ export const NAV_ITEMS = [
   { title: 'Zenn', href: '/zenn' },
   { title: 'Blog', href: '/blog' },
   { title: 'ReadingMemo', href: '/readingMemo' },
+  { title: 'Resume', href: '/resume' },
 ]
 
 export const SNS_LIST_ITEM = [
