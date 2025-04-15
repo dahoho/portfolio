@@ -4,8 +4,7 @@ export const NAV_ITEMS = [
   { title: 'Home', href: '/' },
   { title: 'Zenn', href: '/zenn' },
   { title: 'Blog', href: '/blog' },
-  { title: 'ReadingMemo', href: '/readingMemo' },
-  { title: 'Resume', href: '/resume' },
+  { title: 'Resume', href: '/resume/detail' },
 ]
 
 export const SNS_LIST_ITEM = [

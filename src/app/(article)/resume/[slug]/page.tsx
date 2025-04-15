@@ -1,31 +1,27 @@
-import { ReadingMemoDetail } from '@/app/(article)/readingMemo/[slug]/_containers'
+import { ResumeDetail } from '@/app/(article)/resume/[slug]/_containers'
 import { NEXT_PUBLIC_BASE_URL } from '@/config'
 import { SITE_NAME } from '@/constants'
-import {
-  getReadingMemoArticleBySlug,
-  getReadingMemoArticles,
-} from '@/lib/newt/ReadingMemo'
+import { getResumeArticleBySlug, getResumeArticles } from '@/lib/newt/Resume'
 import { Metadata } from 'next'
+import { draftMode } from 'next/headers'
 
 type ParamsType = {
   params: Promise<{ slug: string }>
 }
 
 export async function generateStaticParams() {
-  const articles = await getReadingMemoArticles()
+  const articles = await getResumeArticles()
   return articles.map((article) => ({
     slug: article.slug,
   }))
 }
 
-export const dynamicParams = false
-
 export const generateMetadata = async ({
   params,
 }: ParamsType): Promise<Metadata> => {
+  const { isEnabled } = await draftMode()
   const { slug } = await params
-  const article = await getReadingMemoArticleBySlug(slug)
-
+  const article = await getResumeArticleBySlug(slug, isEnabled)
   const ogImageUrl = new URL(
     `/api/og?title=${encodeURIComponent(article?.title || '')}`,
     NEXT_PUBLIC_BASE_URL,
@@ -33,12 +29,12 @@ export const generateMetadata = async ({
 
   return {
     title: `${article?.title} | ${SITE_NAME}`,
-    description: `${article?.title}　読書メモページ`,
+    description: `ブログページです`,
     openGraph: {
       type: 'article',
-      title: `${article?.title} | ${SITE_NAME}`,
-      description: `${article?.title}　読書メモページ`,
-      url: `${NEXT_PUBLIC_BASE_URL}/readingMemo/${slug}`,
+      title: article?.title,
+      description: `ブログページです`,
+      url: `${NEXT_PUBLIC_BASE_URL}/resume/${slug}`,
       images: [
         {
           url: ogImageUrl,
@@ -50,13 +46,13 @@ export const generateMetadata = async ({
     },
     twitter: {
       card: 'summary_large_image',
-      title: `${article?.title} | ${SITE_NAME}`,
-      description: `${article?.title}　読書メモページ`,
+      title: article?.title,
+      description: `ブログページです`,
       images: [ogImageUrl],
     },
   }
 }
 
-export default async function Article({ params }: ParamsType) {
-  return <ReadingMemoDetail params={params} />
+export default async function Resume({ params }: ParamsType) {
+  return <ResumeDetail params={params} />
 }

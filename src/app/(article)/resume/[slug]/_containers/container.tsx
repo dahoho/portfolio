@@ -1,15 +1,19 @@
-import { ReadingMemoDetailPresentational } from '@/app/(article)/readingMemo/[slug]/_containers/presentational'
-import { getReadingMemoArticleBySlug } from '@/lib/newt/ReadingMemo'
+import { ResumeDetailPresentational } from '@/app/(article)/resume/[slug]/_containers/presentational'
+import { getResumeArticleBySlug } from '@/lib/newt/Resume'
+
+import { draftMode } from 'next/headers'
 import { tv } from 'tailwind-variants'
 
 type ParamsType = {
   params: Promise<{ slug: string }>
 }
 
-export const ReadingMemoDetailContainer = async ({ params }: ParamsType) => {
+export const ResumeDetailContainer = async ({ params }: ParamsType) => {
+  const { isEnabled } = await draftMode()
+
   const { slug } = await params
 
-  const article = await getReadingMemoArticleBySlug(slug)
+  const article = await getResumeArticleBySlug(slug, isEnabled)
 
   if (!article) return
 
@@ -27,7 +31,7 @@ export const ReadingMemoDetailContainer = async ({ params }: ParamsType) => {
         'mt-12',
         'prose-h2:dark:text-textDark',
         'prose-h2:text-text',
-        'prose-h2:text-xl',
+        'prose-h2:text-2xl',
         'prose-h2:border-b',
         'prose-h2:border-border',
         '[&>h2>a]:text-text',
@@ -53,26 +57,16 @@ export const ReadingMemoDetailContainer = async ({ params }: ParamsType) => {
     },
   })
 
-  const {
-    content,
-    imageWrapper,
-    time,
-    contentWrapper,
-    backButton,
-    url,
-    textLink,
-  } = detailPage()
+  const { content, time, contentWrapper, backButton } = detailPage()
 
   return (
-    <ReadingMemoDetailPresentational
+    <ResumeDetailPresentational
       article={article}
-      content={content}
-      imageWrapper={imageWrapper}
       time={time}
       contentWrapper={contentWrapper}
       backButton={backButton}
-      url={url}
-      textLink={textLink}
+      content={content}
+      isEnabled={isEnabled}
     />
   )
 }
