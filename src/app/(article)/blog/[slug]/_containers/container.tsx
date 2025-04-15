@@ -31,7 +31,7 @@ export const BlogDetailContainer = async ({ params }: ParamsType) => {
         'mt-12',
         'prose-h2:dark:text-textDark',
         'prose-h2:text-text',
-        'prose-h2:text-xl',
+        'prose-h2:text-2xl',
         'prose-h2:border-b',
         'prose-h2:border-border',
         '[&>h2>a]:text-text',
