@@ -31,13 +31,13 @@ export const NavPresentational = ({
         overlayProps={{ backgroundOpacity: 0.5, blur: 4 }}
         styles={{
           header: {
-            backgroundColor: theme === 'dark' ? '#030712' : '#ffffff',
+            backgroundColor: theme === 'dark' ? '#23272F' : '#ffffff',
           },
           content: {
-            backgroundColor: theme === 'dark' ? '#030712' : '#ffffff',
+            backgroundColor: theme === 'dark' ? '#23272F' : '#ffffff',
           },
           close: {
-            color: theme === 'dark' ? '#ffffff' : '#030712',
+            color: theme === 'dark' ? '#ffffff' : '#23272F',
             background: 'transparent',
           },
         }}
