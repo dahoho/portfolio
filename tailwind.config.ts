@@ -21,7 +21,6 @@ export default {
         textDark: '#f6f7f9',
         border: '#343A46',
         accent: '#58C4DC',
-        link: '#58C4DC',
         gray: '#404756',
         grayDark: '#EBECF0',
       },

@@ -51,7 +51,7 @@ export const ResumeDetailContainer = async ({ params }: ParamsType) => {
         'prose-strong:text-text',
         'dark:text-textDark',
         'leading-8',
-        'prose-a:text-link',
+        'prose-a:text-accent',
         'prose-a:break-all',
       ],
     },
