@@ -13,16 +13,17 @@ export default {
   theme: {
     extend: {
       colors: {
-        text: '#2B2C2C',
+        text: '#23272F',
         background: '#ffffff',
-        card: '#EDF2F6',
-        backgroundDark: '#030712',
-        cardDark: '#1C202A',
-        textDark: '#f8fafc',
-        border: '#e5e7eb',
-        accent: '#38bdf8',
-        link: '#2B7FFF',
-        gray: '#98A1AE',
+        card: '#F6F7F9',
+        backgroundDark: '#23272F',
+        cardDark: '#343A46',
+        textDark: '#f6f7f9',
+        border: '#343A46',
+        accent: '#58C4DC',
+        link: '#58C4DC',
+        gray: '#404756',
+        grayDark: '#EBECF0',
       },
     },
     // Mantineと一致させる https://mantine.dev/styles/responsive/

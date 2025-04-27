@@ -9,7 +9,7 @@ export const FooterPresentational = ({
   currentYear,
 }: FooterPresentationalProps) => {
   return (
-    <footer className="mt-12 flex h-20 flex-col items-center justify-center gap-6 text-xs text-gray">
+    <footer className="mt-12 flex h-20 flex-col items-center justify-center gap-6 text-xs text-gray dark:text-grayDark">
       <Link
         href="/privacy"
         className="block text-center text-xs underline sm:hover:no-underline"

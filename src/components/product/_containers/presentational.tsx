@@ -33,7 +33,7 @@ export const ProductPresentational = ({
                   </span>
                   <p className="font-bold">{article.title}</p>
                 </div>
-                <ul className="mt-2 flex  flex-wrap text-xs leading-6 text-gray">
+                <ul className="mt-2 flex  flex-wrap text-xs leading-6 text-gray dark:text-grayDark">
                   {article.tags.map((tag, index) => (
                     <li key={tag.name}>
                       &nbsp;

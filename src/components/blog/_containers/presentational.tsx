@@ -41,7 +41,7 @@ export const BlogPresentational = ({
                   </p>
                   <time
                     dateTime={formatDate(article._sys.createdAt, true)}
-                    className="mt-3 flex items-center gap-1 text-xs text-gray"
+                    className="mt-3 flex items-center gap-1 text-xs text-gray dark:text-grayDark"
                   >
                     {formatDate(article._sys.createdAt)}
                   </time>

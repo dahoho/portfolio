@@ -54,7 +54,7 @@ export const ZennArticlesPresentational = ({
                   </div>
                   <time
                     dateTime={formatDate(article.published_at, true)}
-                    className="mt-3 flex items-center gap-1 text-xs text-gray"
+                    className="mt-3 flex items-center gap-1 text-xs text-gray dark:text-grayDark"
                   >
                     <Image src="zenn.svg" alt="Zenn" width={12} height={12} />
                     {formatDate(article.published_at)}
