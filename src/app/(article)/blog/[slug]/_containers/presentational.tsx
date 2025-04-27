@@ -7,7 +7,6 @@ import { BackToTopButton } from '@/components/ui/backToTopButton/_containers'
 
 import { formatDate } from '@/utils/dateFormat'
 import { TagIcon } from '@heroicons/react/16/solid'
-import { Title } from '@mantine/core'
 import Link from 'next/link'
 import ReactMarkdown from 'react-markdown'
 
@@ -47,9 +46,9 @@ export const BlogDetailPresentational = ({
     <ContainerLayout>
       <div className="text-center text-7xl">{article.emoji.value}</div>
       <div className={contentWrapper()}>
-        <Title order={2}>
+        <h2 className="text-3xl font-bold">
           <span className="mx-auto block w-fit">{article.title}</span>
-        </Title>
+        </h2>
         <time
           dateTime={formatDate(article._sys.createdAt, true)}
           className={time()}

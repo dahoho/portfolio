@@ -72,7 +72,7 @@ export const ZennArticlesPresentational = ({
               total={paginatedArticles.length}
               value={activePage}
               onChange={setActivePage}
-              color="#38bdf8"
+              color="#58C4DC"
             />
           )}
         </div>
