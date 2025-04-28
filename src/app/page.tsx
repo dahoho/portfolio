@@ -1,4 +1,5 @@
 import { Blog } from '@/components/blog/_containers'
+import { Event } from '@/components/event/_containers'
 import { ContainerLayout } from '@/components/layout/containerLayout/_containers'
 import { Product } from '@/components/product/_containers'
 
@@ -17,8 +18,8 @@ const Home = async () => {
     <ContainerLayout>
       <ZennArticles zennArticles={zennArticles} />
       <Blog blogArticles={bookArticles} />
-
       <Product productArticles={productArticles} />
+      <Event />
     </ContainerLayout>
   )
 }
